@@ -22,6 +22,6 @@ $p_{like}(Z_T \mid Z_C)$ representa el modelo de transición físico. Es entrena
 $p_{prior}(Z_T \mid \eta)$ es el experto prior. Inyecta información auxiliar $\eta$ (ej. evitar obstáculos, llegar a una posición). Actúa limitando el espacio de estados predicho únicamente a aquellas trayectorias que cumplen la restricción de la tarea.
 
 ## Inferencia y Control
-Matemáticamente, BJEPA implementa una actualización de filtro de Kalman en el espacio latente. Durante la planificación, se intersectan el manifold de los futuros físicamente posibles con el manifold de los futuros que cumplen la tarea. Esto permite:
+Matemáticamente, BJEPA implementa una actualización de filtro de Kalman en el espacio latente. Durante la planificación, se intersecan el manifold de los futuros físicamente posibles con el manifold de los futuros que cumplen la tarea. Esto permite:
 - **Zero-Shot Transfer**: Cambiar de tarea equivale simplemente a cambiar el $p_{prior}$, manteniendo intacto el modelo físico.
 - **Evitar Catastrophic Forgetting**: Al no reentrenar los pesos de las dinámicas, el modelo no olvida cómo funciona el mundo al aprender nuevas tareas.

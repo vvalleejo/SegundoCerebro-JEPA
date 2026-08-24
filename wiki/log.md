@@ -130,3 +130,12 @@ Registro cronológico de las operaciones realizadas en la base de conocimientos.
 - Se generan 19 notas técnicas de arquitectura en `wiki/architecture/` con esquemas de encoders, predictores, enmascaramiento, regularización y planificación.
 - Se actualiza `GEMINI.md` para estandarizar la extracción de arquitectura en el protocolo de ingesta.
 - Se actualiza `index.md` con la sección de Arquitecturas y Diagramas.
+
+## [2026-08-23] ingest | GeniWorld A Generalizable Interactive World Model for Robotic.pdf
+- Se lee el paper "GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions".
+- Se crea el resumen en `papers/2026_GeniWorld.md`.
+- Se extrae la arquitectura y diagramas en `architecture/2026_GeniWorld.md` e imágenes en `architecture/img/` (300 DPI).
+- Se extraen las matemáticas clave en `math/Visual_Action_Flow_Matching.md`.
+- Se crea la entidad en `entities/GeniWorld.md`.
+- Se actualiza la guía de síntesis en `synthesis/World_Models_PhD_Guide.md`.
+- Se actualiza el `index.md`.

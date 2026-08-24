@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "29821dc6f1b7a7d5",
+        "id": "2d8303fb4724bc52",
         "type": "tabs",
         "children": [
           {
-            "id": "5ae5d4d9bf23fff2",
+            "id": "d83b3c12b32c61cc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wiki/math/Dense_Predictive_Loss.md",
+                "file": "wiki/entities/I-JEPA.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dense_Predictive_Loss"
+              "title": "I-JEPA"
             }
           }
         ]
@@ -96,8 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wiki/math/Dense_Predictive_Loss.md",
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -138,6 +137,20 @@
             }
           },
           {
+            "id": "c91939d9435dffa7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "wiki/entities/TC-JEPA.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "TC-JEPA"
+            }
+          },
+          {
             "id": "3023124b2def280f",
             "type": "leaf",
             "state": {
@@ -164,49 +177,65 @@
               "icon": "lucide-list",
               "title": "Esquema"
             }
+          },
+          {
+            "id": "5987ac2bc6384ab9",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Vista gráfica"
+            }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 594.1666259765625
   },
   "left-ribbon": {
     "hiddenItems": {
       "switcher:Abrir selector rápido": false,
-      "graph:Abrir vista gráfica": false,
       "canvas:Crear nuevo lienzo": false,
       "daily-notes:Abrir la nota de hoy": false,
       "templates:Insertar plantilla": false,
       "command-palette:Abrir paleta de comandos": false,
-      "bases:Crear nueva base": false
+      "bases:Crear nueva base": false,
+      "graph:Abrir vista gráfica": false
     }
   },
-  "active": "5ae5d4d9bf23fff2",
+  "active": "5987ac2bc6384ab9",
   "lastOpenFiles": [
-    "README.md",
+    "wiki/architecture/2023_I-JEPA.md",
+    "wiki/entities/I-JEPA.md",
+    "wiki/papers/2023_I-JEPA.md",
     "wiki/synthesis/World_Models_PhD_Guide.md",
+    "wiki/papers/2026_GeniWorld.md",
+    "wiki/math/Visual_Action_Flow_Matching.md",
+    "wiki/architecture/2026_GeniWorld.md",
+    "wiki/entities/GeniWorld.md",
+    "raw/GeniWorld A Generalizable Interactive World Model for Robotic.pdf",
+    "wiki/entities/TC-JEPA.md",
+    "raw/Causal-JEPA Learning World Models through Object-Level Latent Masking.pdf",
+    "wiki/entities/BJEPA.md",
+    "wiki/entities/EB-JEPA.md",
+    "JEPA.md",
+    "V-JEPA2-AC.md",
+    "wiki/entities/AdaJEPA.md",
+    "wiki/papers/2026_SkyJEPA.md",
+    "wiki/architecture/2026_VJEPA.md",
+    "wiki/papers/2026_VJEPA.md",
+    "wiki/math/SIGReg.md",
+    "wiki/math/Dense_Predictive_Loss.md",
+    "README.md",
     "wiki/GEMINI.md",
     "wiki/architecture/2026_CHARM.md",
     "wiki/architecture/2026_HP-JEPA.md",
     "wiki/architecture/2026_EB-JEPA.md",
     "wiki/architecture/2026_SkyJEPA.md",
     "wiki/architecture/2026_LeWorldModel.md",
-    "wiki/architecture/2025_PLDM.md",
-    "wiki/architecture/2023_I-JEPA.md",
-    "wiki/papers/2026_LeWorldModel.md",
-    "wiki/architecture/2026_VJEPA.md",
-    "wiki/architecture/2026_V-JEPA2.1.md",
-    "wiki/architecture/2026_TC-JEPA.md",
-    "wiki/architecture/2026_Semantic_Tube.md",
-    "wiki/architecture/2026_Rectified_LpJEPA.md",
-    "wiki/architecture/2026_Music-JEPA.md",
-    "wiki/architecture/2026_MuSe.md",
-    "wiki/architecture/2026_MJEPA.md",
-    "wiki/architecture/2026_LeJEPA_Identifiability.md",
-    "wiki/architecture/2026_Causal-JEPA.md",
-    "wiki/architecture/2026_AdaJEPA.md",
-    "wiki/architecture/2025_V-JEPA2.md",
     "wiki/architecture/img/2026_MJEPA_detailed.png",
     "wiki/architecture/img/2026_Causal-JEPA_aux.png",
     "wiki/architecture/img/2025_V-JEPA2_planning.png",
@@ -219,16 +248,11 @@
     "wiki/architecture/img/2026_TC-JEPA_overview.png",
     "wiki/architecture/img",
     "wiki/architecture",
-    "wiki/math/SIGReg.md",
     "raw/Self-Supervised Learning from Images with a.pdf",
     "raw/LeWorldModel.pdf",
-    "wiki/math/VJEPA_Loss.md",
-    "wiki/math/LeWM_Loss.md",
     "raw/Music-JEPA Learning a world model of sound from action.pdf",
     "raw/Sin confirmar 13258.crdownload",
     "raw/HP-JEPA Hierarchical Partitioning for Multi-Resolution Graph.pdf",
-    "raw/Sin confirmar 744062.crdownload",
-    "raw/Learning from Reward-Free Offline Data.pdf",
-    "raw/Sin confirmar 878994.crdownload"
+    "raw/Sin confirmar 744062.crdownload"
   ]
 }

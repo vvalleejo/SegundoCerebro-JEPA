@@ -6,7 +6,29 @@
   "hideUnresolved": false,
   "showOrphans": true,
   "collapse-color-groups": true,
-  "colorGroups": [],
+  "colorGroups": [
+    {
+      "query": "path:wiki/architecture  ",
+      "color": {
+        "a": 1,
+        "rgb": 14731602
+      }
+    },
+    {
+      "query": "path:wiki/math  ",
+      "color": {
+        "a": 1,
+        "rgb": 13707561
+      }
+    },
+    {
+      "query": "path:wiki/synthesis  ",
+      "color": {
+        "a": 1,
+        "rgb": 7446547
+      }
+    }
+  ],
   "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0,
@@ -17,6 +39,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 1,
+  "scale": 0.7132754626224406,
   "close": true
 }

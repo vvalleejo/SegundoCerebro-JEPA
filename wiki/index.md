@@ -28,12 +28,16 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[2026_HP-JEPA]]: "HP-JEPA: Hierarchical Partitioning for Multi-Resolution Graph Joint-Embedding Predictive Learning" (2026). JEPA multirresolución en grafos mediante particionamiento jerárquico y readout adaptativo.
 - [[2026_Music-JEPA]]: "Music-JEPA: Learning a World Model of Sound from Action" (2026). Modelo de mundo musical condicionado por acciones (audio como estado, pianoroll como acción) y transcripción vía planificación.
 
+- [[2026_GeniWorld]]: "GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions" (2026). Modelo de mundo interactivo con Flow Matching y acciones visuales renderizadas vía URDF.
+
 ## 🧮 Conceptos Matemáticos y Teóricos (Math & Concepts)
 - [[SIGReg]]: Sketched-Isotropic-Gaussian Regularizer. Término de regularización para evitar el colapso de representación hacia distribuciones de baja dimensionalidad.
 - [[LeWM_Loss]]: Objetivo matemático minimalista para el entrenamiento de LeWM (MSE + SIGReg).
 - [[VJEPA_Loss]]: Objetivo variacional (NLL + KL Divergence) para modelar incertidumbre aleatoria y evitar modelar ruido distractivo.
 - [[Dense_Predictive_Loss]]: Extensión de la pérdida JEPA sobre los tokens de contexto visibles ponderados por distancia.
 - [[Linear_Identifiability]]: Garantía matemática de que el espacio latente de LeJEPA recupera fielmente las variables reales del mundo hasta una rotación ortogonal.
+
+- [[Visual_Action_Flow_Matching]]: Formulación de Flow Matching condicionado por acciones visuales espaciales limpias para interacción física en modelos de mundo.
 
 ## 🏗️ Entidades y Arquitecturas (Entities)
 - [[LeWorldModel]]: La arquitectura World Model introducida en 2026, caracterizada por su entrenamiento estable basado exclusivamente en regularización gaussiana.
@@ -57,6 +61,8 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[HP-JEPA]]: Framework de JEPA jerárquico para grafos que captura información estructural a múltiples escalas de resolución.
 - [[Music-JEPA]]: Modelo de mundo acústico y musical condicionado por acciones instrumentales que permite transcripción por planificación inversa.
 
+- [[GeniWorld]]: Modelo de mundo interactivo autorregresivo para robótica que desacopla cinemática y dinámica ambiental mediante acciones visuales.
+
 ## 🏛️ Arquitecturas y Diagramas (Architecture)
 - [[2023_I-JEPA]]: Arquitectura I-JEPA con enmascaramiento multi-bloque y predicción en espacio de representación.
 - [[2025_PLDM]]: Arquitectura PLDM para aprendizaje de dinámicas latentes y planificación offline sin recompensas.
@@ -77,6 +83,8 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[2026_TC-JEPA]]: Arquitectura TC-JEPA con condicionamiento textual de grano fino vía Cross-Attention.
 - [[2026_V-JEPA2.1]]: Arquitectura V-JEPA 2.1 con 3D RoPE y pérdida de contexto ponderada para características densas.
 - [[2026_VJEPA]]: Arquitecturas VJEPA (variacional) y BJEPA (bayesiana con Product of Experts) como modelos de mundo probabilísticos.
+
+- [[2026_GeniWorld]]: Arquitectura GeniWorld con renderizador URDF, codificación 3D VAE concatenada y DiT causal con Flow Matching.
 
 ## 🧠 Síntesis (Synthesis)
 - [[World_Models_PhD_Guide]]: Guía comprensiva para el Doctorado integrando las lecciones de la arquitectura JEPA en diversas modalidades (Visión, Robótica, Series Temporales, Lenguaje).

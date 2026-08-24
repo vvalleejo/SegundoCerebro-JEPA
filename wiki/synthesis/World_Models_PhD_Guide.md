@@ -42,6 +42,8 @@ Los humanos no solo usan los ojos; un verdadero modelo de mundo robótico requie
 - **[[SkyJEPA]] (2026)**: Aplicó JEPA al control ágil de drones en tiempo real a alta frecuencia ($>100\text{ Hz}$) mediante un *Physics-Inspired Prober* que traduce latentes a estados físicos $(p, v, R, \omega)$ usando integradores cinemáticos diferenciables, logrando transferencia *Sim-to-Real Zero-Shot*.
 - **[[Music-JEPA]] / [[2026_Music-JEPA]] (2026)**: Modela el sonido como un sistema dinámico interactivo (audio como estado, eventos de pianoroll y pedal como acción), demostrando que la predicción latente permite resolver problemas inversos de transcripción mediante planificación en el espacio de acciones.
 
+- **[[GeniWorld]] / [[2026_GeniWorld]] (2026)**: Resuelve el problema de generalización fuera de distribución (OOD) y el acoplamiento espurio en modelos de mundo generativos sustituyendo vectores numéricos por **Acciones Visuales** renderizadas con cinemática URDF. Combina un DiT causal (Wan2.2) y Flow Matching para actuar como simulador interactivo en tiempo real (~8 Hz) para evaluación robusta de políticas VLA ($\\pi_0$) y síntesis masiva de trayectorias.
+
 ## 5. Estructuras Relacionales, Grafos y Multirresolución
 Los entornos físicos y relacionales complejos no siempre se estructuran en cuadrículas euclidianas (como imágenes o audio), sino en redes y topologías no euclidianas (moléculas, interacciones multi-agente, conectividad abstracta).
 
