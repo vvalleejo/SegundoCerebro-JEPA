@@ -139,3 +139,18 @@ Registro cronológico de las operaciones realizadas en la base de conocimientos.
 - Se crea la entidad en `entities/GeniWorld.md`.
 - Se actualiza la guía de síntesis en `synthesis/World_Models_PhD_Guide.md`.
 - Se actualiza el `index.md`.
+
+## [2026-08-26] ingest | LpWM A Case for Sparse Representations in World Models
+- **Resumen**: Ingesta del paper LpWM.
+- **Acciones**:
+  - Extracción de texto y figuras del PDF de LpWM.
+  - Creación de notas de paper (`papers/2026_LpWM.md`), arquitectura (`architecture/2026_LpWM.md`), concepto matemático (`math/RDMReg.md`) y entidad (`entities/LpWM.md`).
+  - Actualización de `index.md`, `log.md` y `World_Models_PhD_Guide.md`.
+  - Archivos creados:
+    - `wiki/papers/2026_LpWM.md`
+    - `wiki/architecture/2026_LpWM.md`
+    - `wiki/math/RDMReg.md`
+    - `wiki/entities/LpWM.md`
+    - `wiki/architecture/img/2026_LpWM_arch.png`
+    - `wiki/architecture/img/2026_LpWM_support.png`
+    - `wiki/architecture/img/2026_LpWM_capacity.png`

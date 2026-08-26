@@ -8,6 +8,7 @@ tags: [index, moc]
 Este es el punto de entrada principal para la base de conocimientos enfocada en los Modelos de Mundo (World Models) y las arquitecturas JEPA de Yann LeCun.
 
 ## 📄 Papers Ingeridos
+- [[2026_LpWM]]: "LpWM: A Case for Sparse Representations in World Models" (2026). Demostración teórica y empírica de representaciones latentes dispersas (sparse) para dinámicas simplificadas usando RDMReg.
 - [[2026_LeWorldModel]]: "LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels" (2026). Arquitectura JEPA end-to-end con SIGReg.
 - [[2026_VJEPA]]: "VJEPA: Variational Joint Embedding Predictive Architectures as Probabilistic World Models" (2026). Generalización probabilística de JEPA y formulación Bayesiana (BJEPA).
 - [[2025_V-JEPA2]]: "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning" (2025). Modelo masivo de video pre-entrenado y su variante Action-Conditioned para robótica.
@@ -31,6 +32,7 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[2026_GeniWorld]]: "GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions" (2026). Modelo de mundo interactivo con Flow Matching y acciones visuales renderizadas vía URDF.
 
 ## 🧮 Conceptos Matemáticos y Teóricos (Math & Concepts)
+- [[RDMReg]]: Rectified Distribution Matching Regularization. Regularizador que aproxima distribuciones a un objetivo RGG (Laplace Rectificado) para esparcidad.
 - [[SIGReg]]: Sketched-Isotropic-Gaussian Regularizer. Término de regularización para evitar el colapso de representación hacia distribuciones de baja dimensionalidad.
 - [[LeWM_Loss]]: Objetivo matemático minimalista para el entrenamiento de LeWM (MSE + SIGReg).
 - [[VJEPA_Loss]]: Objetivo variacional (NLL + KL Divergence) para modelar incertidumbre aleatoria y evitar modelar ruido distractivo.
@@ -40,6 +42,7 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[Visual_Action_Flow_Matching]]: Formulación de Flow Matching condicionado por acciones visuales espaciales limpias para interacción física en modelos de mundo.
 
 ## 🏗️ Entidades y Arquitecturas (Entities)
+- [[LpWM]]: Arquitectura JEPA de World Models caracterizada por generar representaciones latentes distribuidas y dispersas.
 - [[LeWorldModel]]: La arquitectura World Model introducida en 2026, caracterizada por su entrenamiento estable basado exclusivamente en regularización gaussiana.
 - [[VJEPA]]: Extensión probabilística que mapea a distribuciones predictivas en lugar de puntos deterministas.
 - [[BJEPA]]: Bayesian JEPA, usa "Product of Experts" para fusionar el conocimiento físico y las restricciones de una tarea de manera modular.
@@ -64,6 +67,7 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[GeniWorld]]: Modelo de mundo interactivo autorregresivo para robótica que desacopla cinemática y dinámica ambiental mediante acciones visuales.
 
 ## 🏛️ Arquitecturas y Diagramas (Architecture)
+- [[2026_LpWM]]: Arquitectura LpWorldModel con RepReLU y predictores simplificados mediante RDMReg.
 - [[2023_I-JEPA]]: Arquitectura I-JEPA con enmascaramiento multi-bloque y predicción en espacio de representación.
 - [[2025_PLDM]]: Arquitectura PLDM para aprendizaje de dinámicas latentes y planificación offline sin recompensas.
 - [[2025_V-JEPA2]]: Arquitectura V-JEPA 2 / V-JEPA 2-AC para modelos de video y control MPC en robótica.
