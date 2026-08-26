@@ -11,14 +11,12 @@
             "id": "17b2bd692c3c2ce8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "wiki/architecture/2023_I-JEPA.md",
-                "mode": "source",
-                "source": false
+                "file": "raw/SkyJEPA Learning Long-Horizon World Models for.pdf"
               },
-              "icon": "lucide-file",
-              "title": "2023_I-JEPA"
+              "icon": "lucide-file-text",
+              "title": "SkyJEPA Learning Long-Horizon World Models for"
             }
           }
         ]
@@ -208,15 +206,34 @@
   },
   "active": "17b2bd692c3c2ce8",
   "lastOpenFiles": [
+    "raw/Semantic Tube Prediction Beating LLM Data Efficiency with JEPA.pdf",
+    "wiki/architecture/2023_I-JEPA.md",
+    "fix_crops.py",
+    "crop_script.py",
+    "scratch_page.py",
+    "crop_remaining.py",
+    "fix_diagrams.py",
+    "crop_vjepa.py",
+    "vjepa_14.png",
+    "vjepa_13.png",
+    "vjepa_12.png",
+    "vjepa_11.png",
+    "vjepa_10.png",
+    "vjepa_9.png",
+    "vjepa_8.png",
+    "vjepa_7.png",
+    "vjepa_6.png",
+    "vjepa_5.png",
+    "render_page.py",
+    "crop_pdf.py",
+    "crop.py",
     "wiki/architecture/2026_Causal-JEPA.md",
-    "wiki/architecture/img/2026_Causal-JEPA_pipeline.png",
     "raw/Causal-JEPA Learning World Models through Object-Level Latent Masking.pdf",
     "wiki/entities/C-JEPA.md",
     "wiki/repositories.md",
     "wiki/architecture/2026_LpWM.md",
     "wiki/papers/2026_LpWM.md",
     "wiki/entities/LpWM.md",
-    "wiki/architecture/2023_I-JEPA.md",
     "wiki/entities/I-JEPA.md",
     "wiki/papers/2023_I-JEPA.md",
     "wiki/synthesis/World_Models_PhD_Guide.md",
@@ -224,7 +241,6 @@
     "wiki/math/Visual_Action_Flow_Matching.md",
     "wiki/architecture/2026_GeniWorld.md",
     "wiki/entities/GeniWorld.md",
-    "raw/GeniWorld A Generalizable Interactive World Model for Robotic.pdf",
     "wiki/entities/TC-JEPA.md",
     "wiki/entities/BJEPA.md",
     "wiki/entities/EB-JEPA.md",
@@ -235,23 +251,6 @@
     "wiki/architecture/2026_VJEPA.md",
     "wiki/papers/2026_VJEPA.md",
     "wiki/math/SIGReg.md",
-    "wiki/math/Dense_Predictive_Loss.md",
-    "wiki/architecture/img/2026_MJEPA_detailed.png",
-    "wiki/architecture/img/2026_Causal-JEPA_aux.png",
-    "wiki/architecture/img/2025_V-JEPA2_planning.png",
-    "wiki/architecture/img/2025_PLDM_plans.png",
-    "wiki/architecture/img/2026_BJEPA_arch.png",
-    "wiki/architecture/img/2026_VJEPA_arch.png",
-    "wiki/architecture/img/2026_V-JEPA2.1_context_loss.png",
-    "wiki/architecture/img/2026_V-JEPA2.1_arch.png",
-    "wiki/architecture/img/2026_TC-JEPA_arch.png",
-    "wiki/architecture/img",
-    "wiki/architecture",
-    "raw/Self-Supervised Learning from Images with a.pdf",
-    "raw/LeWorldModel.pdf",
-    "raw/Music-JEPA Learning a world model of sound from action.pdf",
-    "raw/Sin confirmar 13258.crdownload",
-    "raw/HP-JEPA Hierarchical Partitioning for Multi-Resolution Graph.pdf",
-    "raw/Sin confirmar 744062.crdownload"
+    "wiki/math/Dense_Predictive_Loss.md"
   ]
 }
