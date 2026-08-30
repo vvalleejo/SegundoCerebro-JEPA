@@ -9,6 +9,7 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 
 ## 📄 Papers Ingeridos
 - [[2026_LpWM]]: "LpWM: A Case for Sparse Representations in World Models" (2026). Demostración teórica y empírica de representaciones latentes dispersas (sparse) para dinámicas simplificadas usando RDMReg.
+- [[2026_LeVJEPA]]: "LeVJEPA: Efficient & Scalable Video Pretraining without the Heuristics" (2026). Encoder de video eficiente y libre de colapso usando SIGReg y token dropping.
 - [[2026_LeWorldModel]]: "LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels" (2026). Arquitectura JEPA end-to-end con SIGReg.
 - [[2026_VJEPA]]: "VJEPA: Variational Joint Embedding Predictive Architectures as Probabilistic World Models" (2026). Generalización probabilística de JEPA y formulación Bayesiana (BJEPA).
 - [[2025_V-JEPA2]]: "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning" (2025). Modelo masivo de video pre-entrenado y su variante Action-Conditioned para robótica.
@@ -37,6 +38,7 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[LeWM_Loss]]: Objetivo matemático minimalista para el entrenamiento de LeWM (MSE + SIGReg).
 - [[VJEPA_Loss]]: Objetivo variacional (NLL + KL Divergence) para modelar incertidumbre aleatoria y evitar modelar ruido distractivo.
 - [[Dense_Predictive_Loss]]: Extensión de la pérdida JEPA sobre los tokens de contexto visibles ponderados por distancia.
+- [[Invariance_Loss]]: Objetivo matemático (MSE) para predicción local-a-global en JEPAs sin heurísticas (ej. LeVJEPA).
 - [[Linear_Identifiability]]: Garantía matemática de que el espacio latente de LeJEPA recupera fielmente las variables reales del mundo hasta una rotación ortogonal.
 
 - [[Visual_Action_Flow_Matching]]: Formulación de Flow Matching condicionado por acciones visuales espaciales limpias para interacción física en modelos de mundo.
@@ -44,6 +46,8 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 ## 🏗️ Entidades y Arquitecturas (Entities)
 - [[LpWM]]: Arquitectura JEPA de World Models caracterizada por generar representaciones latentes distribuidas y dispersas.
 - [[LeWorldModel]]: La arquitectura World Model introducida en 2026, caracterizada por su entrenamiento estable basado exclusivamente en regularización gaussiana.
+- [[LeJEPA]]: Arquitectura base matemáticamente garantizada contra el colapso mediante SIGReg.
+- [[LeVJEPA]]: Adaptación al video de LeJEPA con block-causal attention y extrema eficiencia computacional.
 - [[VJEPA]]: Extensión probabilística que mapea a distribuciones predictivas en lugar de puntos deterministas.
 - [[BJEPA]]: Bayesian JEPA, usa "Product of Experts" para fusionar el conocimiento físico y las restricciones de una tarea de manera modular.
 - [[V-JEPA2]]: Arquitectura de video fundacional que demostró empíricamente la viabilidad del control MPC en espacios latentes JEPA.
@@ -78,6 +82,7 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[2026_HP-JEPA]]: Arquitectura HP-JEPA con particionamiento jerárquico multirresolución en grafos.
 - [[2026_LeJEPA_Identifiability]]: Arquitectura y teoría de identificabilidad lineal y unicidad gaussiana en LeJEPA.
 - [[2026_LeWorldModel]]: Arquitectura LeWorldModel end-to-end desde píxeles con regularización SIGReg.
+- [[2026_LeVJEPA_Arch]]: Arquitectura de LeVJEPA con token dropping uniforme y ausencia de predictor.
 - [[2026_MJEPA]]: Arquitectura MJEPA con encoder y predictor compartidos para audio y video.
 - [[2026_MuSe]]: Arquitectura MuSe para adaptación continua multisensorial visomotora a sensores de fuerza/par.
 - [[2026_Music-JEPA]]: Arquitectura Music-JEPA conectando estados acústicos y acciones de pianoroll.

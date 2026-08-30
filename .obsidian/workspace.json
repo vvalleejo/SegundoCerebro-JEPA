@@ -4,19 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "f6a30a119bc2c74f",
+        "id": "03daa402beabcaec",
         "type": "tabs",
         "children": [
           {
-            "id": "17b2bd692c3c2ce8",
+            "id": "3e1c25f00477d7f9",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "raw/SkyJEPA Learning Long-Horizon World Models for.pdf"
+                "file": "raw/Semantic Tube Prediction Beating LLM Data Efficiency with JEPA.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "SkyJEPA Learning Long-Horizon World Models for"
+              "title": "Semantic Tube Prediction Beating LLM Data Efficiency with JEPA"
             }
           }
         ]
@@ -204,8 +204,11 @@
       "graph:Abrir vista gráfica": false
     }
   },
-  "active": "17b2bd692c3c2ce8",
+  "active": "3e1c25f00477d7f9",
   "lastOpenFiles": [
+    "wiki/architecture/img/2026_Semantic_Tube_geodesic.png",
+    "raw/SkyJEPA Learning Long-Horizon World Models for.pdf",
+    "raw/LpWM A Case for Sparse Representations in World.pdf",
     "raw/Semantic Tube Prediction Beating LLM Data Efficiency with JEPA.pdf",
     "wiki/architecture/2023_I-JEPA.md",
     "fix_crops.py",
@@ -225,10 +228,7 @@
     "vjepa_6.png",
     "vjepa_5.png",
     "render_page.py",
-    "crop_pdf.py",
-    "crop.py",
     "wiki/architecture/2026_Causal-JEPA.md",
-    "raw/Causal-JEPA Learning World Models through Object-Level Latent Masking.pdf",
     "wiki/entities/C-JEPA.md",
     "wiki/repositories.md",
     "wiki/architecture/2026_LpWM.md",

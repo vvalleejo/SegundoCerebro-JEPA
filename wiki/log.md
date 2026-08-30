@@ -1,8 +1,8 @@
-# Log
+﻿# Log
 
-Registro cronológico de las operaciones realizadas en la base de conocimientos.
+Registro cronolÃ³gico de las operaciones realizadas en la base de conocimientos.
 
-## [2026-07-05] ingest | Inicialización
+## [2026-07-05] ingest | InicializaciÃ³n
 - Se crea el esquema `CLAUDE.md`.
 - Se crea el `index.md` y `log.md`.
 - Se preparan las carpetas base.
@@ -11,14 +11,14 @@ Registro cronológico de las operaciones realizadas en la base de conocimientos.
 - Se lee el paper base "LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels".
 - Se crea el resumen en `papers/2026_LeWorldModel.md`.
 - Se extrae la arquitectura en `entities/LeWorldModel.md`.
-- Se extraen las matemáticas clave en `math/SIGReg.md` y `math/LeWM_Loss.md`.
+- Se extraen las matemÃ¡ticas clave en `math/SIGReg.md` y `math/LeWM_Loss.md`.
 - Se actualiza el `index.md`.
 
 ## [2026-07-05] ingest | VJEPA Variational Joint Embedding Predictive Architectures as Probabilistic World Models.pdf
 - Se lee el paper "VJEPA: Variational Joint Embedding Predictive Architectures as Probabilistic World Models".
 - Se crea el resumen en `papers/2026_VJEPA.md`.
 - Se extraen las arquitecturas `entities/VJEPA.md` y `entities/BJEPA.md`.
-- Se extraen las matemáticas clave en `math/VJEPA_Loss.md`.
+- Se extraen las matemÃ¡ticas clave en `math/VJEPA_Loss.md`.
 - Se actualiza el `index.md`.
 
 ## [2026-07-05] ingest | V-JEPA2.pdf
@@ -31,7 +31,7 @@ Registro cronológico de las operaciones realizadas en la base de conocimientos.
 - Se lee el paper "V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning".
 - Se crea el resumen en `papers/2026_V-JEPA2.1.md`.
 - Se extrae la entidad en `entities/V-JEPA2.1.md`.
-- Se extraen las matemáticas clave en `math/Dense_Predictive_Loss.md`.
+- Se extraen las matemÃ¡ticas clave en `math/Dense_Predictive_Loss.md`.
 - Se actualiza el `index.md`.
 
 ## [2026-07-05] ingest | EB-JEPA.pdf
@@ -124,28 +124,28 @@ Registro cronológico de las operaciones realizadas en la base de conocimientos.
 - Se extrae la entidad en `entities/Music-JEPA.md`.
 - Se actualiza el `index.md`.
 
-## [2026-08-22] architecture | Creación de wiki/architecture/ y extracción de diagramas
+## [2026-08-22] architecture | CreaciÃ³n de wiki/architecture/ y extracciÃ³n de diagramas
 - Se crea el directorio `wiki/architecture/` y su subdirectorio `wiki/architecture/img/`.
-- Se extraen 39 diagramas arquitectónicos en alta resolución (300 DPI PNG) directamente desde los 19 PDFs de `raw/`.
-- Se generan 19 notas técnicas de arquitectura en `wiki/architecture/` con esquemas de encoders, predictores, enmascaramiento, regularización y planificación.
-- Se actualiza `GEMINI.md` para estandarizar la extracción de arquitectura en el protocolo de ingesta.
-- Se actualiza `index.md` con la sección de Arquitecturas y Diagramas.
+- Se extraen 39 diagramas arquitectÃ³nicos en alta resoluciÃ³n (300 DPI PNG) directamente desde los 19 PDFs de `raw/`.
+- Se generan 19 notas tÃ©cnicas de arquitectura en `wiki/architecture/` con esquemas de encoders, predictores, enmascaramiento, regularizaciÃ³n y planificaciÃ³n.
+- Se actualiza `GEMINI.md` para estandarizar la extracciÃ³n de arquitectura en el protocolo de ingesta.
+- Se actualiza `index.md` con la secciÃ³n de Arquitecturas y Diagramas.
 
 ## [2026-08-23] ingest | GeniWorld A Generalizable Interactive World Model for Robotic.pdf
 - Se lee el paper "GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions".
 - Se crea el resumen en `papers/2026_GeniWorld.md`.
-- Se extrae la arquitectura y diagramas en `architecture/2026_GeniWorld.md` e imágenes en `architecture/img/` (300 DPI).
-- Se extraen las matemáticas clave en `math/Visual_Action_Flow_Matching.md`.
+- Se extrae la arquitectura y diagramas en `architecture/2026_GeniWorld.md` e imÃ¡genes en `architecture/img/` (300 DPI).
+- Se extraen las matemÃ¡ticas clave en `math/Visual_Action_Flow_Matching.md`.
 - Se crea la entidad en `entities/GeniWorld.md`.
-- Se actualiza la guía de síntesis en `synthesis/World_Models_PhD_Guide.md`.
+- Se actualiza la guÃ­a de sÃ­ntesis en `synthesis/World_Models_PhD_Guide.md`.
 - Se actualiza el `index.md`.
 
 ## [2026-08-26] ingest | LpWM A Case for Sparse Representations in World Models
 - **Resumen**: Ingesta del paper LpWM.
 - **Acciones**:
-  - Extracción de texto y figuras del PDF de LpWM.
-  - Creación de notas de paper (`papers/2026_LpWM.md`), arquitectura (`architecture/2026_LpWM.md`), concepto matemático (`math/RDMReg.md`) y entidad (`entities/LpWM.md`).
-  - Actualización de `index.md`, `log.md` y `World_Models_PhD_Guide.md`.
+  - ExtracciÃ³n de texto y figuras del PDF de LpWM.
+  - CreaciÃ³n de notas de paper (`papers/2026_LpWM.md`), arquitectura (`architecture/2026_LpWM.md`), concepto matemÃ¡tico (`math/RDMReg.md`) y entidad (`entities/LpWM.md`).
+  - ActualizaciÃ³n de `index.md`, `log.md` y `World_Models_PhD_Guide.md`.
   - Archivos creados:
     - `wiki/papers/2026_LpWM.md`
     - `wiki/architecture/2026_LpWM.md`
