@@ -1,4 +1,4 @@
-﻿# Log
+# Log
 
 Registro cronolÃ³gico de las operaciones realizadas en la base de conocimientos.
 
@@ -154,3 +154,33 @@ Registro cronolÃ³gico de las operaciones realizadas en la base de conocimiento
     - `wiki/architecture/img/2026_LpWM_arch.png`
     - `wiki/architecture/img/2026_LpWM_support.png`
     - `wiki/architecture/img/2026_LpWM_capacity.png`
+
+## [2026-08-30] ingest | LeVJEPA
+- **Resumen**: Ingesta del paper "LeVJEPA: Efficient & Scalable Video Pretraining without the Heuristics".
+- **Acciones**:
+  - Extracción de texto y diagrama de arquitectura de Figure 1.
+  - Creación de notas de paper (`papers/2026_LeVJEPA.md`), arquitectura (`architecture/2026_LeVJEPA_Arch.md`), concepto matemático (`math/Invariance_Loss.md`) y entidad (`entities/LeVJEPA.md`).
+  - Actualización de `index.md` y `log.md`.
+  - Archivos creados:
+    - `wiki/papers/2026_LeVJEPA.md`
+    - `wiki/architecture/2026_LeVJEPA_Arch.md`
+    - `wiki/math/Invariance_Loss.md`
+    - `wiki/entities/LeVJEPA.md`
+    - `wiki/architecture/img/2026_LeVJEPA.png`
+
+## [2026-08-30] ingest | LeJEPA
+- **Resumen**: Ingesta del paper fundacional "LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics".
+- **Acciones**:
+  - Extracción de texto y figuras de arquitectura/pipeline (Figure 1 y Figure 2).
+  - Creación de notas de paper (`papers/2025_LeJEPA.md`), arquitectura (`architecture/2025_LeJEPA.md`), conceptos matemáticos (`math/LeJEPA_Loss.md`, `math/Isotropic_Gaussian_Optimality.md`), actualización exhaustiva de (`math/SIGReg.md`) y entidad (`entities/LeJEPA.md`).
+  - Actualización del mapa de contenido `index.md` y registro en `log.md`.
+  - Archivos creados / actualizados:
+    - `wiki/papers/2025_LeJEPA.md`
+    - `wiki/architecture/2025_LeJEPA.md`
+    - `wiki/math/LeJEPA_Loss.md`
+    - `wiki/math/Isotropic_Gaussian_Optimality.md`
+    - `wiki/math/SIGReg.md`
+    - `wiki/entities/LeJEPA.md`
+    - `wiki/architecture/img/2025_LeJEPA_pipeline.png`
+    - `wiki/architecture/img/2025_LeJEPA_overview.png`
+

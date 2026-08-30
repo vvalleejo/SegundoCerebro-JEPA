@@ -13,6 +13,7 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[2026_LeWorldModel]]: "LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels" (2026). Arquitectura JEPA end-to-end con SIGReg.
 - [[2026_VJEPA]]: "VJEPA: Variational Joint Embedding Predictive Architectures as Probabilistic World Models" (2026). Generalización probabilística de JEPA y formulación Bayesiana (BJEPA).
 - [[2025_V-JEPA2]]: "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning" (2025). Modelo masivo de video pre-entrenado y su variante Action-Conditioned para robótica.
+- [[2025_LeJEPA]]: "LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics" (2025). Marco teórico fundacional que demuestra la optimalidad de la Gaussiana isotrópica e introduce SIGReg.
 - [[2026_V-JEPA2.1]]: "V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning" (2026). Mejora sobre V-JEPA 2 para obtener representaciones locales densas y de grano fino.
 - [[2026_EB-JEPA]]: "A Lightweight Library for Energy-Based Joint-Embedding Predictive Architectures" (2026). Formulación EBM de JEPA y librería educativa con Multistep Rollouts.
 - [[2026_Causal-JEPA]]: "Causal-JEPA: Learning World Models through Object-Level Latent Masking" (2026). Enmascaramiento de objetos para inducir razonamiento relacional y causal.
@@ -36,6 +37,8 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[RDMReg]]: Rectified Distribution Matching Regularization. Regularizador que aproxima distribuciones a un objetivo RGG (Laplace Rectificado) para esparcidad.
 - [[SIGReg]]: Sketched-Isotropic-Gaussian Regularizer. Término de regularización para evitar el colapso de representación hacia distribuciones de baja dimensionalidad.
 - [[LeWM_Loss]]: Objetivo matemático minimalista para el entrenamiento de LeWM (MSE + SIGReg).
+- [[LeJEPA_Loss]]: Función de pérdida unificada de LeJEPA con balance lambda entre predicción de invariancia y regularización SIGReg.
+- [[Isotropic_Gaussian_Optimality]]: Demostración formal de que la distribución Gaussiana isotrópica minimiza el sesgo cuadrático integrado en modelos fundacionales.
 - [[VJEPA_Loss]]: Objetivo variacional (NLL + KL Divergence) para modelar incertidumbre aleatoria y evitar modelar ruido distractivo.
 - [[Dense_Predictive_Loss]]: Extensión de la pérdida JEPA sobre los tokens de contexto visibles ponderados por distancia.
 - [[Invariance_Loss]]: Objetivo matemático (MSE) para predicción local-a-global en JEPAs sin heurísticas (ej. LeVJEPA).
@@ -75,6 +78,7 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[2023_I-JEPA]]: Arquitectura I-JEPA con enmascaramiento multi-bloque y predicción en espacio de representación.
 - [[2025_PLDM]]: Arquitectura PLDM para aprendizaje de dinámicas latentes y planificación offline sin recompensas.
 - [[2025_V-JEPA2]]: Arquitectura V-JEPA 2 / V-JEPA 2-AC para modelos de video y control MPC en robótica.
+- [[2025_LeJEPA]]: Arquitectura LeJEPA libre de heurísticas (sin teacher-student EMA, sin predictor, sin stop-gradient) con regularización SIGReg.
 - [[2026_AdaJEPA]]: Arquitectura AdaJEPA con adaptación a tiempo de test (TTA) en bucle cerrado MPC.
 - [[2026_Causal-JEPA]]: Arquitectura C-JEPA con Slot Attention y enmascaramiento latente a nivel de objeto.
 - [[2026_CHARM]]: Arquitectura CHARM multimodal (TCN + Gating) condicionada por descripciones de sensores.

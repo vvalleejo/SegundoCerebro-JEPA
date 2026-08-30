@@ -10,6 +10,7 @@ A continuación se listan los enlaces a los repositorios oficiales de código (o
 - **HP-JEPA: Hierarchical Partitioning for Multi-Resolution Graph**: *(Código no liberado oficialmente por los autores todavía)*
 - **LeWorldModel**: [https://github.com/lucas-maes/le-wm](https://github.com/lucas-maes/le-wm)
 - **Learning from Reward-Free Offline Data**: [https://github.com/vladisai/PLDM](https://github.com/vladisai/PLDM)
+- **LeJEPA**: [github.com/galilai-group/lejepa](https://github.com/galilai-group/lejepa)
 - **LeVJEPA**: [github.com/MLO-lab/LeVJEPA](https://github.com/MLO-lab/LeVJEPA)
 - **LpWM: A Case for Sparse Representations in World**: [https://github.com/YilunKuang/lpworldmodel](https://github.com/YilunKuang/lpworldmodel)
 - **MJEPA**: [https://github.com/facebookresearch/MJEPA](https://github.com/facebookresearch/MJEPA)
