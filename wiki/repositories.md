@@ -13,12 +13,14 @@ A continuación se listan los enlaces a los repositorios oficiales de código (o
 - **LeJEPA**: [github.com/galilai-group/lejepa](https://github.com/galilai-group/lejepa)
 - **LeVJEPA**: [github.com/MLO-lab/LeVJEPA](https://github.com/MLO-lab/LeVJEPA)
 - **LpWM: A Case for Sparse Representations in World**: [https://github.com/YilunKuang/lpworldmodel](https://github.com/YilunKuang/lpworldmodel)
+- **MotionJEPA: Preventing Temporal Feature Collapse by Capturing Visual Changes in Latent Space**: [https://github.com/mkarmann/motion-jepa](https://github.com/mkarmann/motion-jepa)
 - **MJEPA**: [https://github.com/facebookresearch/MJEPA](https://github.com/facebookresearch/MJEPA)
 - **Multisensory Continual Learning**: [https://github.com/jadenvc/multisensory_wm](https://github.com/jadenvc/multisensory_wm)
 - **Music-JEPA: Learning a world model of sound from action**: [https://zzwaang.github.io/music-jepa-demo/](https://zzwaang.github.io/music-jepa-demo/) *(Demo del proyecto)*
 - **Rectified LpJEPA: Joint-Embedding Predictive Architectures with Sparse and Maximum-Entropy Representations**: [https://github.com/YilunKuang/rectified-lp-jepa](https://github.com/YilunKuang/rectified-lp-jepa)
 - **Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture (I-JEPA)**: [https://github.com/facebookresearch/ijepa](https://github.com/facebookresearch/ijepa)
 - **Semantic Tube Prediction: Beating LLM Data Efficiency with JEPA**: [https://github.com/galilai-group/llm-jepa](https://github.com/galilai-group/llm-jepa)
+- **Semigroup-JEPA: Latent Dynamics Consistency for Zero-Shot Physics Generalization**: [https://github.com/sg-jepa/sg-jepa](https://github.com/sg-jepa/sg-jepa)
 - **SkyJEPA: Learning Long-Horizon World Models**: [https://github.com/arplaboratory/SkyJEPA](https://github.com/arplaboratory/SkyJEPA)
 - **Text-Conditional JEPA for Learning Semantically Rich Visual Representations**: *(Código no liberado oficialmente por los autores todavía)*
 - **V-JEPA2.1**: [https://github.com/facebookresearch/vjepa2](https://github.com/facebookresearch/vjepa2)

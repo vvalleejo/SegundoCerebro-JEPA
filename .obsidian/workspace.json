@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "03daa402beabcaec",
+        "id": "3f1d84104e103051",
         "type": "tabs",
         "children": [
           {
-            "id": "3e1c25f00477d7f9",
+            "id": "1c01a022423239de",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "raw/Semantic Tube Prediction Beating LLM Data Efficiency with JEPA.pdf"
+                "file": "wiki/synthesis/JEPA-World-Models-Synthesis.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "Semantic Tube Prediction Beating LLM Data Efficiency with JEPA"
+              "icon": "lucide-file",
+              "title": "JEPA-World-Models-Synthesis"
             }
           }
         ]
@@ -191,7 +193,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 594.1666259765625
+    "width": 422.16650390625,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -204,53 +207,53 @@
       "graph:Abrir vista gráfica": false
     }
   },
-  "active": "3e1c25f00477d7f9",
+  "active": "1c01a022423239de",
   "lastOpenFiles": [
+    "wiki/math/RDMReg.md",
+    "wiki/math/Semigroup_Rollout_Consistency.md",
+    "wiki/math/Visual_Action_Flow_Matching.md",
+    "wiki/math/VJEPA_Loss.md",
+    "wiki/math/SIGReg.md",
+    "wiki/math/LeWM_Loss.md",
+    "wiki/math/LeJEPA_Loss.md",
+    "wiki/synthesis/JEPA-World-Models-Synthesis.md",
+    "wiki/architecture/2026_Semigroup-JEPA.md",
+    "wiki/repositories.md",
+    "wiki/papers/2026_Semigroup-JEPA.md",
+    "test_accents.txt",
+    "wiki/entities/SG-JEPA.md",
+    "wiki/math/Latent_Dynamics_Consistency.md",
+    "wiki/architecture/2026_SkyJEPA.md",
+    "scratch",
+    "wiki/architecture/img/2026_SG-JEPA_rollouts.png",
+    "wiki/architecture/img/2026_SG-JEPA_crossover_analysis.png",
+    "wiki/architecture/img/2026_SG-JEPA_environments.png",
+    "wiki/architecture/img/2026_SG-JEPA_training_control.png",
+    "wiki/GEMINI.md",
+    "README.md",
+    "wiki/architecture/2025_LeJEPA.md",
+    "raw/LeJEPA Provable and Scalable.pdf",
+    "raw/Semantic Tube Prediction Beating LLM Data Efficiency with JEPA.pdf",
     "wiki/architecture/img/2026_Semantic_Tube_geodesic.png",
     "raw/SkyJEPA Learning Long-Horizon World Models for.pdf",
     "raw/LpWM A Case for Sparse Representations in World.pdf",
-    "raw/Semantic Tube Prediction Beating LLM Data Efficiency with JEPA.pdf",
     "wiki/architecture/2023_I-JEPA.md",
     "fix_crops.py",
     "crop_script.py",
     "scratch_page.py",
     "crop_remaining.py",
-    "fix_diagrams.py",
-    "crop_vjepa.py",
     "vjepa_14.png",
     "vjepa_13.png",
     "vjepa_12.png",
     "vjepa_11.png",
     "vjepa_10.png",
-    "vjepa_9.png",
-    "vjepa_8.png",
-    "vjepa_7.png",
-    "vjepa_6.png",
-    "vjepa_5.png",
-    "render_page.py",
     "wiki/architecture/2026_Causal-JEPA.md",
     "wiki/entities/C-JEPA.md",
-    "wiki/repositories.md",
     "wiki/architecture/2026_LpWM.md",
     "wiki/papers/2026_LpWM.md",
     "wiki/entities/LpWM.md",
     "wiki/entities/I-JEPA.md",
     "wiki/papers/2023_I-JEPA.md",
-    "wiki/synthesis/World_Models_PhD_Guide.md",
-    "wiki/papers/2026_GeniWorld.md",
-    "wiki/math/Visual_Action_Flow_Matching.md",
-    "wiki/architecture/2026_GeniWorld.md",
-    "wiki/entities/GeniWorld.md",
-    "wiki/entities/TC-JEPA.md",
-    "wiki/entities/BJEPA.md",
-    "wiki/entities/EB-JEPA.md",
-    "JEPA.md",
-    "V-JEPA2-AC.md",
-    "wiki/entities/AdaJEPA.md",
-    "wiki/papers/2026_SkyJEPA.md",
-    "wiki/architecture/2026_VJEPA.md",
-    "wiki/papers/2026_VJEPA.md",
-    "wiki/math/SIGReg.md",
-    "wiki/math/Dense_Predictive_Loss.md"
+    "wiki/synthesis/World_Models_PhD_Guide.md"
   ]
 }

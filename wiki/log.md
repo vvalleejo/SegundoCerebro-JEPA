@@ -184,3 +184,62 @@ Registro cronolÃ³gico de las operaciones realizadas en la base de conocimiento
     - `wiki/architecture/img/2025_LeJEPA_pipeline.png`
     - `wiki/architecture/img/2025_LeJEPA_overview.png`
 
+## [2026-09-15] ingest | Semigroup-JEPA
+- **Resumen**: Ingesta del paper fundacional "Semigroup-JEPA: Latent Dynamics Consistency for Zero-Shot Physics Generalization" (Liu, Sun, Baker, Balestriero, Sous - Yale / Jump Trading / Brown, arXiv:2609.10464).
+- **Acciones**:
+  - Extracción de texto y figuras a 300 DPI (`2026_SG-JEPA_training_control.png`, `2026_SG-JEPA_environments.png`, `2026_SG-JEPA_crossover_analysis.png`, `2026_SG-JEPA_rollouts.png`).
+  - Creación de nota del paper en `papers/2026_Semigroup-JEPA.md`.
+  - Creación de nota de arquitectura detallada en `architecture/2026_Semigroup-JEPA.md`.
+  - Creación de notas de rigor matemático en `math/Semigroup_Rollout_Consistency.md` y `math/Latent_Dynamics_Consistency.md`.
+  - Creación de la entidad del modelo en `entities/SG-JEPA.md`.
+  - Actualización del Map of Content en `index.md`.
+  - Archivos creados / actualizados:
+    - `wiki/papers/2026_Semigroup-JEPA.md`
+    - `wiki/architecture/2026_Semigroup-JEPA.md`
+    - `wiki/math/Semigroup_Rollout_Consistency.md`
+    - `wiki/math/Latent_Dynamics_Consistency.md`
+    - `wiki/entities/SG-JEPA.md`
+    - `wiki/architecture/img/2026_SG-JEPA_training_control.png`
+    - `wiki/architecture/img/2026_SG-JEPA_environments.png`
+    - `wiki/architecture/img/2026_SG-JEPA_crossover_analysis.png`
+    - `wiki/architecture/img/2026_SG-JEPA_rollouts.png`
+    - `wiki/index.md`
+    - `wiki/log.md`
+
+## [2026-09-18] synthesis | JEPA-World-Models-Synthesis
+- **Resumen**: Creación de la Nota Maestra de Arquitectura "JEPA & Modelos de Mundo Latentes" optimizada para Obsidian.
+- **Acciones**:
+  - Creación de la nota maestra en `wiki/synthesis/JEPA-World-Models-Synthesis.md`.
+  - Integración de diagrama Mermaid (flujo de tensores online/target con stop-gradient y EMA).
+  - Implementación minimalista en PyTorch (`GenericJEPA`) con anotaciones teóricas y prevención de colapso.
+  - Formulación geométrica de escultura de la variedad latente y conexión con planificación latente en World Models.
+  - Adición de consultas Dataview (DQL y DataviewJS) para indexación dinámica.
+  - Actualización del Map of Content en `wiki/index.md`.
+  - Archivos creados / actualizados:
+    - `wiki/synthesis/JEPA-World-Models-Synthesis.md`
+    - `wiki/index.md`
+    - `wiki/log.md`
+
+## [2026-09-23] ingest | MotionJEPA
+- **Resumen**: Ingesta del paper "MotionJEPA: Preventing Temporal Feature Collapse by Capturing Visual Changes in Latent Space" (Karmann et al., Oxford / vivo / Brown / AMI Labs, 2026).
+- **Acciones**:
+  - Extracción de texto y figuras a 300 DPI (`2026_MotionJEPA_overview.png`, `2026_MotionJEPA_feature_suppression.png`, `2026_MotionJEPA_latent_trajectories.png`, `2026_MotionJEPA_distractors.png`).
+  - Creación de nota del paper en `papers/2026_MotionJEPA.md`.
+  - Creación de nota de arquitectura detallada en `architecture/2026_MotionJEPA.md`.
+  - Creación de concepto matemático `math/DISReg.md`.
+  - Creación de entidad `entities/MotionJEPA.md`.
+  - Inclusión del repositorio oficial `https://github.com/mkarmann/motion-jepa` en `repositories.md`.
+  - Actualización del Map of Content en `index.md`.
+  - Archivos creados / actualizados:
+    - `wiki/papers/2026_MotionJEPA.md`
+    - `wiki/architecture/2026_MotionJEPA.md`
+    - `wiki/math/DISReg.md`
+    - `wiki/entities/MotionJEPA.md`
+    - `wiki/repositories.md`
+    - `wiki/architecture/img/2026_MotionJEPA_overview.png`
+    - `wiki/architecture/img/2026_MotionJEPA_feature_suppression.png`
+    - `wiki/architecture/img/2026_MotionJEPA_latent_trajectories.png`
+    - `wiki/architecture/img/2026_MotionJEPA_distractors.png`
+    - `wiki/index.md`
+    - `wiki/log.md`
+

@@ -8,6 +8,8 @@ tags: [index, moc]
 Este es el punto de entrada principal para la base de conocimientos enfocada en los Modelos de Mundo (World Models) y las arquitecturas JEPA de Yann LeCun.
 
 ## 📄 Papers Ingeridos
+- [[2026_MotionJEPA]]: "MotionJEPA: Preventing Temporal Feature Collapse by Capturing Visual Changes in Latent Space" (2026). Prevención del colapso temporal y sesgo hacia características lentas en JEPAs usando regularización de diferencias de imagen (DISReg).
+- [[2026_Semigroup-JEPA]]: "Semigroup-JEPA: Latent Dynamics Consistency for Zero-Shot Physics Generalization" (2026). Extensión de LeWM condicionada por gravedad con entrenamiento de rollout autorregresivo de semigrupo, SIGReg y garantías analíticas de clausura predictiva.
 - [[2026_LpWM]]: "LpWM: A Case for Sparse Representations in World Models" (2026). Demostración teórica y empírica de representaciones latentes dispersas (sparse) para dinámicas simplificadas usando RDMReg.
 - [[2026_LeVJEPA]]: "LeVJEPA: Efficient & Scalable Video Pretraining without the Heuristics" (2026). Encoder de video eficiente y libre de colapso usando SIGReg y token dropping.
 - [[2026_LeWorldModel]]: "LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels" (2026). Arquitectura JEPA end-to-end con SIGReg.
@@ -34,6 +36,9 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[2026_GeniWorld]]: "GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions" (2026). Modelo de mundo interactivo con Flow Matching y acciones visuales renderizadas vía URDF.
 
 ## 🧮 Conceptos Matemáticos y Teóricos (Math & Concepts)
+- [[DISReg]]: Difference Image and Single image embedding Regularization. Regularizador que predice cambios visuales en imágenes de diferencias temporales para evitar el colapso de dinámicas rápidas.
+- [[Semigroup_Rollout_Consistency]]: Pérdida de consistencia de rollout bajo semigrupos de evolución latente con descuento exponencial y retropropagación sin stop-gradient.
+- [[Latent_Dynamics_Consistency]]: Teoría analítica de consistencia de dinámicas latentes: defecto de clausura predictiva, cota de cobertura de la ley física y teorema de inversión de ranking.
 - [[RDMReg]]: Rectified Distribution Matching Regularization. Regularizador que aproxima distribuciones a un objetivo RGG (Laplace Rectificado) para esparcidad.
 - [[SIGReg]]: Sketched-Isotropic-Gaussian Regularizer. Término de regularización para evitar el colapso de representación hacia distribuciones de baja dimensionalidad.
 - [[LeWM_Loss]]: Objetivo matemático minimalista para el entrenamiento de LeWM (MSE + SIGReg).
@@ -47,6 +52,8 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[Visual_Action_Flow_Matching]]: Formulación de Flow Matching condicionado por acciones visuales espaciales limpias para interacción física en modelos de mundo.
 
 ## 🏗️ Entidades y Arquitecturas (Entities)
+- [[MotionJEPA]]: Arquitectura JEPA consciente del cambio visual y dinámicas temporales con regularización DISReg y sin supervisión de acciones.
+- [[SG-JEPA]]: Semigroup Joint-Embedding Predictive Architecture con inyección física, predictores recurrentes/SSM y generalización zero-shot.
 - [[LpWM]]: Arquitectura JEPA de World Models caracterizada por generar representaciones latentes distribuidas y dispersas.
 - [[LeWorldModel]]: La arquitectura World Model introducida en 2026, caracterizada por su entrenamiento estable basado exclusivamente en regularización gaussiana.
 - [[LeJEPA]]: Arquitectura base matemáticamente garantizada contra el colapso mediante SIGReg.
@@ -74,6 +81,8 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[GeniWorld]]: Modelo de mundo interactivo autorregresivo para robótica que desacopla cinemática y dinámica ambiental mediante acciones visuales.
 
 ## 🏛️ Arquitecturas y Diagramas (Architecture)
+- [[2026_MotionJEPA]]: Arquitectura MotionJEPA con encoder de diferencias temporales, predictor latente de cambio visual y planificación CEM.
+- [[2026_Semigroup-JEPA]]: Arquitectura SG-JEPA con rollout autorregresivo latente, encoder compartido sin EMA/stop-gradient y control vía Diffusion Policy.
 - [[2026_LpWM]]: Arquitectura LpWorldModel con RepReLU y predictores simplificados mediante RDMReg.
 - [[2023_I-JEPA]]: Arquitectura I-JEPA con enmascaramiento multi-bloque y predicción en espacio de representación.
 - [[2025_PLDM]]: Arquitectura PLDM para aprendizaje de dinámicas latentes y planificación offline sin recompensas.
@@ -101,3 +110,4 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 
 ## 🧠 Síntesis (Synthesis)
 - [[World_Models_PhD_Guide]]: Guía comprensiva para el Doctorado integrando las lecciones de la arquitectura JEPA en diversas modalidades (Visión, Robótica, Series Temporales, Lenguaje).
+- [[JEPA-World-Models-Synthesis]]: Nota Maestra de Arquitectura JEPA y Modelos de Mundo latentes (diagrama de flujo, componentes nucleares, código PyTorch, dinámica geométrica del manifold y consultas Dataview).
