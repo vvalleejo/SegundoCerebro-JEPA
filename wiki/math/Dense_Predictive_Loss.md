@@ -1,5 +1,6 @@
 ---
 title: "Dense Predictive Loss"
+type: "math"
 tags: [math, loss, v-jepa, dense-features]
 ---
 

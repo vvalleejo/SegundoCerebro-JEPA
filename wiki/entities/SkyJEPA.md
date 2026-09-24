@@ -1,5 +1,6 @@
 ---
 title: "SkyJEPA"
+type: "entity"
 tags: [entity, architecture, jepa, world-models, quadrotor, robotics, mppi]
 ---
 
@@ -19,3 +20,4 @@ SkyJEPA conecta el aprendizaje de representaciones latentes libres de reconstruc
 ## Enlaces Relacionados
 - Paper: [[2026_SkyJEPA]]
 - Arquitecturas de Control y Robótica: [[LeWorldModel]], [[V-JEPA2]], [[AdaJEPA]], [[MuSe]]
+- **Arquitectura**: [[wiki/architecture/2026_SkyJEPA|2026_SkyJEPA]]

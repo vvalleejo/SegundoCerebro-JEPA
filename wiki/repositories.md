@@ -4,6 +4,7 @@ A continuación se listan los enlaces a los repositorios oficiales de código (o
 
 - **AdaJEPA: An Adaptive Latent World Model**: [https://github.com/agentic-learning-ai-lab/adajepa](https://github.com/agentic-learning-ai-lab/adajepa)
 - **Causal-JEPA: Learning World Models through Object-Level Latent Masking**: [https://github.com/galilai-group/cjepa](https://github.com/galilai-group/cjepa)
+- **Deep Learning-Based Artificial Intelligence for Predictive Maintenance in Smart Manufacturing Systems**: *(Sin código: revisión conceptual sin experimentos; procedencia dudosa, ver [[wiki/papers/2026_DL_Predictive_Maintenance|2026_DL_Predictive_Maintenance]])*
 - **EB-JEPA**: [https://github.com/facebookresearch/eb_jepa](https://github.com/facebookresearch/eb_jepa)
 - **GeniWorld: A Generalizable Interactive World Model for Robotic**: [https://chenghaogu.github.io/GeniWorld/](https://chenghaogu.github.io/GeniWorld/) *(Página de proyecto)*
 - **Giving Sensors a Voice: Multimodal JEPA for Semantic Time-Series Embeddings**: *(Código no liberado oficialmente por los autores todavía)*

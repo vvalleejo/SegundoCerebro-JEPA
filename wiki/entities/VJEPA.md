@@ -1,5 +1,6 @@
 ---
 title: "Variational JEPA (VJEPA)"
+type: "entity"
 tags: [entity, architecture, jepa, probabilistic]
 ---
 
@@ -20,3 +21,6 @@ A diferencia de modelos como [[LeWorldModel]] o I-JEPA que predicen un estado la
 
 ## Relación con BJEPA
 VJEPA es un caso especial de su extensión natural, [[BJEPA]] (Bayesian JEPA), cuando se utiliza un prior uniforme/no informativo para la tarea.
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_VJEPA|2026_VJEPA]]

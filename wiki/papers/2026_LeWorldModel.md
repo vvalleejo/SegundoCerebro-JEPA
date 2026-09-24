@@ -2,6 +2,16 @@
 title: "LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels"
 authors: [Lucas Maes, Quentin Le Lidec, Damien Scieur, Yann LeCun, Randall Balestriero]
 year: 2026
+venue: "arXiv preprint"
+arxiv: "2603.19312"
+source_pdf: "raw/LeWorldModel.pdf"
+repo: "https://github.com/lucas-maes/le-wm"
+type: "paper"
+family: "jepa"
+modality: [control]
+anti_collapse: [sigreg]
+predictor: true
+planner: [cem]
 tags: [paper, jepa, world-models, end-to-end, sigreg]
 ---
 
@@ -29,3 +39,6 @@ Una vez entrenado el modelo del mundo, la planificación para tareas de control 
 - LeWM planifica hasta 48 veces más rápido que modelos fundacionales (ej. DINO-WM).
 - Logra entrenarse con solo ~15M de parámetros en una sola GPU en unas pocas horas.
 - Demuestra "Physical Understanding" (Entendimiento Físico) al asignar mayor nivel de "sorpresa" a violaciones de la física (ej. un objeto teletransportándose) en el entorno evaluado, en comparación con simples perturbaciones visuales (cambios de color).
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_LeWorldModel|2026_LeWorldModel]]

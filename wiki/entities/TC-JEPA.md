@@ -1,5 +1,6 @@
 ---
 title: "TC-JEPA (Text-Conditional JEPA)"
+type: "entity"
 tags: [entity, architecture, jepa, multimodal, vision-language]
 ---
 
@@ -18,3 +19,4 @@ TC-JEPA es conceptualmente hermano de [[CHARM]] (que condiciona series temporale
 
 ## Enlaces Relacionados
 - Paper: [[2026_TC-JEPA]]
+- **Arquitectura**: [[wiki/architecture/2026_TC-JEPA|2026_TC-JEPA]]

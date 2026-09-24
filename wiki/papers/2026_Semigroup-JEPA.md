@@ -2,6 +2,16 @@
 title: "Semigroup-JEPA: Latent Dynamics Consistency for Zero-Shot Physics Generalization"
 authors: [Andy Zeyi Liu, Haoran Sun, Lucas Baker, Randall Balestriero, John Sous (Yale University, Jump Trading, Brown University)]
 year: 2026
+venue: "arXiv preprint"
+arxiv: "2609.10464"
+source_pdf: "raw/Semigroup-JEPA Latent Dynamics Consistency for.pdf"
+repo: "https://github.com/sg-jepa/sg-jepa"
+type: "paper"
+family: "jepa"
+modality: [video, control]
+anti_collapse: [sigreg]
+predictor: true
+planner: [diffusion-policy]
 tags: [paper, sg-jepa, jepa, world-models, physics-generalization, semigroup, latent-rollout, sigreg, zero-shot, mujoco]
 ---
 
@@ -115,6 +125,7 @@ Este trabajo es de importancia crítica para una tesis en World Models y JEPA:
 ---
 
 ## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_Semigroup-JEPA|2026_Semigroup-JEPA]]
 - **Arquitectura**: [[2026_Semigroup-JEPA]]
 - **Conceptos Matemáticos**: [[Semigroup_Rollout_Consistency]], [[Latent_Dynamics_Consistency]], [[SIGReg]], [[LeWM_Loss]]
 - **Entidades**: [[SG-JEPA]], [[LeWorldModel]], [[DINO-WM]]

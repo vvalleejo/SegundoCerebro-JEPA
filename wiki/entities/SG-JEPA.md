@@ -1,5 +1,6 @@
 ---
 title: "SG-JEPA (Semigroup Joint-Embedding Predictive Architecture)"
+type: "entity"
 tags: [entity, architecture, jepa, world-models, physics-generalization, semigroup, sigreg]
 ---
 
@@ -35,3 +36,4 @@ SG-JEPA es un pilar conceptual fundamental para la tesis en World Models basados
 - **Fundamentos Matemáticos**: [[Semigroup_Rollout_Consistency]], [[Latent_Dynamics_Consistency]]
 - **Pérdidas y Regularizadores**: [[SIGReg]], [[LeWM_Loss]]
 - **Arquitecturas Conexas**: [[LeWorldModel]], [[DINO-WM]], [[V-JEPA2]], [[AdaJEPA]], [[SkyJEPA]]
+- **Arquitectura**: [[wiki/architecture/2026_Semigroup-JEPA|2026_Semigroup-JEPA]]

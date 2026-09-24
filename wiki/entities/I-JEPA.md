@@ -1,5 +1,6 @@
 ---
 title: "I-JEPA (Image JEPA)"
+type: "entity"
 tags: [entity, architecture, jepa, vision]
 ---
 
@@ -17,3 +18,4 @@ A diferencia de los enfoques contrastivos, I-JEPA prescinde totalmente de transf
 ## Enlaces Relacionados
 - Paper original: [[2023_I-JEPA]]
 - Arquitecturas derivadas para video: [[V-JEPA2]], [[V-JEPA2.1]]
+- **Arquitectura**: [[wiki/architecture/2023_I-JEPA|2023_I-JEPA]]

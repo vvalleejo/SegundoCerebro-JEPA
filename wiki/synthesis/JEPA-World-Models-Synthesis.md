@@ -1,10 +1,16 @@
 ---
-tags: [JEPA, WorldModels, DeepLearning, Antigravity]
+title: "JEPA & World Models Latentes (síntesis previa)"
+type: "synthesis"
+status: superseded
+tags: [synthesis, jepa, world-models, deep-learning, antigravity]
 tipo: concept-note
 estado: brain-ingested
 ---
 
 # Nota Maestra: Arquitectura JEPA & Modelos de Mundo Latentes
+
+> [!warning] Nota reemplazada
+> Esta es una síntesis anterior. La referencia actual, verificada contra los PDFs, es [[JEPA-master-note]]. Se conserva por historial. Se han corregido dos afirmaciones que contradecían la bóveda (ver §2 y §5).
 
 > [!ABSTRACT] Resumen "Antigravity": ¿Por qué el Espacio Latente sobre la Generación de Píxeles?
 > Los modelos generativos clásicos (Autoencoders, Difusión, Autoregresivos como GPT-4V o Sora) sufren de la **maldición del detalle perceptual**: al optimizar una pérdida de reconstrucción en el espacio de píxeles ($\|x - \hat{x}\|_p$), el modelo se ve forzado a asignar la mayor parte de su capacidad computacional a modelar ruido aleatorio irrelevante y alta frecuencia entrópica (el movimiento caótico de las hojas de un árbol, la textura exacta del agua, el parpadeo de una sombra o ruido del sensor).
@@ -48,6 +54,7 @@ graph TD
 > - **Context Encoder ($E_\theta$):** Procesa la porción accesible o visible de la señal (parches no enmascarados de una imagen, historial de frames $o_{1:t}$). Se entrena vía descenso de gradiente directo $\nabla_\theta \mathcal{L}_{\text{pred}}$ para mapear la observación sensorial a un vector de estado representativo $s_x \in \mathbb{R}^{d_{\text{lat}}}$.
 > - **Target Encoder ($E_{\bar{\theta}}$):** Procesa la porción complementaria u objetivo a predecir (bloques de parches enmascarados o transiciones futuras $o_{t+k}$). Para evitar el **colapso representacional** (donde todos los vectores colapsan trivialmente a una constante $s_x = s_y = \mathbf{c}$), el Target Encoder aplica **Stop-Gradient** ($\text{sg}[\cdot]$) y sus pesos se actualizan exclusivamente mediante una **Media Móvil Exponencial (EMA)** de los pesos de $E_\theta$:
 >   $$\bar{\theta}_{t} \leftarrow \tau \bar{\theta}_{t-1} + (1 - \tau) \theta_t, \quad \tau \in [0.996, 1.0]$$
+>   *Corrección:* esto describe la línea I-JEPA / V-JEPA 2. **No es el único mecanismo.** LeJEPA, LeVJEPA, LeWM, SG-JEPA y SkyJEPA no usan ni EMA ni stop-gradient: usan [[SIGReg]]. PLDM y EB-JEPA usan VICReg y C-JEPA congela el encoder. Ver §5 de [[JEPA-master-note]].
 > - **Predictor ($P_\phi$):** Red neuronal habitualmente más ligera (Transformer no causal o MLP profundo) condicionado por una variable $z$ (posiciones relativas espaciales, vector de acción motora $a_t$, perturbación latente). Modela la transición $P_\phi(s_x, z) \mapsto \hat{s}_y$. Al absorber la asimetría y dificultad predictiva, aísla al Context Encoder de sobreajustar correlaciones espurias locales.
 
 ---
@@ -160,7 +167,7 @@ Al sustituir el vector abstracto $z$ por un **vector de acción motora $a_t$**, 
 2. **Evaluación Energética Directa (MPC / CEM):**
    Dado un embedding de meta $s_{\text{goal}} = E_\theta(o_{\text{goal}})$, el coste de una secuencia de acciones $\{a_t\}_{t=1}^H$ es simplemente la energía en el espacio latente:
    $$J(a_{1:H}) = \sum_{t=1}^H \| \hat{s}_t - s_{\text{goal}} \|_2^2 + \lambda \| a_t \|_2^2$$
-3. **Inmunidad a Alucinaciones Acumuladas:** Las simulaciones en píxeles degradan y difuminan la imagen a medida que el horizonte temporal $t$ crece (compounding errors). En JEPA, la invariancia semántica mantiene la trayectoria sobre la variedad física válida.
+3. **Menor error por paso, pero no inmunidad al error acumulado:** en latente no hace falta predecir detalle perceptual, así que el error de un paso $\varepsilon$ es menor. Pero el error **sí se acumula** con el horizonte: con un predictor $L$-Lipschitz, $e_k \le \varepsilon\,(L^k-1)/(L-1)$. SG-JEPA formaliza la propagación telescópica, $e_h=\sum_j \hat A^{h-1-j}[\delta_j+W\xi_{j+1}]$ (Eq. 8), y demuestra que la preferencia a un paso **puede invertirse** en rollout (Thm H.15). Ver §6.2 de [[JEPA-master-note]].
 
 ---
 

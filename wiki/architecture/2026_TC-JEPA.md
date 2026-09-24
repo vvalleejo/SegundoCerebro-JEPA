@@ -2,6 +2,7 @@
 title: "Arquitectura TC-JEPA: Text-Conditional JEPA for Visual Representations"
 paper: "[[2026_TC-JEPA]]"
 entity: "[[TC-JEPA]]"
+type: "architecture"
 tags: [architecture, jepa, text-conditional, vision, cross-attention, vit]
 ---
 
@@ -37,7 +38,9 @@ tags: [architecture, jepa, text-conditional, vision, cross-attention, vit]
 
 ## 3. Función de Pérdida
 
-$$\mathcal{L}_{\text{TC-JEPA}} = \frac{1}{|B_T|} \sum_{j \in B_T} \| \hat{s}_{T, j} - s_{T, j} \|_1$$
+$$\mathcal{L}_{\text{predict}} = \frac{1}{|B_y|} \sum_{j \in B_y} \| \hat{z}_{y_j} - z_{y_j} \|_2$$
+
+Es la **norma $\ell_2$ sin elevar al cuadrado** (TC-JEPA Eq. 1, p. 3). La nota anterior decía $\ell_1$, y eso es un error. El objetivo total es $\mathcal L=\mathcal L_{\text{predict}}+\lambda\,\mathcal L_{\text{sparse}}+\beta\,\mathcal L_{\text{consistency}}$, con $\lambda=0.1$ y $\beta=0.5$. La $\ell_1$ aparece **solo** en la sparsity, sobre las similitudes coseno parche-palabra rectificadas (Eqs. 3–4). El target $z_{y_j}=f_{\bar\theta}(y_j)$ usa EMA con stop-gradient.
 
 ---
 

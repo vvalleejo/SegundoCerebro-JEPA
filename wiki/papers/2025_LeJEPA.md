@@ -2,6 +2,16 @@
 title: "LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics"
 authors: [Randall Balestriero, Yann LeCun]
 year: 2025
+venue: "arXiv preprint"
+arxiv: "2511.08544"
+source_pdf: "raw/LeJEPA Provable and Scalable.pdf"
+repo: "https://github.com/rbalestr-lab/lejepa"
+type: "paper"
+family: "jepa"
+modality: [image]
+anti_collapse: [sigreg]
+predictor: false
+planner: [none]
 tags: [jepa, self-supervised, theory, sigreg, collapse-free, foundation-models]
 ---
 
@@ -30,3 +40,6 @@ Ver [[2025_LeJEPA]] en la sección de arquitecturas.
 - [[2026_LeWorldModel]]: Extensión de LeJEPA a Modelos de Mundo *end-to-end* con dinámicas latentes condicionadas por acciones.
 - [[2026_LeVJEPA]]: Adaptación de LeJEPA al preentrenamiento de video con atención *block-causal* y *token dropping* extremo (95%).
 - [[2026_LeJEPA_Identifiability]]: Marco teórico complementario que analiza la identificabilidad lineal y unicidad de las representaciones aprendidas por LeJEPA.
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2025_LeJEPA|2025_LeJEPA]]

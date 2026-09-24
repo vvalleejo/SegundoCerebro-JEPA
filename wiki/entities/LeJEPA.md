@@ -1,5 +1,6 @@
 ---
 title: LeJEPA
+type: "entity"
 tags: [architecture, entity, jepa, foundation-models, sigreg]
 ---
 
@@ -52,3 +53,4 @@ El marco LeJEPA ha originado una familia completa de arquitecturas en la literat
 - Resumen del paper: [[2025_LeJEPA]]
 - Diagrama y flujo de arquitectura: [[2025_LeJEPA]] (sección Architecture)
 - Fundamentación matemática: [[SIGReg]], [[LeJEPA_Loss]], [[Isotropic_Gaussian_Optimality]], [[Invariance_Loss]]
+- **Arquitectura**: [[wiki/architecture/2025_LeJEPA|2025_LeJEPA]]

@@ -1,5 +1,6 @@
 ---
 title: "Latent Dynamics Consistency & Linear Feature Theory"
+type: "math"
 tags: [math, theory, dynamics, semigroup, jepa, consistency, generalization, linear-feature-model]
 ---
 

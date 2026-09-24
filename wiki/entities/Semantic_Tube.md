@@ -1,5 +1,6 @@
 ---
 title: "Semantic Tube Prediction (STP)"
+type: "entity"
 tags: [entity, architecture, jepa, llm, semantic-tube]
 ---
 
@@ -21,3 +22,4 @@ STP demuestra que los principios de JEPA (evitar modelar el ruido de alta frecue
 
 ## Enlaces Relacionados
 - Paper: [[2026_Semantic_Tube]]
+- **Arquitectura**: [[wiki/architecture/2026_Semantic_Tube|2026_Semantic_Tube]]

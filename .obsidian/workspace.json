@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wiki/synthesis/JEPA-World-Models-Synthesis.md",
+                "file": "wiki/synthesis/JEPA-master-note.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "JEPA-World-Models-Synthesis"
+              "title": "JEPA-master-note"
             }
           }
         ]
@@ -209,6 +209,7 @@
   },
   "active": "1c01a022423239de",
   "lastOpenFiles": [
+    "wiki/synthesis/JEPA-World-Models-Synthesis.md",
     "wiki/math/RDMReg.md",
     "wiki/math/Semigroup_Rollout_Consistency.md",
     "wiki/math/Visual_Action_Flow_Matching.md",
@@ -216,7 +217,6 @@
     "wiki/math/SIGReg.md",
     "wiki/math/LeWM_Loss.md",
     "wiki/math/LeJEPA_Loss.md",
-    "wiki/synthesis/JEPA-World-Models-Synthesis.md",
     "wiki/architecture/2026_Semigroup-JEPA.md",
     "wiki/repositories.md",
     "wiki/papers/2026_Semigroup-JEPA.md",

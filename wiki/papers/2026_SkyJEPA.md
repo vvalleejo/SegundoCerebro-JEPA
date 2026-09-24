@@ -2,6 +2,16 @@
 title: "SkyJEPA: Learning Long-Horizon World Models for Zero-Shot Sim-to-Real Control of Quadrotors"
 authors: [Pratyaksh Rao, Wancong Zhang, Randall Balestriero, Yann LeCun, Giuseppe Loianno (UC Berkeley, NYU, Brown)]
 year: 2026
+venue: "arXiv preprint"
+arxiv: "2606.23444"
+source_pdf: "raw/SkyJEPA Learning Long-Horizon World Models for.pdf"
+repo: "https://github.com/arplaboratory/SkyJEPA"
+type: "paper"
+family: "jepa"
+modality: [control]
+anti_collapse: [sigreg]
+predictor: true
+planner: [mppi]
 tags: [paper, skyjepa, jepa, world-models, quadrotor, robotics, mppi, sim2real]
 ---
 
@@ -17,7 +27,7 @@ Este paper (2026) presenta **SkyJEPA**, el primer modelo de mundo latente de tip
 ## Arquitectura y Componentes Clave
 SkyJEPA combina tres elementos fundamentales:
 
-1. **Modelo de Dinámica Latente JEPA**: Usa encoders TCN para historiales de estados y acciones, junto con un predictor GRU. Se entrena con una pérdida predictiva latente multi-paso regularizada con **SIGReg** para garantizar anisotropía y prevenir el colapso sin usar pérdidas de reconstrucción.
+1. **Modelo de Dinámica Latente JEPA**: Usa encoders TCN para historiales de estados y acciones, junto con un predictor GRU. Se entrena con una pérdida predictiva latente multi-paso regularizada con **SIGReg** (Epps–Pulley, $\lambda=0.02$, $T=20$), aplicada a los latentes **predichos** del rollout. Según el paper, "promotes diversity and **isotropy**" (p. 4), lo que evita el colapso sin pérdidas de reconstrucción. No se enuncia una garantía formal.
 2. **Physics-Inspired Prober (PI Prober)**: Un mecanismo de prueba diferenciable que toma las representaciones latentes congeladas y las mapea a estados físicos interpretables $(p, v, R, \omega)$. En lugar de aprender la física desde cero, el prober predice *correcciones residuales de aceleración* ($\Delta \dot{v}, K_t a_t$) sobre un integrador cinemático nominal diferenciable (usando el mapa exponencial $SO(3)$).
 3. **Control MPPI en Tiempo Real**: Incorporado dentro de un planificador óptimo estocástico MPPI en C++ optimizado con TensorRT sobre NVIDIA Jetson Orin NX a bordo del dron, logrando inferencias en $< 10\text{ ms}$ ($> 100\text{ Hz}$).
 4. **Data Pipeline y Métrica TDQ**: Generación automática de datos en simulación con procesos gaussianos (GP) y aleatorización de dominio (Domain Randomization) sobre masa, inercia, arrastre aerodinámico y constantes de motores. Introducen la métrica **TDQ (Trajectory Distribution Quality)** para cuantificar la riqueza y cobertura del dataset.
@@ -26,3 +36,6 @@ SkyJEPA combina tres elementos fundamentales:
 - **Transferencia Sim-to-Real Zero-Shot**: Entrenado 100% en simulación y desplegado de forma segura en experimentos exteriores reales sin ningún ajuste previo.
 - **Robustez**: Mantiene un seguimiento preciso de trayectorias incluso bajo variaciones no nominales en despliegue real (cambio de hélices, transporte de cargas de 300g).
 - **Menor Error Acumulado**: Demuestra un error de proyección a largo plazo sensiblemente menor y trayectorias latentes más "rectas" (temporal straightening) que los modelos autorregresivos tradicionales.
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_SkyJEPA|2026_SkyJEPA]]

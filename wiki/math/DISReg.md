@@ -1,5 +1,6 @@
 ---
 title: "DISReg: Difference Image and Single Image Embedding Regularization"
+type: "math"
 tags: [math, loss, disreg, sigreg, jepa, anti-collapse, slow-features, inverse-dynamics]
 ---
 
@@ -50,7 +51,7 @@ $$\mathcal{L}_{\text{DISReg}} \triangleq \lambda_z L_z + \lambda_d L_d + \lambda
 
 ### 1. Término Estático ($L_z$)
 $$L_z \triangleq \text{SIGReg}(Z)$$
-Aplica la prueba de Cramér-von Mises proyectada sobre direcciones aleatorias uniformes $v \sim \mathbb{S}^{D_z-1}$ para ajustar la distribución empírica de los embeddings de estado $Z \in \mathbb{R}^{B \times D_z}$ a una distribución normal estándar isotrópica $\mathcal{N}(0, I_{D_z})$. Preserva la diversidad informacional global del estado.
+Aplica [[SIGReg]], que es el test de **Epps–Pulley** sobre la función característica empírica ("using the Epps-Pulley test … rather than the Sliced Wasserstein Distance", MotionJEPA p. 3), a proyecciones sobre direcciones aleatorias uniformes $v \sim \mathbb{S}^{D_z-1}$ para ajustar la distribución empírica de los embeddings de estado $Z \in \mathbb{R}^{B \times D_z}$ a una distribución normal estándar isotrópica $\mathcal{N}(0, I_{D_z})$. Preserva la diversidad informacional global del estado.
 
 ### 2. Término Dinámico ($L_d$)
 $$L_d \triangleq \text{SIGReg}(D)$$

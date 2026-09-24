@@ -1,5 +1,6 @@
 ---
 title: "V-JEPA 2.1"
+type: "entity"
 tags: [entity, architecture, jepa, video, dense-features]
 ---
 
@@ -19,3 +20,4 @@ V-JEPA 2.1 incorpora:
 
 ## Enlaces Relacionados
 - Paper: [[2026_V-JEPA2.1]]
+- **Arquitectura**: [[wiki/architecture/2026_V-JEPA2.1|2026_V-JEPA2.1]]

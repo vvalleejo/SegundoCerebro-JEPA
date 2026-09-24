@@ -1,5 +1,6 @@
 ---
 title: "Bayesian JEPA (BJEPA)"
+type: "entity"
 tags: [entity, architecture, jepa, bayesian, product-of-experts]
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "AdaJEPA (Adaptive JEPA)"
+type: "entity"
 tags: [entity, architecture, jepa, world-models, test-time-adaptation, mpc]
 ---
 
@@ -19,3 +20,4 @@ AdaJEPA demuestra cómo resolver la brecha sim-to-real o la falta de robustez an
 ## Enlaces Relacionados
 - Paper: [[2026_AdaJEPA]]
 - Arquitecturas de Control Relacionadas: [[V-JEPA2]], [[LeWorldModel]], [[MuSe]]
+- **Arquitectura**: [[wiki/architecture/2026_AdaJEPA|2026_AdaJEPA]]

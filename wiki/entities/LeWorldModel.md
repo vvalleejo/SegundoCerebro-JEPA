@@ -1,12 +1,13 @@
 ---
 title: "LeWorldModel (LeWM)"
+type: "entity"
 tags: [entity, architecture, jepa, world-models]
 ---
 
 # LeWorldModel (LeWM)
 
 ## Descripción
-**LeWorldModel (LeWM)** es una arquitectura introducida en 2026 por Lucas Maes, Quentin Le Lidec, Damien Scieur, Yann LeCun y Randall Balestriero. Es la primera arquitectura tipo **[[JEPA]]** que logra entrenarse de forma completamente estable, end-to-end, desde píxeles en bruto, sin necesidad de heurísticas complejas (como las utilizadas en [[I-JEPA]] o [[V-JEPA]]).
+**LeWorldModel (LeWM)** es una arquitectura introducida en 2026 por Lucas Maes, Quentin Le Lidec, Damien Scieur, Yann LeCun y Randall Balestriero. Es la primera arquitectura tipo **[[JEPA]]** que logra entrenarse de forma completamente estable, end-to-end, desde píxeles en bruto, sin necesidad de heurísticas complejas (como el target encoder EMA y el stop-gradient de [[I-JEPA]] o [[V-JEPA2]]).
 
 ## Arquitectura
 Consiste en dos módulos principales entrenados conjuntamente:
@@ -25,3 +26,4 @@ Logra esto reemplazando todo por un único término de regularización llamado *
 ## Enlaces Relacionados
 - Paper: [[2026_LeWorldModel]]
 - Función de pérdida principal: [[LeWM_Loss]]
+- **Arquitectura**: [[wiki/architecture/2026_LeWorldModel|2026_LeWorldModel]]

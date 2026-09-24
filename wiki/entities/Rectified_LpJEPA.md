@@ -1,5 +1,6 @@
 ---
 title: "Rectified LpJEPA"
+type: "entity"
 tags: [entity, architecture, jepa, sparsity, rdmreg]
 ---
 
@@ -17,3 +18,4 @@ Esta variante acerca los World Models artificiales a los modelos biológicos (co
 
 ## Enlaces Relacionados
 - Paper: [[2026_Rectified_LpJEPA]]
+- **Arquitectura**: [[wiki/architecture/2026_Rectified_LpJEPA|2026_Rectified_LpJEPA]]

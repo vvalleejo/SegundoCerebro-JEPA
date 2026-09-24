@@ -1,5 +1,6 @@
 ---
 title: "VJEPA Loss Objective"
+type: "math"
 tags: [math, loss, variational, jepa]
 ---
 

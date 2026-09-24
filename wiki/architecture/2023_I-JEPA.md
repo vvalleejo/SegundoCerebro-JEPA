@@ -2,6 +2,7 @@
 title: "Arquitectura I-JEPA: Image-based Joint-Embedding Predictive Architecture"
 paper: "[[2023_I-JEPA]]"
 entity: "[[I-JEPA]]"
+type: "architecture"
 tags: [architecture, jepa, vision, self-supervised, masking, vit]
 ---
 
@@ -58,7 +59,7 @@ Para evitar soluciones triviales (atajos espaciales por correlación de bordes i
 
 ## 4. Función de Pérdida y Regularización
 
-La función de coste optimiza la distancia $L_2$ o $L_1$ en el espacio de embedding normalizado:
+La función de coste es la distancia $L_2$ **al cuadrado**, sumada sobre los parches de cada bloque y promediada sobre los $M=4$ bloques target (I-JEPA p. 4). El texto la llama "average L2 distance", pero la fórmula es $\|\cdot\|_2^2$. La variante $L_1$ es la de V-JEPA 2, no la de I-JEPA:
 
 $$\mathcal{L}(\theta, \phi) = \frac{1}{K} \sum_{k=1}^K \mathcal{D}\left( \hat{s}_{t_k}, s_{t_k} \right) = \frac{1}{K} \sum_{k=1}^K \frac{1}{|B_k|} \sum_{j \in B_k} \| \hat{s}_{t_{k,j}} - s_{t_{k,j}} \|_2^2$$
 

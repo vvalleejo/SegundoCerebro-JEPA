@@ -2,6 +2,7 @@
 title: "Arquitectura AdaJEPA: Adaptive Latent World Model"
 paper: "[[2026_AdaJEPA]]"
 entity: "[[AdaJEPA]]"
+type: "architecture"
 tags: [architecture, jepa, test-time-adaptation, mpc, robotics, world-models]
 ---
 

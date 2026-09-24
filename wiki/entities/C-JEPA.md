@@ -1,5 +1,6 @@
 ---
 title: "C-JEPA (Causal-JEPA)"
+type: "entity"
 tags: [entity, architecture, jepa, object-centric, causal]
 ---
 
@@ -15,9 +16,10 @@ tags: [entity, architecture, jepa, object-centric, causal]
 4. **Predictor**: Un Transformer bidireccional que procesa el historial parcialmente enmascarado y las variables auxiliares para predecir los tokens futuros enmascarados.
 
 ## Diferencia Clave
-La innovación de C-JEPA no es una nueva función de pérdida (utiliza una minimización estándar sobre representaciones latentes, similar a [[LeWM_Loss]] o VICReg adaptado a objetos), sino **qué es lo que se enmascara**. Enmascarar objetos enteros fuerza el aprendizaje relacional, mientras que enmascarar parches ([[V-JEPA2.1]]) fomenta la comprensión geométrica densa. 
+La innovación de C-JEPA no es una nueva función de pérdida (es un $\|\cdot\|_2^2$ sobre los slots enmascarados, Eq. 5, **sin regularizador anti-colapso**: los encoders de slots están congelados, así que el colapso no es posible), sino **qué es lo que se enmascara**. Enmascarar objetos enteros fuerza el aprendizaje relacional, mientras que enmascarar parches ([[V-JEPA2.1]]) fomenta la comprensión geométrica densa. 
 
 Ambos enfoques son ortogonales pero revelan cómo el "masking" controla el sesgo inductivo del World Model.
 
 ## Enlaces Relacionados
 - Paper: [[2026_Causal-JEPA]]
+- **Arquitectura**: [[wiki/architecture/2026_Causal-JEPA|2026_Causal-JEPA]]

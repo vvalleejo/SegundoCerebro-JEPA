@@ -2,6 +2,7 @@
 title: "Arquitectura MJEPA: Multimodal Joint-Embedding Predictive Architecture"
 paper: "[[2026_MJEPA]]"
 entity: "[[MJEPA]]"
+type: "architecture"
 tags: [architecture, jepa, multimodal, audio-video, cross-modal, vit]
 ---
 
@@ -27,7 +28,7 @@ tags: [architecture, jepa, multimodal, audio-video, cross-modal, vit]
 ## 2. Componentes del Sistema
 
 ### A. Shared Multimodal Encoder ($E_\theta$)
-- **Backbone**: Vision Transformer (ViT-B, ViT-L, ViT-H) que recibe secuencias de parches de espectrogramas de audio ($A$) y parches espaciotemporales de video ($V$).
+- **Backbone**: Vision Transformer, ViT-L (300M) y ViT-g (1B) según el paper (MJEPA p. 10, p. 19), que recibe secuencias de parches de espectrogramas de audio ($A$) y parches espaciotemporales de video ($V$).
 - **Parches Unificados**: Los datos de audio (espectrogramas 2D) y video (volúmenes 3D) se proyectan linealmente a una misma dimensión latente $D$.
 - **Modality Embeddings**: Se suman embeddings de tipo de modalidad para distinguir origen.
 

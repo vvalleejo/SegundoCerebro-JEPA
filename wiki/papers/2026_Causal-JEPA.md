@@ -2,6 +2,16 @@
 title: "Causal-JEPA: Learning World Models through Object-Level Latent Masking"
 authors: [Heejeong Nam, Quentin Le Lidec, Lucas Maes, Yann LeCun, Randall Balestriero]
 year: 2026
+venue: "ICML 2026"
+arxiv: "2602.11389"
+source_pdf: "raw/Causal-JEPA Learning World Models through Object-Level Latent Masking.pdf"
+repo: "https://github.com/galilai-group/cjepa"
+type: "paper"
+family: "jepa"
+modality: [video, control]
+anti_collapse: [frozen-encoder]
+predictor: true
+planner: [cem]
 tags: [paper, causal, jepa, object-centric, world-models]
 ---
 
@@ -23,3 +33,6 @@ El paper demuestra que este enmascaramiento actúa como una **intervención late
 ## Resultados Empíricos
 - **Razonamiento Visual**: En el dataset CLEVRER, mejora las respuestas a preguntas contrafactuales en un ~20% absoluto.
 - **Planificación Eficiente**: Al operar sobre unos pocos "slots" de objetos en lugar de miles de parches, C-JEPA reduce el espacio de tokens al 1%, logrando una velocidad de planificación **8 veces mayor** que los modelos basados en parches (como DINO-WM) en tareas de control robótico como Push-T, sin pérdida de rendimiento.
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_Causal-JEPA|2026_Causal-JEPA]]

@@ -1,5 +1,6 @@
 ---
 title: "V-JEPA 2 & V-JEPA 2-AC"
+type: "entity"
 tags: [entity, architecture, jepa, video, action-conditioned]
 ---
 
@@ -21,3 +22,4 @@ Donde $z_k$ es el estado visual inicial, $s_k$ es el estado del robot, y $z_g$ e
 
 ## Enlaces Relacionados
 - Paper: [[2025_V-JEPA2]]
+- **Arquitectura**: [[wiki/architecture/2025_V-JEPA2|2025_V-JEPA2]]

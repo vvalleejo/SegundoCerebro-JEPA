@@ -1,5 +1,6 @@
 ---
 title: LeVJEPA
+type: "entity"
 tags: [architecture, entity, video, jepa]
 ---
 
@@ -17,3 +18,6 @@ En su lugar, entrena **un único encoder** que procesa vistas globales y locales
 2. **Alta Eficiencia**: Utiliza una estrategia radical de *uniform random token dropping* (hasta el 95%) en vez de un *structured tube masking*. Esto no solo ahorra memoria y cómputo exponencialmente, sino que sirve como regularización estocástica.
 
 Ver la arquitectura detallada en [[2026_LeVJEPA_Arch]].
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_LeVJEPA_Arch|2026_LeVJEPA_Arch]]

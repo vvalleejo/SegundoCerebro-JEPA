@@ -2,6 +2,16 @@
 title: "GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions"
 authors: [Chenghao Gu, Hanyang Yu, Jingbo Zhang, Haitao Lin, Wenyao Zhang, Jinghe Wang, Hanglei Jin, Shuzhao Xie, Jingyan Jiang, Zhi Wang]
 year: 2026
+venue: "arXiv preprint"
+arxiv: "2608.06332"
+source_pdf: "raw/GeniWorld A Generalizable Interactive World Model for Robotic.pdf"
+repo: "https://chenghaogu.github.io/GeniWorld/"
+type: "paper"
+family: "generative"
+modality: [video, control]
+anti_collapse: [n/a]
+predictor: false
+planner: [none]
 tags: [paper, world-models, robotics, visual-actions, flow-matching, diffusion-transformers, autoregressive, data-synthesis, policy-evaluation, ood-generalization]
 ---
 
@@ -80,6 +90,7 @@ A partir de solo 25 demostraciones reales por tarea:
 ---
 
 ## Conexiones y Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_GeniWorld|2026_GeniWorld]]
 - **Arquitectura y Pipeline**: [[2026_GeniWorld]]
 - **Entidad**: [[GeniWorld]]
 - **Matemáticas**: [[Visual_Action_Flow_Matching]]

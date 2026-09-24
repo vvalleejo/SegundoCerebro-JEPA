@@ -1,5 +1,8 @@
 ---
 title: LeVJEPA Architecture
+paper: "[[wiki/papers/2026_LeVJEPA|2026_LeVJEPA]]"
+entity: "[[LeVJEPA]]"
+type: "architecture"
 tags: [architecture, diagram, jepa, video]
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "LpWorldModel (LpWM)"
+type: "entity"
 tags: [entity, architecture, world-models, sparse-representations, rdmreg]
 ---
 
@@ -23,3 +24,4 @@ tags: [entity, architecture, world-models, sparse-representations, rdmreg]
 - Paper: [[2026_LpWM]]
 - Relacionado a la matemática estructural: [[Rectified_LpJEPA]]
 - Arquitectura densa contraparte: [[LeWorldModel]]
+- **Arquitectura**: [[wiki/architecture/2026_LpWM|2026_LpWM]]

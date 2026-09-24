@@ -2,6 +2,7 @@
 title: "Arquitectura Music-JEPA: World Model of Sound from Action"
 paper: "[[2026_Music-JEPA]]"
 entity: "[[Music-JEPA]]"
+type: "architecture"
 tags: [architecture, jepa, audio, music, action-conditioned, inverse-planning]
 ---
 
@@ -34,8 +35,11 @@ Music-JEPA opera con cuatro redes especializadas conectadas en un espacio latent
   $$\hat{z}_{t+1}^s = f(z_t^s, z_{t+1}^a)$$
 
 ### D. Action Predictor / Inverse Model ($g$)
-- **Mecanismo Inverso**: Infiere la acción ejecutada observando la transición de estados acústicos:
-  $$\hat{z}_{t+1}^a = g(z_t^s, z_{t+1}^s)$$
+- **Prior de acción $g$** (no es un modelo inverso): Transformer sin cross-attention que modela la estructura temporal de las acciones, $a_{t+1}=g(a_t)$ (Music-JEPA Eq. 1, p. 2). La pérdida total es (Eq. 3):
+  $$\mathcal{L}(\theta)=\|f(s_t,a_{t+1})-s_{t+1}\|^2+\lambda\,\|g(a_t)-a_{t+1}\|^2,\qquad \lambda=0.5$$
+  El texto de p. 3 dice que $g$ "is trained to reconstruct $a_t$", pero la Eq. 3 y el Algorithm 1 entrenan $g(a_t)\to a_{t+1}$ (inconsistencia interna del paper).
+- **Modelo inverso $h$** (módulo separado): $a_{t+1}=h(s_t,s_{t+1},a_t)$. Se entrena **después**, con el JEPA congelado, para hacer planificación amortizada (p. 3).
+- **Anti-colapso**: EMA ($\tau=0.95$) con encoders teacher con stop-gradient y LayerNorm en las salidas (p. 3–4).
 
 ---
 

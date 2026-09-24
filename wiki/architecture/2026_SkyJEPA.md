@@ -2,6 +2,7 @@
 title: "Arquitectura SkyJEPA: Long-Horizon World Models for Quadrotors"
 paper: "[[2026_SkyJEPA]]"
 entity: "[[SkyJEPA]]"
+type: "architecture"
 tags: [architecture, jepa, quadrotors, robotics, physics-prober, mppi, sim-to-real]
 ---
 

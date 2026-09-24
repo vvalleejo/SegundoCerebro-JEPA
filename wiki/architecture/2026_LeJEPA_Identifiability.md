@@ -2,6 +2,7 @@
 title: "Arquitectura y Teoría LeJEPA: Linear Identifiability & World Model Recovery"
 paper: "[[2026_LeJEPA_Identifiability]]"
 entity: "[[Linear_Identifiability]]"
+type: "architecture"
 tags: [architecture, theory, jepa, identifiability, sigreg, vicreg, world-models]
 ---
 

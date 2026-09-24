@@ -1,5 +1,6 @@
 ---
 title: "LeWorldModel Loss Objective"
+type: "math"
 tags: [math, loss, jepa, leworldmodel]
 ---
 

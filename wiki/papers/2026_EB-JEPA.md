@@ -2,6 +2,16 @@
 title: "A Lightweight Library for Energy-Based Joint-Embedding Predictive Architectures (EB-JEPA)"
 authors: [Basile Terver, Randall Balestriero, Megi Dervishi, David Fan, Quentin Garrido, Tushar Nagarajan, Koustuv Sinha, Wancong Zhang, Mike Rabbat, Yann LeCun, Amir Bar]
 year: 2026
+venue: "ICLR 2026 — 2nd Workshop on World Models"
+arxiv: "2602.03604"
+source_pdf: "raw/EB-JEPA.pdf"
+repo: "https://github.com/facebookresearch/eb_jepa"
+type: "paper"
+family: "jepa"
+modality: [image, video, control]
+anti_collapse: [vicreg, sigreg]
+predictor: true
+planner: [mppi, cem]
 tags: [paper, eb-jepa, library, energy-based-models, code]
 ---
 
@@ -24,3 +34,6 @@ La biblioteca proporciona tres implementaciones incrementales:
 
 ## Utilidad para el Doctorado
 EB-JEPA proporciona la implementación práctica de referencia (código) para experimentar con variaciones matemáticas de los World Models latentes en entornos locales sin requerir clusters masivos de computación.
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_EB-JEPA|2026_EB-JEPA]]

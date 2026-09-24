@@ -1,5 +1,6 @@
 ---
 title: Invariance Loss
+type: "math"
 tags: [math, loss, jepa]
 ---
 

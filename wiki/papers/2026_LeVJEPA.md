@@ -2,6 +2,16 @@
 title: "LeVJEPA: Efficient & Scalable Video Pretraining without the Heuristics"
 authors: [Lukas Kuhn, Lucas Maes, Giuseppe Serra, Quentin Le Lidec, Yann LeCun, Randall Balestriero, Florian Buettner]
 year: 2026
+venue: "arXiv preprint"
+arxiv: "2608.27395"
+source_pdf: "raw/LeVJEPA Efficient & Scalable Video Pretraining without the Heuristics.pdf"
+repo: "https://github.com/MLO-lab/LeVJEPA"
+type: "paper"
+family: "jepa"
+modality: [video]
+anti_collapse: [sigreg]
+predictor: false
+planner: [none]
 tags: [video, jepa, self-supervised, collapse-free, sigreg]
 ---
 
@@ -26,3 +36,6 @@ Ver [[2026_LeVJEPA_Arch]].
 
 **Evaluación y Conclusiones**:
 Alcanza paridad e incluso mejora respecto a baselines muy sólidos de video y compite casi a la par con DINOv2 (entrenado en imágenes de esos mismos videos) en evaluación centrada en apariencia (Appearance-centric), pero duplica su exactitud en métricas de entendimiento de movimiento (Motion-centric). Demuestra que el entrenamiento con video ya no está restringido a supercomputadoras; una ViT-Tiny puede entrenarse en una sola GPU de consumo en 12 horas.
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_LeVJEPA_Arch|2026_LeVJEPA_Arch]]

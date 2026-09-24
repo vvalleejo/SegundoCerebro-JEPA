@@ -2,6 +2,16 @@
 title: "HP-JEPA: Hierarchical Partitioning for Multi-Resolution Graph Joint-Embedding Predictive Learning"
 authors: [Ruichen Xu, Jingxiang Qu, Wenhan Gao, Jiaxing Zhang, Linsey Pang, Ravid Shwartz-Ziv, Yann LeCun, Yuefan Deng (Stony Brook, TikTok, PayPal, NYU)]
 year: 2026
+venue: "arXiv preprint"
+arxiv: "2608.00491"
+source_pdf: "raw/HP-JEPA Hierarchical Partitioning for Multi-Resolution Graph.pdf"
+repo: ""
+type: "paper"
+family: "jepa"
+modality: [graph]
+anti_collapse: [ema-sg]
+predictor: true
+planner: [none]
 tags: [paper, hp-jepa, jepa, graphs, gnn, self-supervised, multi-resolution]
 ---
 
@@ -40,3 +50,6 @@ HP-JEPA divide el grafo en un banco ordenado de resoluciones de partición de gr
 
 ## Relevancia para el Doctorado
 HP-JEPA amplía la familia de World Models de Yann LeCun al dominio de estructuras topológicas no euclidianas. Demuestra cómo formular jerarquías espaciales y multigranulares dentro de la predicción latente, un concepto directamente aplicable a World Models jerárquicos y relacionales.
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_HP-JEPA|2026_HP-JEPA]]

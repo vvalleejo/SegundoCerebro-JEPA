@@ -1,5 +1,6 @@
 ---
 title: "Linear Identifiability in JEPAs"
+type: "entity"
 tags: [entity, theory, jepa, identifiability, math]
 ---
 
@@ -19,3 +20,4 @@ Antes de este trabajo, el éxito de JEPAs como [[LeWorldModel]] o [[I-JEPA]] se 
 - Paper: [[2026_LeJEPA_Identifiability]]
 - Conceptos Matemáticos: [[SIGReg]], [[LeWM_Loss]]
 - Arquitecturas Relacionadas: [[LeWorldModel]], [[Rectified_LpJEPA]]
+- **Arquitectura**: [[wiki/architecture/2026_LeJEPA_Identifiability|2026_LeJEPA_Identifiability]]

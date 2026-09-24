@@ -1,7 +1,8 @@
 ---
-title: "Arquitectura CHARM: Context-aware Hierarchical Attention for Robust Multimodal JEPA"
+title: "Arquitectura CHARM: Channel-Aware Representation Model"
 paper: "[[2026_CHARM]]"
 entity: "[[CHARM]]"
+type: "architecture"
 tags: [architecture, jepa, time-series, multimodal, text-conditioning, tcn, gating]
 ---
 
@@ -30,7 +31,7 @@ tags: [architecture, jepa, time-series, multimodal, text-conditioning, tcn, gati
 ### B. Arquitectura de Tres Encoders
 1. **Sensor Description Encoder ($E_{\text{text}}$)**: Transforma el texto de metadatos del sensor $D_i$ en un vector semántico $z_{\text{text}}^i$ (usando backbones como RoBERTa o BGE).
 2. **Context Time-Series Encoder ($E_{\text{ctx}}$)**: Codifica la ventana observable del historial temporal $T_{\text{past}}$ condicionado por los embeddings de texto.
-3. **Target Time-Series Encoder ($E_{\text{tgt}}$)**: Codifica los segmentos objetivo $T_{\text{future}}$ (actualizado vía EMA o stop-gradient).
+3. **Target Time-Series Encoder ($E_{\text{tgt}}$)**: Codifica los segmentos objetivo $T_{\text{future}}$ (actualizado por **EMA** del context encoder con el schedule de I-JEPA; CHARM p. 5, p. 16).
 
 ### C. Predictor Multimodal ($P_\phi$)
 - Predice los embeddings latentes del objetivo a partir del contexto temporal y los descriptores semánticos textuales.

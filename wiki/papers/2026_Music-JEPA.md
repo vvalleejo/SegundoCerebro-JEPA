@@ -2,6 +2,16 @@
 title: "Music-JEPA: Learning a World Model of Sound from Action"
 authors: [Ziyu Wang, Kun Fang, Yann LeCun (NYU, McGill, MBZUAI, CIRMMT, AMI Labs)]
 year: 2026
+venue: "arXiv preprint"
+arxiv: "2607.22000"
+source_pdf: "raw/Music-JEPA Learning a world model of sound from action.pdf"
+repo: "https://zzwaang.github.io/music-jepa-demo/"
+type: "paper"
+family: "jepa"
+modality: [audio]
+anti_collapse: [ema-sg]
+predictor: true
+planner: [inverse]
 tags: [paper, music-jepa, jepa, audio, music, world-models, action-conditioned, planning]
 ---
 
@@ -41,3 +51,6 @@ Para evitar la inestabilidad de la optimización por gradiente en espacios de al
 - **Dinámica Causal y Contrafactual**: Alta sensibilidad a perturbaciones tonales y temporales; al cambiar la acción a una contrafactual (ej. arpegio o escala), el espectrograma imaginado varía coherentemente.
 - **Tareas Downstream (MIR)**: Supera a los modelos JEPA de solo audio (AO-JEPA) en *beat tracking*, identificación de compositores y reconocimiento de tonalidad, compitiendo con MERT (95M params) usando solo **19M de parámetros** (7% del tamaño).
 - **Control de Pedal Continuo**: Logra el estado del arte en estimación precisa y continua de la curva de pedal de resonancia, superando a métodos supervisados tradicionales.
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_Music-JEPA|2026_Music-JEPA]]

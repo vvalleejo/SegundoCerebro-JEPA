@@ -2,6 +2,7 @@
 title: "Arquitectura SG-JEPA: Semigroup Joint-Embedding Predictive Architecture"
 paper: "[[2026_Semigroup-JEPA]]"
 entity: "[[SG-JEPA]]"
+type: "architecture"
 tags: [architecture, jepa, world-models, physics-generalization, semigroup, autoregressive-rollout, sigreg, diffusion-policy]
 ---
 
@@ -87,7 +88,7 @@ El descuento exponencial evita que los errores numéricos acumulados en los últ
 ### Regularización Anti-Colapso: [[SIGReg]]
 Para evitar que el encoder $e_\phi$ colapse a una representación constante trivial (al no haber stop-gradient en el target), se aplica SIGReg exclusivamente sobre los estados latentes codificados $z_t$:
 $$\mathcal{L}_{\text{SG-JEPA}} = \mathcal{L}_{\text{roll}} + \lambda_{\text{sig}} \mathcal{L}_{\text{SIGReg}}$$
-donde $\mathcal{L}_{\text{SIGReg}}$ proyecta los vectores latentes sobre direcciones unidimensionales aleatorias y minimiza la discrepancia con una distribución normal estándar $\mathcal{N}(0, I)$ mediante la prueba de Cramér-von Mises proyectada.
+donde $\mathcal{L}_{\text{SIGReg}}$ proyecta los vectores latentes sobre direcciones unidimensionales aleatorias y minimiza la discrepancia con una distribución normal estándar $\mathcal{N}(0, I)$ comparando la función característica empírica con $e^{-t^2/2}$ (forma Epps–Pulley; ver [[SIGReg]]; SG-JEPA Eq. 160).
 
 ---
 

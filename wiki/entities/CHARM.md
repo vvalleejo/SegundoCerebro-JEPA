@@ -1,5 +1,6 @@
 ---
 title: "CHARM (Channel-Aware Representation Model)"
+type: "entity"
 tags: [entity, architecture, jepa, time-series, multimodal]
 ---
 
@@ -19,3 +20,4 @@ CHARM extiende el ecosistema JEPA, históricamente dominado por imágenes y vide
 
 ## Enlaces Relacionados
 - Paper: [[2026_CHARM]]
+- **Arquitectura**: [[wiki/architecture/2026_CHARM|2026_CHARM]]

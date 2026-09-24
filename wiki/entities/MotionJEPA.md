@@ -1,5 +1,6 @@
 ---
 title: "MotionJEPA (Visual Change-Aware Joint-Embedding Predictive Architecture)"
+type: "entity"
 tags: [entity, architecture, motion-jepa, disreg, jepa, world-models, anti-collapse]
 ---
 
@@ -16,8 +17,8 @@ Introduce el regularizador **DISReg** (*Difference Image and Single image embedd
 1. **Encoder Visual ViT-Tiny ($e_\theta$)**: Proyecta la observación $o_t$ a un embedding de estado $z_t \in \mathbb{R}^{192}$ mediante el token `[CLS]` y un proyector MLP con BatchNorm.
 2. **Predictor Forward Causal ($p_\phi$)**: Modelo autorregresivo basado en Transformer de 6 capas que predice $\hat{z}_{t+1}$ condicionado por acciones.
 3. **Módulo DISReg**:
-   - **Encoder de Diferencias ($	ext{DiffEnc}_\alpha$)**: Codifica $o_{t+1} - o_t \to d_t$, donde los fondos estáticos desaparecen numéricamente.
-   - **Predictor de Cambio Latente ($	ext{DiffPred}_\beta$)**: Predice $\hat{d}_t$ a partir de $[z_t; z_{t+1}]$ sin reconstruir píxeles ni requerir etiquetas de acción.
+   - **Encoder de Diferencias ($\text{DiffEnc}_\alpha$)**: Codifica $o_{t+1} - o_t \to d_t$, donde los fondos estáticos desaparecen numéricamente.
+   - **Predictor de Cambio Latente ($\text{DiffPred}_\beta$)**: Predice $\hat{d}_t$ a partir de $[z_t; z_{t+1}]$ sin reconstruir píxeles ni requerir etiquetas de acción.
    - **Regularización SIGReg Dual**: Aplica [[SIGReg]] tanto al estado $z$ (término estático) como a la diferencia $d$ (término dinámico).
 4. **Descarte de Módulos Auxiliares en Inferencia**: Los componentes de diferencia son exclusivos del bucle de entrenamiento, dejando el modelo de despliegue con cero sobrecarga computacional.
 
@@ -36,3 +37,4 @@ Introduce el regularizador **DISReg** (*Difference Image and Single image embedd
 - **Concepto Matemático**: [[DISReg]], [[SIGReg]], [[LeWM_Loss]]
 - **Modelos Conexos**: [[LeWorldModel]], [[2026_Semigroup-JEPA]], [[V-JEPA2]]
 - **Repositorio**: [https://github.com/mkarmann/motion-jepa](https://github.com/mkarmann/motion-jepa)
+- **Arquitectura**: [[wiki/architecture/2026_MotionJEPA|2026_MotionJEPA]]

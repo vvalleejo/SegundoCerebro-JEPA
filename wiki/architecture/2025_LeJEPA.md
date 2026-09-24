@@ -1,5 +1,8 @@
 ---
 title: LeJEPA Architecture & Pipeline
+paper: "[[wiki/papers/2025_LeJEPA|2025_LeJEPA]]"
+entity: "[[LeJEPA]]"
+type: "architecture"
 tags: [architecture, diagram, jepa, sigreg, ssl]
 ---
 

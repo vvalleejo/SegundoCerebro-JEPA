@@ -243,3 +243,37 @@ Registro cronolÃ³gico de las operaciones realizadas en la base de conocimiento
     - `wiki/index.md`
     - `wiki/log.md`
 
+## [2026-09-24] schema | GEMINI.md
+- **Resumen**: Reescritura del esquema de la wiki orientada a rigor verificable.
+- **Acciones**:
+  - Rutas reales del vault y regla de desambiguación de enlaces (`[[wiki/papers/X|X]]`); sufijo `_Arch` para arquitecturas nuevas; 24 nombres duplicados registrados como deuda técnica.
+  - Frontmatter obligatorio por carpeta (`venue`, `arxiv`, `source_pdf`, `repo`, `family`, `modality`, `anti_collapse`, `predictor`, `planner`).
+  - Paso de verificación contra el PDF y control de procedencia en la ingesta; notación canónica; higiene de LaTeX; checklist de lint automatizada.
+  - Archivos: `wiki/GEMINI.md`
+
+## [2026-09-24] ingest | Deep Learning-Based AI for Predictive Maintenance
+- **Resumen**: Ingesta de "Deep Learning-Based Artificial Intelligence for Predictive Maintenance in Smart Manufacturing Systems". Revisión conceptual sin experimentos ni ecuaciones. **Procedencia dudosa**: atribuida a Yann LeCun como autor único; metadatos `python-docx`; bibliografía de relleno ajena al tema (refs. 36–43).
+- **Acciones**:
+  - Figuras a 300 DPI: `2026_DL_PdM_workflow.png`, `2026_DL_PdM_framework.png`.
+  - Archivos: `wiki/papers/2026_DL_Predictive_Maintenance.md`, `wiki/architecture/2026_DL_PdM_Framework_Arch.md`, `wiki/architecture/img/2026_DL_PdM_*.png`, `wiki/repositories.md`, `wiki/index.md`
+
+## [2026-09-24] lint | Arbitraje de la bóveda contra los PDFs
+- **Resumen**: Verificación de las 26 notas de paper contra `raw/`; 24 contradicciones resueltas (tabla completa en §14 de `synthesis/JEPA-master-note.md`).
+- **Acciones**:
+  - Frontmatter completado en `papers/` (datos verificados en PDF) y `type` añadido en todas las carpetas; `author` → `authors` en VJEPA.
+  - Correcciones: igualdad falsa en `math/LeJEPA_Loss`; SIGReg descrito como Cramér–von Mises / momentos (`math/DISReg`, `math/Semigroup_Rollout_Consistency`, `architecture/2026_Semigroup-JEPA`, `architecture/2026_LeWorldModel`); variantes de SIGReg por paper en `math/SIGReg`; origen de RDMReg (`math/RDMReg`); encoder/predictor/planificación de LeWM; pérdida y planificador de PLDM; predictor bidireccional y encoder congelado de C-JEPA; pérdida Smooth-L1/Lorentz de HP-JEPA; prior de acción de Music-JEPA; predictores de MJEPA; ξ_T de VJEPA; pérdida ℓ2 de TC-JEPA; EMA de CHARM; EB-JEPA sin EMA; 5 teoremas + axiomas de Identifiability; "anisotropía" en SkyJEPA; "billón" en MJEPA; acrónimo CHARM.
+  - LaTeX corrupto reparado en `papers/2026_MotionJEPA`, `entities/MotionJEPA`, `math/Semigroup_Rollout_Consistency`.
+  - Enlaces colgantes: 33 → 0. Nuevas entidades: `entities/JEPA.md` (hub), `entities/DINO-WM.md` y `entities/Ctrl-World.md` (stubs `external-baseline`).
+  - Síntesis previas corregidas: `synthesis/World_Models_PhD_Guide.md`, `synthesis/JEPA-World-Models-Synthesis.md` (marcada `superseded`).
+  - `index.md`: enlaces con ruta en las secciones de papers y arquitectura; notas nuevas y mapa interactivo.
+  - Pendiente (no tocado): 158 enlaces ambiguos sin ruta (deuda técnica, GEMINI §2); imágenes sin usar `2026_Rectified_LpJEPA_*_test.png`; mojibake histórico de este log.
+
+## [2026-09-24] synthesis | JEPA-master-note
+- **Resumen**: Reescritura de la nota maestra con máximo rigor frente a los 26 papers: eliminadas las marcas † (inferencias por título), notación canónica con equivalencias, LeJEPA sin predictor, SIGReg verificado y sus variantes de λ, RDMReg, DISReg, world models y rollouts (Semigroup-JEPA corregido), identificabilidad con hipótesis, tabla de planificadores/costes, mapa comparativo de los 26 papers, código (`lejepa_loss` + tests) y §14 de decisiones de arbitraje.
+- **Acciones**:
+  - Archivos: `wiki/synthesis/JEPA-master-note.md`
+
+## [2026-09-24] tool | Mapa interactivo del cerebro
+- **Resumen**: Generador `tools/build_brain_map.py` → `wiki/brain-map.html` (autocontenido, offline; d3 + KaTeX incrustados). Vistas: grafo, matriz de papers, evolución anti-colapso, matemáticas, salud de la bóveda. `--lint` / `--strict` para mantenimiento.
+- **Acciones**:
+  - Archivos: `tools/build_brain_map.py`, `tools/brain_map_template.html`, `tools/vendor/*`, `tools/tests/test_build_brain_map.py` (11 tests), `wiki/brain-map.html`

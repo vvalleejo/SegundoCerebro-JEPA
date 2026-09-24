@@ -1,5 +1,6 @@
 ---
 title: "Rectified Distribution Matching Regularization (RDMReg)"
+type: "math"
 tags: [math, regularization, sparsity, jepa]
 ---
 
@@ -9,7 +10,7 @@ tags: [math, regularization, sparsity, jepa]
 
 En el aprendizaje autosupervisado y las arquitecturas JEPA, evitar el colapso de dimensionalidad (donde todas las representaciones convergen a un punto constante) es crítico. Enfoques como [[SIGReg]] utilizan el Teorema de Cramér-Wold para igualar proyecciones 1D de latentes a una Gaussiana isotrópica estándar, lo que promueve el uso eficiente de todo el espacio, resultando en **representaciones densas** (donde todos los valores latentes son no nulos).
 
-**RDMReg** se introduce en **LpWM** ([[2026_LpWM]]) para forzar **representaciones dispersas (sparse) y no negativas**. La intuición es que la esparcidad (o una aproximación relajada a una representación *one-hot*) ayuda a linealizar las dinámicas subyacentes, haciendo más simple la predicción y planificación.
+**RDMReg** se introduce en **Rectified LpJEPA** ([[wiki/papers/2026_Rectified_LpJEPA|2026_Rectified_LpJEPA]]; Eqs. 14–16, p. 6; ICML 2026). **LpWM** ([[wiki/papers/2026_LpWM|2026_LpWM]]) lo reutiliza citándolo como [Kuang et al., 2026b] (LpWM p. 3) y lo lleva a world models. El objetivo es forzar **representaciones dispersas (sparse) y no negativas**. La intuición es que la esparcidad (o una aproximación relajada a una representación *one-hot*) ayuda a linealizar las dinámicas subyacentes, haciendo más simple la predicción y planificación.
 
 ## 2. Formulación Matemática
 

@@ -2,6 +2,7 @@
 title: "Arquitectura VJEPA y BJEPA: Variational & Bayesian Joint-Embedding Predictive Architectures"
 paper: "[[2026_VJEPA]]"
 entity: "[[VJEPA]]"
+type: "architecture"
 tags: [architecture, jepa, variational, bayesian, bjepa, probabilistic, world-models]
 ---
 
@@ -27,7 +28,7 @@ tags: [architecture, jepa, variational, bayesian, bjepa, probabilistic, world-mo
 - El contexto $x_C$ se codifica en un vector $Z_C = E_\theta(x_C)$.
 - El predictor probabilístico parametriza una distribución condicional sobre los targets:
   $$p_\phi(Z_T \mid Z_C, \xi_T) = \mathcal{N}\left( \mu_\phi(Z_C, \xi_T), \Sigma_\phi(Z_C, \xi_T) \right)$$
-  donde $\xi_T$ es una variable latente estocástica que modela la ambigüedad en futuros multimodales.
+  donde $\xi_T$ es **información estructural (side information) del target**, no una latente estocástica: "side information specifying the structure of the target (e.g. spatial location, temporal index, or masking pattern)" (VJEPA p. 11). La incertidumbre la modela la distribución $p_\phi$, y $q_{\theta'}(Z_T\mid x_T)$ depende **solo** de $x_T$ a través del target encoder EMA (Eq. 10).
 
 ### B. Target Distribution Encoder
 - Mapea el bloque target $x_T$ a una distribución variacional $q_\psi(Z_T \mid x_T)$.

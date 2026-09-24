@@ -2,6 +2,7 @@
 title: "Arquitectura HP-JEPA: Hierarchical Partitioning for Multi-Resolution Graph JEPA"
 paper: "[[2026_HP-JEPA]]"
 entity: "[[HP-JEPA]]"
+type: "architecture"
 tags: [architecture, jepa, graphs, gnn, hierarchical, multiresolution]
 ---
 
@@ -39,9 +40,25 @@ tags: [architecture, jepa, graphs, gnn, hierarchical, multiresolution]
 
 ## 3. Función de Pérdida Multiescala
 
-$$\mathcal{L}_{\text{HP-JEPA}} = \sum_{\ell=1}^L \omega_\ell \sum_{k=1}^{K_\ell} \left\| P_\phi\left( z_{\text{ctx}}^{(\ell, k)}, \text{pos}^{(\ell, k)} \right) - E_{\text{tgt}}\left( G_{\text{core}}^{(\ell, k)} \right) \right\|_2^2$$
+> [!important] Corrección (arbitraje con el PDF)
+> La versión anterior de esta nota daba una $L_2^2$ sumada sobre escalas. El paper usa **Smooth-L1 contra un target en el hiperboloide de Lorentz 1-D** y **no suma** las pérdidas entre resoluciones: da un paso de optimizador por resolución (HP-JEPA p. 6).
 
-donde $\omega_\ell$ es el factor de ponderación de la escala jerárquica $\ell$.
+**Target de Lorentz.** Para un embedding $u\in\mathbb R^d$ del target encoder EMA (con stop-gradient) se toma su media $m(u)=d^{-1}\mathbf 1_d^\top u$ y se mapea a
+
+$$
+\Phi(u)=\big[\cosh m(u),\ \sinh m(u)\big]^\top \in \mathbb R^2,\qquad \Phi(u)^\top J_L\,\Phi(u)=-1,\quad J_L=\mathrm{diag}(-1,1)
+$$
+
+Es decir, el target es un **escalar** (la media de features) embebido en la rama positiva del hiperboloide. No es el vector $d$-dimensional completo. El predictor $\hat y^{(\ell)}_t=q_\psi\big(s^{(\ell)}_{c_\ell}+p^{(\ell)}_t\big)\in\mathbb R^2$ se ajusta en coordenadas ambiente y **no** está restringido al hiperboloide.
+
+**Pérdida por resolución $\ell$:**
+
+$$
+\mathcal{L}_\ell(G)=\frac{1}{M_\ell(G)}\sum_{t\in T_\ell(G)} \mathrm{SmoothL1}_\beta\big(\hat y^{(\ell)}_t,\ \mathrm{sg}(y^{(\ell)}_{t,\text{tgt}})\big),\qquad
+\mathcal{L}_\ell(\mathcal B)=\sum_{G\in\mathcal B_\ell} w_{G,\ell}\,\mathcal L_\ell(G)
+$$
+
+Aquí la Smooth-L1 se promedia sobre las 2 coordenadas. Los pesos por tarea $\omega^{\text{task}}_\ell=(1-\lambda_{\text{unif}})\,\mathrm{softmax}(b^{\text{task}})_\ell+\lambda_{\text{unif}}/L$ **solo** intervienen en el *readout* downstream (§4.3), que usa el target encoder EMA congelado. No forman parte de la pérdida de preentrenamiento.
 
 ---
 

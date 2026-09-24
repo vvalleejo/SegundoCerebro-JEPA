@@ -2,6 +2,16 @@
 title: "Semantic Tube Prediction: Beating LLM Data Efficiency with JEPA"
 authors: [Hai Huang, Yann LeCun, Randall Balestriero (Atlassian, NYU, Brown)]
 year: 2026
+venue: "arXiv preprint"
+arxiv: "2602.22617"
+source_pdf: "raw/Semantic Tube Prediction Beating LLM Data Efficiency with JEPA.pdf"
+repo: "https://github.com/galilai-group/llm-jepa"
+type: "paper"
+family: "jepa"
+modality: [text]
+anti_collapse: [none]
+predictor: false
+planner: [none]
 tags: [paper, jepa, llm, nlp, semantic-tube]
 ---
 
@@ -23,3 +33,6 @@ $\mathcal{L}_{STP}$ confina las trayectorias de los estados ocultos a un "tubo" 
 
 ### Ventaja frente a otros LLM-JEPAs
 Intentos previos de aplicar JEPA a LLMs requerían crear múltiples vistas del mismo texto artificialmente o usar predictores extra (añadiendo coste computacional). Con STP, como se asume linealidad local, el "predictor" se reduce a la función identidad. Calcula la similitud de coseno entre las diferencias de estados ocultos consecutivos en la secuencia, requiriendo un coste computacional extra casi nulo y sin "data augmentations".
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_Semantic_Tube|2026_Semantic_Tube]]

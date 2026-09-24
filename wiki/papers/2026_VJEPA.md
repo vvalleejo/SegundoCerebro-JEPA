@@ -1,7 +1,17 @@
 ---
 title: "VJEPA: Variational Joint Embedding Predictive Architectures as Probabilistic World Models"
-author: [Yongchao Huang]
+authors: [Yongchao Huang]
 year: 2026
+venue: "arXiv preprint"
+arxiv: "2601.14354"
+source_pdf: "raw/VJEPA Variational Joint Embedding Predictive Architectures as Probabilistic World Models.pdf"
+repo: "https://github.com/YongchaoHuang/VJEPA"
+type: "paper"
+family: "jepa"
+modality: [theory]
+anti_collapse: [ema-sg, kl]
+predictor: true
+planner: [none]
 tags: [paper, jepa, variational, probabilistic, world-models, bjepa]
 ---
 
@@ -22,3 +32,6 @@ $$ \mathcal{L}_{VJEPA} = \mathbb{E} \left[ - \log p_\phi(Z_T \mid Z_C, \xi_T) \r
 ## Impacto para World Models
 - Proporciona garantías formales para evitar el colapso de representaciones sin necesidad de heurísticas arquitectónicas (el colapso se evita por la asimetría de la información y la divergencia KL).
 - Habilita la propagación de creencias (belief propagation) puramente en el espacio latente, permitiendo planificación estocástica robusta.
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_VJEPA|2026_VJEPA]]

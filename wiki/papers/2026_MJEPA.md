@@ -2,6 +2,16 @@
 title: "MJEPA: A Simple and Scalable Joint-Embedding Predictive Architecture for Audio-Visual Learning"
 authors: [Revant Teotia, Adrien Bardes, Michael Rabbat, Sumit Chopra, Matthew Muckley, Nicolas Ballas (FAIR at Meta, NYU)]
 year: 2026
+venue: "arXiv preprint"
+arxiv: "2606.25225"
+source_pdf: "raw/MJEPA.pdf"
+repo: "https://github.com/facebookresearch/MJEPA"
+type: "paper"
+family: "jepa"
+modality: [audio, video]
+anti_collapse: [ema-sg]
+predictor: true
+planner: [none]
 tags: [paper, mjepa, multimodal, audio-visual, jepa]
 ---
 
@@ -21,4 +31,7 @@ MJEPA resuelve este conflicto introduciendo el concepto de **Cross-Modal Predict
 Al forzar matemáticamente que la representación del audio pueda generar la representación latente del video, el modelo "alinea semánticamente" ambos dominios en el mismo espacio vectorial, logrando una transferencia positiva (sinergia) donde la información de una modalidad mejora a la otra.
 
 ## Resultados
-Con un modelo escalado a 1 billón de parámetros (ViT-g), las representaciones congeladas de MJEPA superan a los modelos anteriores en tareas de clasificación como AudioSet-20K, Kinetics-400 y ESC-50, demostrando que JEPA es un framework altamente generalizable a configuraciones multimodales sin perder eficiencia.
+Con un modelo escalado a unos 1.000 millones de parámetros (ViT-g, 1B; MJEPA p. 10), las representaciones congeladas de MJEPA superan a los modelos anteriores en tareas de clasificación como AudioSet-20K, Kinetics-400 y ESC-50, demostrando que JEPA es un framework altamente generalizable a configuraciones multimodales sin perder eficiencia.
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_MJEPA|2026_MJEPA]]

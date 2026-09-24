@@ -1,5 +1,6 @@
 ---
 title: "Semigroup Rollout Consistency Loss"
+type: "math"
 tags: [math, loss, semigroup, rollout, jepa, sigreg, world-models]
 ---
 
@@ -65,7 +66,7 @@ Una diferencia fundamental entre SG-JEPA y arquitecturas previas ([[2023_I-JEPA]
 | Característica | I-JEPA / V-JEPA | LeWorldModel (LeWM) | SG-JEPA |
 | :--- | :--- | :--- | :--- |
 | **Encoder Target** | Copia EMA desconectada | Mismo encoder $e_\phi$ | Mismo encoder $e_\phi$ |
-| **Operador Stop-Gradient** | Sí ($	ext{sg}[z_{\text{tgt}}]$) | No | **No** |
+| **Operador Stop-Gradient** | Sí ($\text{sg}[z_{\text{tgt}}]$) | No | **No** |
 | **Horizonte de Pérdida** | 1 paso | 1 paso (Teacher-Forcing) | **$K$ pasos autorregresivos** |
 | **Mecanismo Anti-Colapso** | Asimetría EMA + Masking | [[SIGReg]] | **[[SIGReg]]** |
 
@@ -85,7 +86,7 @@ Para garantizar que el encoder no colapse hacia una solución trivial constante 
 
 $$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{roll}} + \lambda_{\text{sig}} \mathcal{L}_{\text{SIGReg}}(Z)$$
 
-donde $Z \in \mathbb{R}^{B \times d_z}$ es la matriz de latentes codificados en el batch, y $\mathcal{L}_{\text{SIGReg}}$ proyecta $Z$ sobre direcciones aleatorias uniformes $v \sim \mathbb{S}^{d_z-1}$ penalizando la distancia de Cramér-von Mises contra una Gaussiana estándar $\mathcal{N}(0, I)$.
+donde $Z \in \mathbb{R}^{B \times d_z}$ es la matriz de latentes codificados en el batch, y $\mathcal{L}_{\text{SIGReg}}$ proyecta $Z$ sobre direcciones aleatorias uniformes $v \sim \mathbb{S}^{d_z-1}$ penalizando la discrepancia de la **función característica empírica** frente a $e^{-t^2/2}$, la CF de una Gaussiana estándar $\mathcal{N}(0, I)$. Se usan 1024 proyecciones y 17 knots (SG-JEPA App. C; Eq. 160, App. H.8). El paper no nombra el test, pero la forma coincide con Epps–Pulley ([[SIGReg]]). Hay un matiz: no se usa stop-gradient ni EMA. Los targets salen del mismo encoder entrenable, y el propio paper advierte que su análisis local "neither proves noncollapse nor attributes the dynamics difference to SIGReg" (App. H.8).
 
 ---
 

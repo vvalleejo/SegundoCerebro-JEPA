@@ -1,5 +1,6 @@
 ---
 title: "GeniWorld"
+type: "entity"
 tags: [entity, architecture, world-models, robotics, visual-actions, flow-matching, generative]
 ---
 
@@ -37,3 +38,4 @@ A diferencia de los modelos predictivos latentes puros como [[V-JEPA2]] o [[LeWo
 - Arquitectura y Diagramas: [[2026_GeniWorld]]
 - Formulación Matemática: [[Visual_Action_Flow_Matching]]
 - Guía de Síntesis: [[World_Models_PhD_Guide]]
+- **Arquitectura**: [[wiki/architecture/2026_GeniWorld|2026_GeniWorld]]

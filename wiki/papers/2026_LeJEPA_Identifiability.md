@@ -2,6 +2,16 @@
 title: "When Does LeJEPA Learn a World Model?"
 authors: [David Klindt, Yann LeCun, Randall Balestriero (Cold Spring Harbor Lab, NYU, Brown)]
 year: 2026
+venue: "arXiv preprint"
+arxiv: "2605.26379"
+source_pdf: "raw/When Does LeJEPA Learn a World Model.pdf"
+repo: "https://github.com/klindtlab/lejepa-identifiability"
+type: "paper"
+family: "jepa"
+modality: [theory]
+anti_collapse: [sigreg]
+predictor: false
+planner: [none]
 tags: [paper, lejepa, world-models, theory, identifiability, sigreg, math, lean4]
 ---
 
@@ -29,7 +39,15 @@ En la práctica, la alineación y el blanqueamiento no son perfectos ($\delta, \
 Demuestra que si un codificador cumple la identificabilidad lineal ortogonal ($h(z) = Qz$), cualquier plan de acción optimizado en el espacio latente del modelo de mundo (ej. líneas rectas o MPC) es **matemáticamente idéntico al plan óptimo en el mundo real**, con las mismas acciones y el mismo coste.
 
 ## Verificación Formal
-Todos los 5 resultados teóricos fueron verificados de manera computacional e irrefutable usando el demostrador formal de teoremas **Lean 4** (con la librería Mathlib).
+Los **5 teoremas** (los Thm. 1–4 anteriores más el **Thm. 5** del App. E, que prueba la identificabilidad vía energía de Dirichlet con ruido infinitesimal y Mazur–Ulam) están verificados en **Lean 4** con Mathlib v4.28.0 y "zero sorry obligations" (App. G, p. 31). Matiz importante: la verificación es "modulo standard background lemmas axiomatized from the literature" (p. 5). Se toman como axiomas la completitud de Hermite/Mehler, Mazur–Ulam, AM-GM, Jensen y el pushforward de trayectorias, entre otros (Tab. 4, p. 38). Lo que se verifica son las cadenas de razonamiento entre esos axiomas.
+
+> [!important] Condiciones que suelen omitirse
+> - **Theorem 4** (planificación) exige que los costes de etapa y terminal sean **invariantes bajo $O(n)$**: $\ell(Rz,a)=\ell(z,a)$ para todo $R\in O(n)$ (Eq. 6). El coste $L_2$ de LeWM lo cumple; la energía $L_1$ de V-JEPA 2 **no** es invariante por rotación (observación de la bóveda, no del paper).
+> - El resultado cubre el **encoder**, no la dinámica condicionada por acciones (App. D.2: "our theorems do not prove that it is").
+> - Se asume dimensión de salida igual a la latente real ($m=n$, p. 9). No se enuncia inyectividad de $g$: los teoremas son sobre $h=f\circ g$ medible.
 
 ## Implicaciones para el Doctorado
 Este trabajo justifica teóricamente por qué las sondas lineales (*linear probes*) funcionan como evaluación estándar en SSL/JEPA: evaluar con sondas lineales solo es conceptualmente válido si la red ha aprendido una representación linealmente identificable. Además, explica por qué la regularización Gaussiana de [[SIGReg]] en [[LeWorldModel]] no es un truco heurístico, sino una condición matemáticamente necesaria y suficiente para garantizar que un World Model recupere los verdaderos grados de libertad del entorno.
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_LeJEPA_Identifiability|2026_LeJEPA_Identifiability]]

@@ -1,5 +1,6 @@
 ---
 title: "Music-JEPA"
+type: "entity"
 tags: [entity, architecture, jepa, audio, music, world-models, action-conditioned]
 ---
 
@@ -20,3 +21,4 @@ Music-JEPA ilustra la versatilidad de la arquitectura JEPA para formalizar domin
 ## Enlaces Relacionados
 - Paper: [[2026_Music-JEPA]]
 - Modelos Multimodales y Temporales: [[MJEPA]], [[CHARM]], [[V-JEPA2]], [[LeWorldModel]]
+- **Arquitectura**: [[wiki/architecture/2026_Music-JEPA|2026_Music-JEPA]]

@@ -2,6 +2,7 @@
 title: "Arquitectura Rectified LpJEPA: Sparse & Maximum-Entropy JEPA"
 paper: "[[2026_Rectified_LpJEPA]]"
 entity: "[[Rectified_LpJEPA]]"
+type: "architecture"
 tags: [architecture, jepa, sparsity, entropy, rectified-gaussian, vicreg]
 ---
 
@@ -40,4 +41,5 @@ donde $\mathcal{R}_{\text{RGG}}$ ajusta la esparcidad empírica $\ell_0$ a un ni
 ## 4. Referencias Cruzadas
 - **Paper**: [[2026_Rectified_LpJEPA]]
 - **Entidad**: [[Rectified_LpJEPA]]
-- **Matemáticas**: [[SIGReg]]
+- **Matemáticas**: [[RDMReg]] (regularizador propio de este paper: sliced 2-Wasserstein *two-sample* contra muestras de $\prod_i \mathcal{RGN}_p(\mu,\sigma)$, Eqs. 14–16), comparado con [[SIGReg]] (Epps–Pulley *one-sample* contra $\mathcal N(0,I)$)
+- **Nota (arbitraje con el PDF)**: no hay red predictora; la palabra "predictor" no aparece en el PDF. El objetivo es invarianza multi-vista $\|z-z'\|_2^2$ más RDMReg sobre **ambas** vistas, sin EMA ni stop-gradient. La rectificación es un ReLU plano ("we just use ReLU(·)", p. 36), no el RepReLU de LpWM.

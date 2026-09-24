@@ -2,6 +2,16 @@
 title: "Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture (I-JEPA)"
 authors: [Mahmoud Assran, Quentin Duval, Ishan Misra, Piotr Bojanowski, Pascal Vincent, Michael Rabbat, Yann LeCun, Nicolas Ballas (Meta AI, McGill, NYU)]
 year: 2023
+venue: "arXiv preprint (publicado en CVPR 2023 según citas; el PDF v3 no lo indica)"
+arxiv: "2301.08243"
+source_pdf: "raw/Self-Supervised Learning from Images with a.pdf"
+repo: "https://github.com/facebookresearch/ijepa"
+type: "paper"
+family: "jepa"
+modality: [image]
+anti_collapse: [ema-sg]
+predictor: true
+planner: [none]
 tags: [paper, jepa, i-jepa, images, self-supervised]
 ---
 
@@ -24,3 +34,6 @@ I-JEPA propone predecir información faltante en un **espacio de representación
 I-JEPA establece la base (2023) sobre la que se construirían después los modelos de video y control (V-JEPA, V-JEPA2, LeWorldModel). Demuestra empíricamente que:
 - La predicción en el espacio latente aprende representaciones más semánticas que la reconstrucción de píxeles.
 - Es altamente escalable y eficiente computacionalmente (más rápido que MAE o iBOT).
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2023_I-JEPA|2023_I-JEPA]]

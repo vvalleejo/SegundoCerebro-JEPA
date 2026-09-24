@@ -2,6 +2,7 @@
 title: "Arquitectura GeniWorld: Interactive World Model via Visual Actions"
 paper: "[[2026_GeniWorld]]"
 entity: "[[GeniWorld]]"
+type: "architecture"
 tags: [architecture, world-models, robotics, visual-actions, flow-matching, dit, kv-cache, policy-evaluation, data-synthesis]
 ---
 

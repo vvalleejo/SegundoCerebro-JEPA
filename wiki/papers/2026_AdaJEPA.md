@@ -2,6 +2,16 @@
 title: "AdaJEPA: An Adaptive Latent World Model"
 authors: [Ying Wang, Oumayma Bounou, Yann LeCun, Mengye Ren (NYU & AMI Labs)]
 year: 2026
+venue: "arXiv preprint"
+arxiv: "2606.32026"
+source_pdf: "raw/AdaJEPA An Adaptive Latent World Model.pdf"
+repo: "https://github.com/agentic-learning-ai-lab/adajepa"
+type: "paper"
+family: "jepa"
+modality: [control]
+anti_collapse: [sg]
+predictor: true
+planner: [gd, cem, tta]
 tags: [paper, adajepa, jepa, world-models, test-time-adaptation, mpc, robotics]
 ---
 
@@ -25,3 +35,6 @@ AdaJEPA introduce **Adaptación a Tiempo de Prueba (Test-Time Adaptation - TTA)*
 - **Rendimiento Robusto**: En entornos de manipulación y navegación (PushT, PushObj, PointMaze), AdaJEPA duplica la tasa de éxito del modelo congelado ante cambios de forma de objeto, fallos visuales (ruido, desenfoque) y cambios en la física (masa y amortiguación).
 - **Latencia Mínima**: Añade solo entre 0.01s y 0.03s por paso de replanificación de MPC.
 - **Eficiencia de Datos**: La adaptación online compensa grandes reducciones en los datos de pre-entrenamiento. Un modelo AdaJEPA entrenado con solo 1k trayectorias supera a un modelo congelado entrenado con 64k trayectorias.
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_AdaJEPA|2026_AdaJEPA]]

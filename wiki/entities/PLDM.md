@@ -1,5 +1,6 @@
 ---
 title: "PLDM (Planning with a Latent Dynamics Model)"
+type: "entity"
 tags: [entity, architecture, jepa, world-models, offline-learning, mppi, vicreg]
 ---
 
@@ -20,3 +21,4 @@ tags: [entity, architecture, jepa, world-models, offline-learning, mppi, vicreg]
 ## Enlaces Relacionados
 - Paper: [[2025_PLDM]]
 - Arquitecturas de Modelo de Mundo: [[LeWorldModel]], [[V-JEPA2]], [[AdaJEPA]], [[SkyJEPA]]
+- **Arquitectura**: [[wiki/architecture/2025_PLDM|2025_PLDM]]

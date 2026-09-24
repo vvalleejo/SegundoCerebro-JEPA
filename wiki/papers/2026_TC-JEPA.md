@@ -2,6 +2,16 @@
 title: "Text-Conditional JEPA for Learning Semantically Rich Visual Representations"
 authors: [Chen Huang, Xianhang Li, Vimal Thilak, Etai Littwin, Josh Susskind (Apple)]
 year: 2026
+venue: "ICML 2026"
+arxiv: "2605.03245"
+source_pdf: "raw/Text-Conditional JEPA for Learning Semantically Rich Visual Representations.pdf"
+repo: ""
+type: "paper"
+family: "jepa"
+modality: [image, text]
+anti_collapse: [ema-sg]
+predictor: true
+planner: [none]
 tags: [paper, jepa, vision-language, multimodal, tc-jepa]
 ---
 
@@ -18,3 +28,6 @@ A diferencia de los modelos contrastivos (tipo CLIP) que alinean embeddings visu
 ## Impacto
 TC-JEPA establece un nuevo paradigma para el pre-entrenamiento de modelos Visión-Lenguaje (Vision-Language Models). En lugar de depender de pérdidas contrastivas, se basa exclusivamente en predicción de características. 
 Empíricamente, demuestra superar a los métodos contrastivos (como SigLIP o CLIP) en tareas que requieren entendimiento visual de grano fino y razonamiento local, como la segmentación semántica y la detección de objetos, al mismo tiempo que escala excepcionalmente bien.
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_TC-JEPA|2026_TC-JEPA]]

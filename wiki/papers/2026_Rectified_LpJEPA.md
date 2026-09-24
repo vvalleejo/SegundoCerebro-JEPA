@@ -2,6 +2,16 @@
 title: "Rectified LpJEPA: Joint-Embedding Predictive Architectures with Sparse and Maximum-Entropy Representations"
 authors: [Yilun Kuang, Yash Dagade, Tim G. J. Rudner, Randall Balestriero, Yann LeCun]
 year: 2026
+venue: "ICML 2026"
+arxiv: "2602.01456"
+source_pdf: "raw/Rectified LpJEPA Joint-Embedding Predictive Architectures with Sparse and Maximum-Entropy Representations.pdf"
+repo: "https://github.com/YilunKuang/rectified-lp-jepa"
+type: "paper"
+family: "jepa"
+modality: [image]
+anti_collapse: [rdmreg]
+predictor: false
+planner: [none]
 tags: [paper, jepa, sparsity, regularization, math]
 ---
 
@@ -23,3 +33,6 @@ Al hacerlo, el modelo gana control analítico explícito sobre cuántos ceros (n
 
 ## Resultados
 Rectified LpJEPA aprende características esparzas y no negativas que superan en interpretabilidad y eficiencia a las representaciones densas, logrando resultados competitivos en tareas de clasificación de imágenes y demostrando que la esparsidad se puede controlar directamente a través del diseño de la distribución objetivo en JEPAs.
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_Rectified_LpJEPA|2026_Rectified_LpJEPA]]

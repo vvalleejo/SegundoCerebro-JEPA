@@ -1,5 +1,6 @@
 ---
 title: "Isotropic Gaussian Optimality for Foundation Models"
+type: "math"
 tags: [math, theory, probability, lejepa, statistics]
 ---
 # Optimalidad de la Distribución Gaussiana Isotrópica

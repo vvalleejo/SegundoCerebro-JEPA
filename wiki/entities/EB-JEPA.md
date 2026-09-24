@@ -1,5 +1,6 @@
 ---
 title: "EB-JEPA (Energy-Based JEPA)"
+type: "entity"
 tags: [entity, architecture, jepa, ebm, library]
 ---
 
@@ -20,3 +21,4 @@ Una contribución empírica importante de EB-JEPA es el entrenamiento "Multistep
 
 ## Enlaces Relacionados
 - Paper: [[2026_EB-JEPA]]
+- **Arquitectura**: [[wiki/architecture/2026_EB-JEPA|2026_EB-JEPA]]

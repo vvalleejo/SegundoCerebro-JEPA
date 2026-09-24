@@ -1,5 +1,6 @@
 ---
 title: "HP-JEPA (Hierarchical Partitioning Graph JEPA)"
+type: "entity"
 tags: [entity, architecture, jepa, graphs, gnn, multi-resolution]
 ---
 
@@ -19,3 +20,4 @@ HP-JEPA amplía la teoría y aplicación de JEPA a **estructuras de grafos y rel
 ## Enlaces Relacionados
 - Paper: [[2026_HP-JEPA]]
 - Arquitecturas Relacionadas: [[C-JEPA]], [[I-JEPA]], [[LeWorldModel]]
+- **Arquitectura**: [[wiki/architecture/2026_HP-JEPA|2026_HP-JEPA]]

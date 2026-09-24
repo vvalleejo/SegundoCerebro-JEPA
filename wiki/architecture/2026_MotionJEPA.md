@@ -2,6 +2,7 @@
 title: "Arquitectura MotionJEPA: Mitigación del Colapso Temporal mediante Representaciones de Diferencia Latente"
 paper: "[[2026_MotionJEPA]]"
 entity: "[[MotionJEPA]]"
+type: "architecture"
 tags: [architecture, motion-jepa, disreg, jepa, world-models, latent-dynamics, inverse-dynamics, vit]
 ---
 

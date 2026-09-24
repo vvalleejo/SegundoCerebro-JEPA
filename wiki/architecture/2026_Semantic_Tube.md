@@ -2,6 +2,7 @@
 title: "Arquitectura Semantic Tube: Beating LLM Data Efficiency with JEPA"
 paper: "[[2026_Semantic_Tube]]"
 entity: "[[Semantic_Tube]]"
+type: "architecture"
 tags: [architecture, jepa, llm, nlp, semantic-tube, geodesics]
 ---
 # Arquitectura Semantic Tube

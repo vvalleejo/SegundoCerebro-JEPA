@@ -1,5 +1,6 @@
 ---
 title: "Visual-Action Conditional Flow Matching"
+type: "math"
 tags: [math, flow-matching, generative, world-models, robotics, loss]
 ---
 

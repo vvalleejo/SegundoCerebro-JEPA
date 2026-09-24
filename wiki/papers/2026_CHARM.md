@@ -2,6 +2,16 @@
 title: "Giving Sensors a Voice: Multimodal JEPA for Semantic Time-Series Embeddings"
 authors: [Utsav Dutta, Gerardo Pastrana, Sina Khoshfetrat Pakazad, Henrik Ohlsson (C3 AI)]
 year: 2026
+venue: "ICML 2026"
+arxiv: "2605.31580"
+source_pdf: "raw/Giving Sensors a Voice Multimodal JEPA for Semantic Time-Series Embeddings.pdf"
+repo: ""
+type: "paper"
+family: "jepa"
+modality: [time-series, text]
+anti_collapse: [ema-sg]
+predictor: true
+planner: [none]
 tags: [paper, jepa, time-series, multimodal, charm]
 ---
 
@@ -22,3 +32,6 @@ CHARM adapta el objetivo de aprendizaje auto-supervisado de JEPA al dominio temp
 
 ## Resultados
 Al evaluar en tareas de previsión (forecasting), clasificación y detección de anomalías, CHARM (con un simple *linear probe* sobre el encoder congelado) supera a modelos de series temporales masivos. Demuestra que el uso del objetivo JEPA en lugar del error de reconstrucción es el factor que más contribuye al aumento del rendimiento en el modelado de series temporales.
+
+## Referencias Cruzadas
+- **Arquitectura**: [[wiki/architecture/2026_CHARM|2026_CHARM]]

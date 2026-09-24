@@ -1,5 +1,6 @@
 ---
 title: "MuSe (Multisensory Continual Learning)"
+type: "entity"
 tags: [entity, architecture, continual-learning, robotics, world-models]
 ---
 
@@ -14,7 +15,8 @@ MuSe permite que un agente robótico integre nuevos sensores *después* del pre-
 2. **Replay con Enmascaramiento Modal**: Al reutilizar datos antiguos que no tienen el sensor de fuerza, MuSe utiliza máscaras latentes (similar al enmascaramiento de [[JEPA]]) para indicar la ausencia del sensor, optimizando solo las pérdidas de las modalidades presentes.
 
 ## Conexión con JEPAs y World Models
-Aunque no se denomina formalmente un JEPA, MuSe comparte el núcleo filosófico de los World Models predictivos aplicados a robótica (como [[V-JEPA2-AC]]). Su objetivo predictivo multisensorial ayuda a alinear el espacio de representación latente, de forma muy análoga a la predicción cruzada (Cross-Modal Prediction) introducida en [[MJEPA]] o el condicionamiento textual en [[CHARM]].
+Aunque no se denomina formalmente un JEPA, MuSe comparte el núcleo filosófico de los World Models predictivos aplicados a robótica (como V-JEPA 2-AC, ver [[V-JEPA2]]). Su objetivo predictivo multisensorial ayuda a alinear el espacio de representación latente, de forma muy análoga a la predicción cruzada (Cross-Modal Prediction) introducida en [[MJEPA]] o el condicionamiento textual en [[CHARM]].
 
 ## Enlaces Relacionados
 - Paper: [[2026_MuSe]]
+- **Arquitectura**: [[wiki/architecture/2026_MuSe|2026_MuSe]]

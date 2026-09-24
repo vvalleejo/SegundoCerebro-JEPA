@@ -2,6 +2,7 @@
 title: "Arquitectura Causal-JEPA: Object-Level Latent Masking World Models"
 paper: "[[2026_Causal-JEPA]]"
 entity: "[[C-JEPA]]"
+type: "architecture"
 tags: [architecture, jepa, causality, slot-attention, object-centric, world-models]
 ---
 
@@ -31,8 +32,9 @@ tags: [architecture, jepa, causality, slot-attention, object-centric, world-mode
 - **Representación**: Descompone cada frame $x_t$ en un conjunto de $K$ slots de objetos:
   $$S_t = \{s_t^1, s_t^2, \dots, s_t^K\}, \quad s_t^k \in \mathbb{R}^{d_{\text{slot}}}$$
 
-### B. Predictor Causal Transformer ($P_\phi$)
-- **Arquitectura**: Transformer autoregresivo con atención cruzada entre slots y mecanismos causales a lo largo del tiempo.
+### B. Predictor Transformer enmascarado ($P_\phi$)
+- **Arquitectura**: "ViT-style masked transformer with **bidirectional attention**" (C-JEPA p. 4; Remark 3, p. 8). **No es autorregresivo:** el baseline DINO-WM sí usa un predictor causal autorregresivo (p. 6). En inferencia predice hacia delante con todo el historial observado, enmascarando solo los tokens futuros (p. 5).
+- **Anti-colapso**: no hace falta, porque el **encoder está congelado** ("we employ frozen target encoders", p. 3: VideoSAUR sobre DINOv2 congelado). Solo se entrena el predictor.
 - **Entrada**: Secuencia temporal de slots históricos $S_{1:t}$ donde ciertos slots de objetos específicos han sido enmascarados con un token de máscara aprendible $m_{\text{slot}}$.
 - **Variables Auxiliares / Acciones**: Se inyectan concatenadas a los slots o mediante modulación FiLM.
 
