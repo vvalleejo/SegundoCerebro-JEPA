@@ -23,6 +23,7 @@ A continuación se listan los enlaces a los repositorios oficiales de código (o
 - **Semantic Tube Prediction: Beating LLM Data Efficiency with JEPA**: [https://github.com/galilai-group/llm-jepa](https://github.com/galilai-group/llm-jepa)
 - **Semigroup-JEPA: Latent Dynamics Consistency for Zero-Shot Physics Generalization**: [https://github.com/sg-jepa/sg-jepa](https://github.com/sg-jepa/sg-jepa)
 - **SkyJEPA: Learning Long-Horizon World Models**: [https://github.com/arplaboratory/SkyJEPA](https://github.com/arplaboratory/SkyJEPA)
+- **Temporal Straightening for Latent Planning**: [https://agenticlearning.ai/temporal-straightening/](https://agenticlearning.ai/temporal-straightening/) *(Página de proyecto; el PDF indica que el código está disponible ahí)*
 - **Text-Conditional JEPA for Learning Semantically Rich Visual Representations**: *(Código no liberado oficialmente por los autores todavía)*
 - **V-JEPA2.1**: [https://github.com/facebookresearch/vjepa2](https://github.com/facebookresearch/vjepa2)
 - **V-JEPA2**: [https://github.com/facebookresearch/vjepa2](https://github.com/facebookresearch/vjepa2)

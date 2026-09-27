@@ -277,3 +277,19 @@ Registro cronolÃ³gico de las operaciones realizadas en la base de conocimiento
 - **Resumen**: Generador `tools/build_brain_map.py` → `wiki/brain-map.html` (autocontenido, offline; d3 + KaTeX incrustados). Vistas: grafo, matriz de papers, evolución anti-colapso, matemáticas, salud de la bóveda. `--lint` / `--strict` para mantenimiento.
 - **Acciones**:
   - Archivos: `tools/build_brain_map.py`, `tools/brain_map_template.html`, `tools/vendor/*`, `tools/tests/test_build_brain_map.py` (11 tests), `wiki/brain-map.html`
+
+## [2026-09-27] ingest | Temporal Straightening
+- **Resumen**: Ingesta de "Temporal Straightening for Latent Planning" (Wang, Bounou, Zhou, Balestriero, Rudner, LeCun, Ren; NYU / Brown / Toronto; ICML 2026, PMLR 306; arXiv:2603.12231v3). Trabajo empírico con un teorema en el caso lineal. Procedencia sin señales de alerta. World model JEPA (DINOv2 congelado + proyector, o ResNet desde cero; predictor ViT causal; stop-grad sin EMA) con regularizador de curvatura $\lambda(1-\cos(v_t,v_{t+1}))$ y planificación por GD.
+- **Acciones**:
+  - Figuras a 300 DPI: `overview` (Fig. 3), `agg_head` (Fig. 13), `latent_trajectories` (Fig. 2), `distance_heatmaps` (Fig. 6), `loss_landscape` (Fig. 4), `curvature_vs_success` (Fig. 5).
+  - Verificación contra el PDF (render de pp. 3–5, 8–9, 16, 18) de las ecuaciones 3–12 y 23–24 y de las Tab. 1, 2, 3, 4 y 5. Inconsistencias internas del paper registradas en §14 de la nota maestra.
+  - Observaciones críticas: el Thm 4.4 exige $d_a=d$ (en los experimentos $d_a=2$); distinto lr del encoder para los baselines sin straightening (Tab. 3); DINO-WM evaluado con GD en lugar de su CEM.
+  - Arbitraje #25 (no es una contradicción): cifras de DINO-WM en PushT según el protocolo GD o CEM, anotado en `entities/DINO-WM.md`.
+  - Archivos creados:
+    - `wiki/papers/2026_Temporal_Straightening.md`
+    - `wiki/architecture/2026_Temporal_Straightening_Arch.md`
+    - `wiki/architecture/img/2026_Temporal_Straightening_{overview,agg_head,latent_trajectories,distance_heatmaps,loss_landscape,curvature_vs_success}.png`
+    - `wiki/math/Temporal_Straightening_Loss.md`
+    - `wiki/math/Planning_Hessian_Conditioning.md`
+    - `wiki/entities/Temporal_Straightening.md`
+  - Archivos actualizados: `wiki/entities/DINO-WM.md`, `wiki/entities/Semantic_Tube.md`, `wiki/entities/JEPA.md`, `wiki/synthesis/JEPA-master-note.md` (§5.6, §7.1, §7.3, §8.3, §11, §13, §14), `wiki/index.md`, `wiki/repositories.md`, `wiki/brain-map.html`, `wiki/log.md`

@@ -16,7 +16,7 @@ Nota **hub** de la familia. La explicación completa, con notación, derivacione
 | Mecanismo | Modelos |
 |---|---|
 | EMA + stop-gradient | [[I-JEPA]], [[V-JEPA2]], [[V-JEPA2.1]], [[TC-JEPA]], [[MJEPA]], [[CHARM]], [[HP-JEPA]], [[Music-JEPA]], [[VJEPA]] (+ KL) |
-| Stop-gradient sin EMA | [[AdaJEPA]] |
+| Stop-gradient sin EMA | [[AdaJEPA]], [[Temporal_Straightening]] (+ regularizador de curvatura) |
 | Encoder congelado | [[C-JEPA]] |
 | VICReg (+ IDM) | [[PLDM]], [[EB-JEPA]] |
 | SIGReg | [[LeJEPA]], [[LeVJEPA]], [[LeWorldModel]], [[SG-JEPA]], [[SkyJEPA]], [[MotionJEPA]] (vía [[DISReg]]) |

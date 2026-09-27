@@ -33,6 +33,7 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[wiki/papers/2025_PLDM|2025_PLDM]]: "Learning from Reward-Free Offline Data: A Case for Planning with Latent Dynamics Models" (2025). Estudio comparativo y método PLDM para planificación con modelos de mundo JEPA offline sin recompensas.
 - [[wiki/papers/2026_HP-JEPA|2026_HP-JEPA]]: "HP-JEPA: Hierarchical Partitioning for Multi-Resolution Graph Joint-Embedding Predictive Learning" (2026). JEPA multirresolución en grafos mediante particionamiento jerárquico y readout adaptativo.
 - [[wiki/papers/2026_Music-JEPA|2026_Music-JEPA]]: "Music-JEPA: Learning a World Model of Sound from Action" (2026). Modelo de mundo musical condicionado por acciones (audio como estado, pianoroll como acción) y transcripción vía planificación.
+- [[wiki/papers/2026_Temporal_Straightening|2026_Temporal_Straightening]]: "Temporal Straightening for Latent Planning" (ICML 2026). World model JEPA con regularizador de curvatura latente; mejor condicionamiento y planificación por gradiente frente a DINO-WM.
 
 - [[wiki/papers/2026_GeniWorld|2026_GeniWorld]]: "GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions" (2026). Modelo de mundo interactivo con Flow Matching y acciones visuales renderizadas vía URDF.
 
@@ -49,6 +50,8 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[Dense_Predictive_Loss]]: Extensión de la pérdida JEPA sobre los tokens de contexto visibles ponderados por distancia.
 - [[Invariance_Loss]]: Objetivo matemático (MSE) para predicción local-a-global en JEPAs sin heurísticas (ej. LeVJEPA).
 - [[Linear_Identifiability]]: Garantía matemática de que el espacio latente de LeJEPA recupera fielmente las variables reales del mundo hasta una rotación ortogonal.
+- [[Temporal_Straightening_Loss]]: Regularizador de curvatura $1-\cos(v_t,v_{t+1})$ sobre velocidades latentes, variantes espaciales y cota coseno ⇒ $(A-I)$ pequeño.
+- [[Planning_Hessian_Conditioning]]: Teorema de condicionamiento del Hessiano de planificación bajo dinámica lineal ε-straight (Gramiano de controlabilidad).
 
 - [[Visual_Action_Flow_Matching]]: Formulación de Flow Matching condicionado por acciones visuales espaciales limpias para interacción física en modelos de mundo.
 
@@ -81,6 +84,7 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[PLDM]]: Método de modelo de mundo latente JEPA para planificación offline sin recompensas con alta generalización OOD.
 - [[HP-JEPA]]: Framework de JEPA jerárquico para grafos que captura información estructural a múltiples escalas de resolución.
 - [[Music-JEPA]]: Modelo de mundo acústico y musical condicionado por acciones instrumentales que permite transcripción por planificación inversa.
+- [[Temporal_Straightening]]: World model JEPA con trayectorias latentes enderezadas para planificación por gradiente.
 
 - [[GeniWorld]]: Modelo de mundo interactivo autorregresivo para robótica que desacopla cinemática y dinámica ambiental mediante acciones visuales.
 
@@ -110,6 +114,7 @@ Este es el punto de entrada principal para la base de conocimientos enfocada en 
 - [[wiki/architecture/2026_TC-JEPA|2026_TC-JEPA]]: Arquitectura TC-JEPA con condicionamiento textual de grano fino vía Cross-Attention.
 - [[wiki/architecture/2026_V-JEPA2.1|2026_V-JEPA2.1]]: Arquitectura V-JEPA 2.1 con 3D RoPE y pérdida de contexto ponderada para características densas.
 - [[wiki/architecture/2026_VJEPA|2026_VJEPA]]: Arquitecturas VJEPA (variacional) y BJEPA (bayesiana con Product of Experts) como modelos de mundo probabilísticos.
+- [[wiki/architecture/2026_Temporal_Straightening_Arch|2026_Temporal_Straightening_Arch]]: Proyector sobre DINOv2 o ResNet + predictor ViT causal, cabeza de agregación para la pérdida de curvatura y planificación GD.
 
 - [[wiki/architecture/2026_GeniWorld|2026_GeniWorld]]: Arquitectura GeniWorld con renderizador URDF, codificación 3D VAE concatenada y DiT causal con Flow Matching.
 

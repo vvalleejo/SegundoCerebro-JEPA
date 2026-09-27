@@ -4,8 +4,8 @@ type: synthesis
 tipo: concept-note
 estado: verified-against-pdfs
 nivel: introductorio-técnico
-actualizado: 2026-09-24
-sources: "26 notas de wiki/papers/ + PDFs de raw/ (arbitraje 2026-09-24)"
+actualizado: 2026-09-27
+sources: "27 notas de wiki/papers/ + PDFs de raw/ (arbitraje 2026-09-24; ingesta Temporal Straightening 2026-09-27)"
 aliases: [Joint-Embedding Predictive Architecture, Nota Maestra JEPA]
 tags: [synthesis, jepa, world-models, deep-learning, ssl]
 ---
@@ -21,7 +21,7 @@ tags: [synthesis, jepa, world-models, deep-learning, ssl]
 > [!info] Cómo se ha verificado esta nota
 > Cada cifra y cada ecuación de las §4–§8 se ha contrastado con el PDF de `raw/` y lleva su fuente (`p.`, `Eq.`, `Tab.`). Cuando dos notas de la bóveda se contradecían, decidió el PDF. Esas decisiones están en la §14. Lo que el PDF no permite confirmar va marcado como *no verificado*.
 
-**Ruta de lectura recomendada:** §1 (notación), §2 (el problema), §3 (qué es una JEPA), §4 (I-JEPA paso a paso), §5 (colapso), §6–7 (world models y planificación). La §8 es el mapa comparativo de los 26 papers de la bóveda y la §9 el código de referencia.
+**Ruta de lectura recomendada:** §1 (notación), §2 (el problema), §3 (qué es una JEPA), §4 (I-JEPA paso a paso), §5 (colapso), §6–7 (world models y planificación). La §8 es el mapa comparativo de los 27 papers de la bóveda y la §9 el código de referencia.
 
 ---
 
@@ -444,7 +444,7 @@ En PushT a 25 pasos, el IDM solo supera a MotionJEPA (83.6 frente a 78.4).
 | Mecanismo | Modelos (bóveda) | Qué evita | Ventajas | Limitaciones |
 |---|---|---|---|---|
 | SG + EMA + predictor | I-JEPA, V-JEPA 2/2.1, TC-JEPA, MJEPA, CHARM, HP-JEPA, Music-JEPA | Colapso (empíricamente) | Probado a gran escala (hasta 2B en V-JEPA 2.1) | Sin garantía; sensible a $\tau$ y al predictor |
-| Stop-grad sin EMA | AdaJEPA (TTA) | Colapso durante la adaptación | Simple, online | Solo se ha validado como estabilizador en adaptación de pocos pasos |
+| Stop-grad sin EMA | AdaJEPA (TTA), Temporal Straightening | Colapso durante la adaptación / entrenamiento del proyector | Simple, sin hiperparámetros | Sin garantía; Temporal Straightening admite que el colapso es posible en teoría (§3.3) y no reporta métricas de colapso |
 | Encoder congelado | C-JEPA (DINOv2 + VideoSAUR) | Colapso, por construcción | Nada que regularizar | El encoder no se adapta a la dinámica |
 | Varianza + covarianza (+ IDM) | PLDM, EB-JEPA | Completo y dimensional | Explícito, interpretable | $\mathcal{O}(BD^2)$; hasta 7 pesos; depende del IDM |
 | SIGReg | LeJEPA, LeVJEPA, LeWM, SG-JEPA, SkyJEPA, MotionJEPA | Fuerza $\mathcal{N}(0, I)$ | Lineal en $B$ y $D$; 1 hiperparámetro; con garantías (§6.3) | Impone una forma concreta; $\lambda$ excesivo colapsa |
@@ -604,6 +604,7 @@ Cada paper usa **una variante distinta**, y la elección importa para la teoría
 | EB-JEPA | $\sum_{t}\|f_\theta(x_g)-\hat z_t\|_2$ | MPPI (97 %) / CEM (96 %) | — | Eq. 14; Tab. 4 |
 | SkyJEPA | coste de seguimiento sobre el estado físico del prober | **MPPI** en C++/TensorRT, Jetson Orin NX | $S=512$, $T=15$, $\lambda=10^{-4}$ (Tab. II; el texto elige $U=20$ para caber en 10 ms) | §V |
 | AdaJEPA | $\sum_k\alpha_k\,d(\hat z_k,z_g)$, $d$ ≈ $L_2^2$ | GD (Adam, lr 0.1, 100 pasos) o CEM (200 muestras, 10 pasos) | + TTA | Eq. 3; Tab. 4 |
+| Temporal Straightening | $\|\hat z_T-z_g\|_2^2$ (terminal, open-loop); ponderado en estados intermedios en MPC salvo PushT | **GD** (Adam, lr 0.1, 100 pasos, init. cero); CEM (200 / 10) en ablación | 25 pasos = $H=5$ con frameskip 5; GD ~10× más rápido que CEM | §5.3; Tab. 4; App. B.3 |
 | SG-JEPA | **no planifica sobre el modelo** | Diffusion Policy sobre el encoder congelado | $A=16$, $E=8/4$ | pp. 5–6 |
 | Music-JEPA | $\sum_t\|f(s_t,a_{t+1})-s_{t+1}\|^2+\|g(a_t)-a_{t+1}\|^2$ | **Inverso amortizado** $h(s_t,s_{t+1},a_t)$ | transcripción como planificación | Eq. 5 |
 
@@ -634,6 +635,7 @@ Cada evaluación de $J$ son $H$ llamadas a un predictor ligero sobre vectores de
 > - El objetivo debe poder expresarse como **observación** (o como embedding). SG-JEPA evita CEM precisamente porque requeriría "a future target frame" (p. 6).
 > - El planificador **explota los errores del modelo**: busca acciones que el predictor cree buenas aunque no lo sean. Los horizontes largos lo agravan (§6.2; SG-JEPA Thm H.15).
 > - La distancia euclídea en latente solo es un buen coste si la geometría del espacio refleja la del problema. No está garantizado: depende del regularizador y de los datos. Con SIGReg, bajo las hipótesis de §6.3, sí lo está.
+> - La **curvatura** de las trayectorias latentes empeora el condicionamiento de la planificación por gradiente: en dinámica lineal, $\kappa_{\text{eff}}(H)\le\kappa(B)^2\big(\frac{1+\varepsilon}{1-\varepsilon}\big)^{2(K-1)}$ con $\varepsilon=\|A-I\|_2$ ([[Planning_Hessian_Conditioning]]). Enderezar el latente ([[Temporal_Straightening_Loss]]) acerca la distancia euclídea a la geodésica y hace competitivo a GD frente a CEM (Temporal Straightening Tab. 1, 5).
 
 ---
 
@@ -673,6 +675,7 @@ Cada evaluación de $J$ son $H$ llamadas a un predictor ligero sobre vectores de
 | [[wiki/papers/2026_Causal-JEPA\|Causal-JEPA]] | 2026 | encoder congelado | CEM | Enmascarado de objetos (slots) con predictor bidireccional; +21 puntos en contrafactuales de CLEVRER (ICML 2026) |
 | [[wiki/papers/2026_AdaJEPA\|AdaJEPA]] | 2026 | SG (sin EMA) | GD / CEM + TTA | Adaptación en test dentro de MPC: últimas capas, 1 paso, buffer de 5 |
 | [[wiki/papers/2026_Semigroup-JEPA\|Semigroup-JEPA]] | 2026 | SIGReg | Diffusion Policy | Rollout con descuento sin SG; teoría del defecto de clausura e inversión de ranking; generalización a gravedad OOD |
+| [[wiki/papers/2026_Temporal_Straightening\|Temporal Straightening]] | 2026 | SG (sin EMA) | GD (CEM en ablación) | Regularizador de curvatura $1-\cos(v_t,v_{t+1})$ sobre DINOv2 + proyector o ResNet; teorema de condicionamiento (lineal); frente a DINO-WM con GD, +20–60 open-loop y +20–30 MPC (ICML 2026) |
 | [[wiki/papers/2026_SkyJEPA\|SkyJEPA]] | 2026 | SIGReg | MPPI | Cuadricóptero desde estado, prober físico en $SO(3)$, sim-to-real zero-shot, <10 ms en Orin NX |
 
 ### 8.4 Otras modalidades
@@ -1251,7 +1254,7 @@ def test_cem_moves_toward_goal() -> None:
 - **¿Qué distribución objetivo es la adecuada para world models, Gaussiana densa o dispersa?** La evidencia es parcial. LpWM gana con predictores de capacidad intermedia pero no con el DiT de LeWM. La unicidad gaussiana de When Does LeJEPA… vale para mundos OU gaussianos, no para regímenes con contacto. → [[wiki/papers/2026_LpWM|LpWM]], [[wiki/papers/2026_Rectified_LpJEPA|Rectified LpJEPA]], [[Linear_Identifiability]].
 - **¿Cómo extender la identificabilidad a la dinámica condicionada por acciones?** Es la limitación declarada en App. D.2 de When Does LeJEPA…. → [[Latent_Dynamics_Consistency]] (SG-JEPA) da cotas de error, no identificabilidad.
 - **¿Qué captura el latente de lo que es *controlable*?** Sin IDM, PLDM y EB-JEPA pierden casi todo el rendimiento, y MotionJEPA + IDM es la mejor configuración. → [[wiki/papers/2026_EB-JEPA|EB-JEPA]], [[DISReg]].
-- **¿Cómo planificar a largo horizonte sin que el planificador explote los errores del modelo?** Entre las opciones están el rollout con descuento (SG-JEPA, Thm H.15), el prober físico con restricciones (SkyJEPA) y la adaptación online (AdaJEPA). → [[wiki/papers/2026_Semigroup-JEPA|SG-JEPA]], [[wiki/papers/2026_SkyJEPA|SkyJEPA]], [[wiki/papers/2026_AdaJEPA|AdaJEPA]].
+- **¿Cómo planificar a largo horizonte sin que el planificador explote los errores del modelo?** Entre las opciones están el rollout con descuento (SG-JEPA, Thm H.15), el prober físico con restricciones (SkyJEPA), la adaptación online (AdaJEPA) y un espacio latente enderezado con coste combinado espacial + global (Temporal Straightening, Tab. 2). → [[wiki/papers/2026_Semigroup-JEPA|SG-JEPA]], [[wiki/papers/2026_SkyJEPA|SkyJEPA]], [[wiki/papers/2026_AdaJEPA|AdaJEPA]].
 - **¿Tienen valor empírico las JEPA probabilísticas a escala?** VJEPA no supera al JEPA determinista en su único experimento. → [[wiki/papers/2026_VJEPA|VJEPA]].
 - **¿Cómo trasladar la receta de visión a series temporales multivariantes, grafos y señales físicas con muestreo irregular?** CHARM (canales heterogéneos + texto) y HP-JEPA (multirresolución) son los precedentes. El colapso temporal (§5.5) es especialmente probable en señales que cambian despacio. → [[wiki/papers/2026_CHARM|CHARM]], [[wiki/papers/2026_HP-JEPA|HP-JEPA]], [[wiki/papers/2026_MotionJEPA|MotionJEPA]].
 
@@ -1294,9 +1297,9 @@ for (const [ac, list] of Object.entries(groups).sort()) {
 - **Hub y guías:** [[JEPA]], [[World_Models_PhD_Guide]], síntesis previa [[JEPA-World-Models-Synthesis]] (reemplazada por esta nota).
 - **Fundacionales:** [[wiki/papers/2023_I-JEPA|2023_I-JEPA]], [[wiki/papers/2025_V-JEPA2|2025_V-JEPA2]], [[wiki/papers/2026_V-JEPA2.1|2026_V-JEPA2.1]], [[wiki/papers/2026_TC-JEPA|2026_TC-JEPA]].
 - **Estabilidad y regularización:** [[wiki/papers/2025_LeJEPA|2025_LeJEPA]], [[wiki/papers/2026_LeVJEPA|2026_LeVJEPA]], [[wiki/papers/2026_Rectified_LpJEPA|2026_Rectified_LpJEPA]], [[wiki/papers/2026_LpWM|2026_LpWM]], [[wiki/papers/2026_MotionJEPA|2026_MotionJEPA]], [[wiki/papers/2026_EB-JEPA|2026_EB-JEPA]], [[wiki/papers/2026_VJEPA|2026_VJEPA]].
-- **Matemáticas:** [[SIGReg]], [[LeJEPA_Loss]], [[Isotropic_Gaussian_Optimality]], [[Invariance_Loss]], [[LeWM_Loss]], [[RDMReg]], [[DISReg]], [[Dense_Predictive_Loss]], [[VJEPA_Loss]], [[Semigroup_Rollout_Consistency]], [[Latent_Dynamics_Consistency]], [[Visual_Action_Flow_Matching]].
+- **Matemáticas:** [[SIGReg]], [[LeJEPA_Loss]], [[Isotropic_Gaussian_Optimality]], [[Invariance_Loss]], [[LeWM_Loss]], [[RDMReg]], [[DISReg]], [[Dense_Predictive_Loss]], [[VJEPA_Loss]], [[Semigroup_Rollout_Consistency]], [[Latent_Dynamics_Consistency]], [[Visual_Action_Flow_Matching]], [[Temporal_Straightening_Loss]], [[Planning_Hessian_Conditioning]].
 - **Teoría:** [[wiki/papers/2026_LeJEPA_Identifiability|2026_LeJEPA_Identifiability]], [[Linear_Identifiability]].
-- **World models y planificación:** [[wiki/papers/2025_PLDM|2025_PLDM]], [[wiki/papers/2026_LeWorldModel|2026_LeWorldModel]], [[wiki/papers/2026_Causal-JEPA|2026_Causal-JEPA]], [[wiki/papers/2026_AdaJEPA|2026_AdaJEPA]], [[wiki/papers/2026_Semigroup-JEPA|2026_Semigroup-JEPA]], [[wiki/papers/2026_SkyJEPA|2026_SkyJEPA]].
+- **World models y planificación:** [[wiki/papers/2025_PLDM|2025_PLDM]], [[wiki/papers/2026_LeWorldModel|2026_LeWorldModel]], [[wiki/papers/2026_Causal-JEPA|2026_Causal-JEPA]], [[wiki/papers/2026_AdaJEPA|2026_AdaJEPA]], [[wiki/papers/2026_Semigroup-JEPA|2026_Semigroup-JEPA]], [[wiki/papers/2026_SkyJEPA|2026_SkyJEPA]], [[wiki/papers/2026_Temporal_Straightening|2026_Temporal_Straightening]].
 - **Otras modalidades:** [[wiki/papers/2026_CHARM|2026_CHARM]], [[wiki/papers/2026_HP-JEPA|2026_HP-JEPA]], [[wiki/papers/2026_Music-JEPA|2026_Music-JEPA]], [[wiki/papers/2026_MJEPA|2026_MJEPA]], [[wiki/papers/2026_Semantic_Tube|2026_Semantic_Tube]].
 - **Contraste:** [[wiki/papers/2026_GeniWorld|2026_GeniWorld]], [[wiki/papers/2026_MuSe|2026_MuSe]], [[wiki/papers/2026_DL_Predictive_Maintenance|2026_DL_Predictive_Maintenance]], baselines [[DINO-WM]] y [[Ctrl-World]].
 
@@ -1332,6 +1335,7 @@ Estas son las contradicciones entre notas de la bóveda o entre las notas y los 
 | 22 | EB-JEPA con EMA encoder (diagrama) | Sin EMA ni stop-gradient; VICReg o SIGReg | EB-JEPA p. 2 |
 | 23 | "Inmunidad a alucinaciones acumuladas" ([[JEPA-World-Models-Synthesis]]) | Falso: hay error acumulado (§6.2) | SG-JEPA Eq. 8, Thm H.15 |
 | 24 | LaTeX corrupto en MotionJEPA y [[Semigroup_Rollout_Consistency]] | Reparado (`\t`, `\a`, `\b`, `\f` convertidos en caracteres de control) | lint |
+| 25 | DINO-WM en PushT: 92.0 / 91.33 (LeWM, C-JEPA) frente a 56.00 / 66.00 (Temporal Straightening) | No es una contradicción: protocolo CEM frente a **GD**; con CEM open-loop, 71.33. Anotado en [[DINO-WM]] (2026-09-27) | LeWM Tab. 5; C-JEPA Tab. 3; Temporal Straightening Tab. 1, 5 |
 
 **Inconsistencias internas de los propios papers** (se señalan en las notas, no se "resuelven"):
 - **LeJEPA:** $w(t)$ en el texto frente al código; 256 frente a 1024 slices; $V_l=8$ frente a $V=8$; el 79 % de ViT-H/14 del abstract no aparece en las tablas del cuerpo.
@@ -1341,3 +1345,4 @@ Estas son las contradicciones entre notas de la bóveda o entre las notas y los 
 - **SG-JEPA:** la ganancia se atribuye al predictor en p. 2 y al encoder en §4.
 - **Music-JEPA:** $g$ "reconstruct $a_t$" en el texto frente a $a_{t+1}$ en la ecuación.
 - **PLDM:** varianza "across time" en el texto frente a la varianza sobre el batch de la fórmula.
+- **Temporal Straightening:** acciones iniciales "Gaussian" (App. B.1) frente a "Zero" (Tab. 4); $h_\phi(v_t)$ en el texto frente a $h_\phi(z_t)$ en la Fig. 13; "improves across all models" (Tab. 2) con ResNet/Medium empatado; $K$ se usa a la vez para la historia y para el horizonte.
