@@ -21,8 +21,11 @@ tags: [entity, baseline, world-models]
 | Control con física OOD | Arm Catcher 9.5 % frente a 23.3 % de SG-JEPA | [[wiki/papers/2026_Semigroup-JEPA\|SG-JEPA]] pp. 8–9 |
 | PushT con planificador **GD** (patch) | 56.00 open-loop / 66.00 MPC, frente a 77.33 / 91.33 con straightening | [[wiki/papers/2026_Temporal_Straightening\|Temporal Straightening]] Tab. 1 |
 | PushT con CEM, open-loop (patch) | 71.33 (200 muestras, 10 iters) | Temporal Straightening Tab. 5 |
+| Conducción (NAVSIM, 100 escenas, DINOv3 ViT-L, 256 trayectorias) | EPDMS 68.3, FDE 3.9 m, hit top-1/5 40/73 %; 91.8 s por escena frente a 0.8 s de AD-E2E-JEPA | [[wiki/papers/2026_AD-E2E-JEPA\|AD-E2E-JEPA]] Tab. 2 |
 
 **Por qué importa:** es el punto de comparación para la tesis de que un encoder **entrenado junto al predictor** ([[LeWorldModel]], [[SG-JEPA]]) produce latentes mejores para dinámica que un encoder fundacional congelado. SG-JEPA atribuye su ganancia sobre todo al encoder (experimento de crossover). [[Temporal_Straightening]] muestra que el espacio de DINOv2 es muy curvo y que eso dificulta la planificación por gradiente (Fig. 2, 4).
 
 > [!important] Cifras de PushT no comparables
 > El 92.0 / 91.33 de LeWM y C-JEPA usa el protocolo CEM + MPC de esos papers. El 56.00 / 66.00 de Temporal Straightening usa **GD**. Son protocolos distintos, no una contradicción.
+>
+> En [[AD-E2E-JEPA]], "DINO-WM" usa **DINOv3 ViT-L** (no DINOv2) y planifica por búsqueda sobre un vocabulario de trayectorias, no con CEM (AD-E2E-JEPA §4.2–4.3).

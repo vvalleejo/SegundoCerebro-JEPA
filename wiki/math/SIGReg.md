@@ -51,8 +51,14 @@ El nombre es el mismo, pero los detalles numéricos **no**. Los valores de $\lam
 | [[wiki/papers/2026_Semigroup-JEPA\|SG-JEPA]] | ECF, Eq. 160 | sí ($B$) | 17 knots | 1024 | aditiva | 0.09–0.72 según tarea |
 | [[wiki/papers/2026_SkyJEPA\|SkyJEPA]] | Epps–Pulley sobre latentes **predichos** del rollout | — | 17 knots | — | aditiva | 0.02 |
 | [[wiki/papers/2026_MotionJEPA\|MotionJEPA]] | Epps–Pulley (p. 3), sobre $z$ y sobre $d$ | — | config. LeWM | — | pesos fijos | $\lambda_z=0.25,\ \lambda_d=2$ |
+| [[wiki/papers/2026_AD-E2E-JEPA\|AD-E2E-JEPA]] | Epps–Pulley **por posición de parche** y paso temporal, sobre embeddings proyectados | — (no se indica) | 17 en $[0,3]$ | 1024 | aditiva | 0.09 (0.025 con batch 512) |
 
-Fuentes: LeVJEPA App. A (p. 12); LeWM App. A (p. 13), donde además llama $\lambda$ al ancho de banda $w(t)=e^{-t^2/(2\lambda^2)}$, en conflicto con el peso de la pérdida; SG-JEPA App. C y H.8; SkyJEPA §IV-B (p. 4–5).
+Fuentes: LeVJEPA App. A (p. 12); LeWM App. A (p. 13), donde además llama $\lambda$ al ancho de banda $w(t)=e^{-t^2/(2\lambda^2)}$, en conflicto con el peso de la pérdida; SG-JEPA App. C y H.8; SkyJEPA §IV-B (p. 4–5); AD-E2E-JEPA Eq. 10, App. A.1, Tab. 1.
+
+> [!important] Variante parche a parche (AD-E2E-JEPA)
+> LeWM aplica SIGReg al CLS global en cada paso temporal y promedia en el tiempo. AD-E2E-JEPA lo aplica **por separado a cada posición** $l$ de la rejilla espacio-temporal proyectada ($N=K+2$ frames × $H'W'=32$ posiciones), sobre el batch, y promedia (Eq. 10):
+> $$\mathcal L_{\text{SIGReg}}=\frac{1}{NH'W'M}\sum_{l=1}^{NH'W'}\sum_{m=1}^{M}T\Big(\big\{\langle z_{l,b},u^{(m)}\rangle\big\}_{b=1}^{B}\Big),\quad z_{l,b}\in\mathbb R^{D},\ u^{(m)}\in\mathbb S^{D-1},\ D=256$$
+> Es un test **marginal**: cada parche, visto a lo largo del batch, debe parecer $\mathcal N(0,I_D)$, pero no se impone independencia entre parches. En la notación del paper, $T(\cdot)$ es el test (no el nº de nodos) y $M$ las direcciones (canónico $K$).
 
 > [!warning] Descripciones erróneas corregidas en la bóveda
 > SIGReg **no** es un test de Cramér–von Mises ni una penalización de media, varianza y kurtosis. Los papers usan Epps–Pulley sobre la función característica empírica y rechazan explícitamente los tests basados en momentos (ver §1 abajo). El pariente más cercano es **RDMReg** ([[RDMReg]]). También es una instancia de Cramér–Wold, pero usa un test **two-sample** (sliced $W_2$) en lugar de uno *one-sample*. LpWM llega a reimplementar el baseline LeWM con SWD (LpWM App. H.1).

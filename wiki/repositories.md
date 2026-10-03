@@ -2,6 +2,7 @@
 
 A continuación se listan los enlaces a los repositorios oficiales de código (o páginas de proyecto) para cada uno de los papers ingestados en el directorio `raw/`:
 
+- **AD-E2E-JEPA: A Joint-Embedding Predictive Architecture For End-to-End Autonomous Driving**: [https://github.com/HaoranZhuExplorer/AD-E2E-JEPA](https://github.com/HaoranZhuExplorer/AD-E2E-JEPA) *(URL tomada del PDF; no verificada en la ingesta)*
 - **AdaJEPA: An Adaptive Latent World Model**: [https://github.com/agentic-learning-ai-lab/adajepa](https://github.com/agentic-learning-ai-lab/adajepa)
 - **Causal-JEPA: Learning World Models through Object-Level Latent Masking**: [https://github.com/galilai-group/cjepa](https://github.com/galilai-group/cjepa)
 - **Deep Learning-Based Artificial Intelligence for Predictive Maintenance in Smart Manufacturing Systems**: *(Sin código: revisión conceptual sin experimentos; procedencia dudosa, ver [[wiki/papers/2026_DL_Predictive_Maintenance|2026_DL_Predictive_Maintenance]])*

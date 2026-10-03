@@ -21,4 +21,4 @@ Frente a DINO-WM con el mismo planificador GD: +20–60 puntos open-loop y +20�
 - Paper: [[wiki/papers/2026_Temporal_Straightening|2026_Temporal_Straightening]]
 - Arquitectura: [[wiki/architecture/2026_Temporal_Straightening_Arch|2026_Temporal_Straightening_Arch]]
 - Matemáticas: [[Temporal_Straightening_Loss]], [[Planning_Hessian_Conditioning]]
-- Relacionados: [[Semantic_Tube]] (misma pérdida, en LLMs), [[MotionJEPA]] (métrica de rectitud), [[AdaJEPA]] (mismo lab, mismo planificador GD), [[DINO-WM]] (baseline), [[JEPA]]
+- Relacionados: [[Semantic_Tube]] (misma pérdida, en LLMs), [[MotionJEPA]] (métrica de rectitud), [[AdaJEPA]] (mismo lab, mismo planificador GD), [[DINO-WM]] (baseline), [[AD-E2E-JEPA]] (retoma el proyector convolucional con stride $2	imes2$ y SIGReg en lugar de curvatura), [[JEPA]]

@@ -23,6 +23,9 @@ A diferencia de trabajos previos de JEPA, LeWM **no** requiere:
 
 Logra esto reemplazando todo por un único término de regularización llamado **[[SIGReg]]**, que hace el balance de los embeddings forzándolos hacia una distribución Gaussiana isotrópica. Esto simplifica el tuneo de hiperparámetros a un solo escalar, $\lambda$.
 
+## Uso como baseline
+- [[AD-E2E-JEPA]] lo reentrena en conducción (NAVSIM) con un **ViT-L desde cero** y batch 8 (no con el ViT-Tiny original). Planifica rápido (0.7 s) pero con poca precisión: EPDMS 48.3 y FDE 12.4 m en 100 escenas (AD-E2E-JEPA Tab. 1–2). Por esa configuración, la comparación no es representativa del LeWM original.
+
 ## Enlaces Relacionados
 - Paper: [[2026_LeWorldModel]]
 - Función de pérdida principal: [[LeWM_Loss]]

@@ -4,8 +4,8 @@ type: synthesis
 tipo: concept-note
 estado: verified-against-pdfs
 nivel: introductorio-técnico
-actualizado: 2026-09-27
-sources: "27 notas de wiki/papers/ + PDFs de raw/ (arbitraje 2026-09-24; ingesta Temporal Straightening 2026-09-27)"
+actualizado: 2026-10-03
+sources: "28 notas de wiki/papers/ + PDFs de raw/ (arbitraje 2026-09-24; ingestas Temporal Straightening 2026-09-27 y AD-E2E-JEPA 2026-10-03)"
 aliases: [Joint-Embedding Predictive Architecture, Nota Maestra JEPA]
 tags: [synthesis, jepa, world-models, deep-learning, ssl]
 ---
@@ -318,7 +318,7 @@ Aquí $\mathcal{L}_{\text{sim}}$ es la predicción **multi-paso** del ensemble, 
 
 **EB-JEPA** reproduce esta receta en su ejemplo con acciones y aísla la contribución del IDM: **sin IDM el éxito de planificación cae de 97 % a 1 %** (Tab. 4). Es la evidencia más fuerte de la bóveda de que la varianza y la covarianza por sí solas no bastan para que el latente capture lo *controlable*.
 
-### 5.3 Regularización distribucional: SIGReg (LeJEPA, LeVJEPA, LeWM, SG-JEPA, SkyJEPA, MotionJEPA)
+### 5.3 Regularización distribucional: SIGReg (LeJEPA, LeVJEPA, LeWM, SG-JEPA, SkyJEPA, MotionJEPA, AD-E2E-JEPA)
 
 **Idea.** En lugar de heurísticas (EMA, stop-gradient, schedules), se fija explícitamente **qué distribución deben seguir los embeddings**. LeJEPA demuestra que la **Gaussiana isotrópica** $\mathcal{N}(0, I_D)$ minimiza el sesgo cuadrático integrado de sondas lineales, k-NN y kernel ([[Isotropic_Gaussian_Optimality]]). Para imponerla propone SIGReg (*Sketched Isotropic Gaussian Regularization*).
 
@@ -445,9 +445,9 @@ En PushT a 25 pasos, el IDM solo supera a MotionJEPA (83.6 frente a 78.4).
 |---|---|---|---|---|
 | SG + EMA + predictor | I-JEPA, V-JEPA 2/2.1, TC-JEPA, MJEPA, CHARM, HP-JEPA, Music-JEPA | Colapso (empíricamente) | Probado a gran escala (hasta 2B en V-JEPA 2.1) | Sin garantía; sensible a $\tau$ y al predictor |
 | Stop-grad sin EMA | AdaJEPA (TTA), Temporal Straightening | Colapso durante la adaptación / entrenamiento del proyector | Simple, sin hiperparámetros | Sin garantía; Temporal Straightening admite que el colapso es posible en teoría (§3.3) y no reporta métricas de colapso |
-| Encoder congelado | C-JEPA (DINOv2 + VideoSAUR) | Colapso, por construcción | Nada que regularizar | El encoder no se adapta a la dinámica |
+| Encoder congelado | C-JEPA (DINOv2 + VideoSAUR), JEPA-WM / DINO-WM (DINOv3, en AD-E2E-JEPA) | Colapso, por construcción | Nada que regularizar | El encoder no se adapta a la dinámica; latente denso y caro de planificar (>90 s por escena en NAVSIM, AD-E2E-JEPA Tab. 2) |
 | Varianza + covarianza (+ IDM) | PLDM, EB-JEPA | Completo y dimensional | Explícito, interpretable | $\mathcal{O}(BD^2)$; hasta 7 pesos; depende del IDM |
-| SIGReg | LeJEPA, LeVJEPA, LeWM, SG-JEPA, SkyJEPA, MotionJEPA | Fuerza $\mathcal{N}(0, I)$ | Lineal en $B$ y $D$; 1 hiperparámetro; con garantías (§6.3) | Impone una forma concreta; $\lambda$ excesivo colapsa |
+| SIGReg | LeJEPA, LeVJEPA, LeWM, SG-JEPA, SkyJEPA, MotionJEPA, AD-E2E-JEPA (parche a parche, + SG + encoder congelado) | Fuerza $\mathcal{N}(0, I)$ | Lineal en $B$ y $D$; 1 hiperparámetro; con garantías (§6.3) | Impone una forma concreta; $\lambda$ excesivo colapsa |
 | RDMReg (RGG) | Rectified LpJEPA, LpWM | Colapso + densidad excesiva | Soporte interpretable, dinámica más lineal | Two-sample: necesita muestrear de la RGG; más reciente |
 | KL variacional | VJEPA (+ EMA) | Colapso de $q$ hacia un punto | Incertidumbre explícita | Solo validado en un toy lineal |
 | Ninguno (predictor identidad) | Semantic Tube (LLMs) | No aplica: es un regularizador auxiliar sumado a la NTP | Coste casi nulo | No es un objetivo SSL autónomo |
@@ -605,6 +605,7 @@ Cada paper usa **una variante distinta**, y la elección importa para la teoría
 | SkyJEPA | coste de seguimiento sobre el estado físico del prober | **MPPI** en C++/TensorRT, Jetson Orin NX | $S=512$, $T=15$, $\lambda=10^{-4}$ (Tab. II; el texto elige $U=20$ para caber en 10 ms) | §V |
 | AdaJEPA | $\sum_k\alpha_k\,d(\hat z_k,z_g)$, $d$ ≈ $L_2^2$ | GD (Adam, lr 0.1, 100 pasos) o CEM (200 muestras, 10 pasos) | + TTA | Eq. 3; Tab. 4 |
 | Temporal Straightening | $\|\hat z_T-z_g\|_2^2$ (terminal, open-loop); ponderado en estados intermedios en MPC salvo PushT | **GD** (Adam, lr 0.1, 100 pasos, init. cero); CEM (200 / 10) en ablación | 25 pasos = $H=5$ con frameskip 5; GD ~10× más rápido que CEM | §5.3; Tab. 4; App. B.3 |
+| AD-E2E-JEPA | $\|z_{t+F}-\hat z^{\,i}_{t+F}\|_2^2$ (terminal; $z_{t+F}$ = frame futuro **real**, objetivo oráculo) | **Búsqueda en vocabulario**: argmin sobre 256–8192 trayectorias de VADv2, en paralelo; sin CEM/GD | $F=8$ (4 s a 2 Hz); 0.8 s (256) a 18.2 s (8192) por escena en A100 | Eq. 13–14; Tab. 2 |
 | SG-JEPA | **no planifica sobre el modelo** | Diffusion Policy sobre el encoder congelado | $A=16$, $E=8/4$ | pp. 5–6 |
 | Music-JEPA | $\sum_t\|f(s_t,a_{t+1})-s_{t+1}\|^2+\|g(a_t)-a_{t+1}\|^2$ | **Inverso amortizado** $h(s_t,s_{t+1},a_t)$ | transcripción como planificación | Eq. 5 |
 
@@ -677,6 +678,7 @@ Cada evaluación de $J$ son $H$ llamadas a un predictor ligero sobre vectores de
 | [[wiki/papers/2026_Semigroup-JEPA\|Semigroup-JEPA]] | 2026 | SIGReg | Diffusion Policy | Rollout con descuento sin SG; teoría del defecto de clausura e inversión de ranking; generalización a gravedad OOD |
 | [[wiki/papers/2026_Temporal_Straightening\|Temporal Straightening]] | 2026 | SG (sin EMA) | GD (CEM en ablación) | Regularizador de curvatura $1-\cos(v_t,v_{t+1})$ sobre DINOv2 + proyector o ResNet; teorema de condicionamiento (lineal); frente a DINO-WM con GD, +20–60 open-loop y +20–30 MPC (ICML 2026) |
 | [[wiki/papers/2026_SkyJEPA\|SkyJEPA]] | 2026 | SIGReg | MPPI | Cuadricóptero desde estado, prober físico en $SO(3)$, sim-to-real zero-shot, <10 ms en Orin NX |
+| [[wiki/papers/2026_AD-E2E-JEPA\|AD-E2E-JEPA]] | 2026 | DINOv3 congelado + SG + SIGReg (parche a parche) | Vocabulario de trayectorias | Conducción E2E (NAVSIMv2, cámara frontal): patch projector 16× menos tokens y 4× menos dimensión; mismo nivel que DINO-WM/JEPA-WM a ~100× menos tiempo (0.8 s); EPDMS 67.3–72.9 con **objetivo oráculo**; proyector transferible a IL (80.2 → 85.4). Preprint, una ejecución por configuración |
 
 ### 8.4 Otras modalidades
 
@@ -1297,11 +1299,11 @@ for (const [ac, list] of Object.entries(groups).sort()) {
 - **Hub y guías:** [[JEPA]], [[World_Models_PhD_Guide]], síntesis previa [[JEPA-World-Models-Synthesis]] (reemplazada por esta nota).
 - **Fundacionales:** [[wiki/papers/2023_I-JEPA|2023_I-JEPA]], [[wiki/papers/2025_V-JEPA2|2025_V-JEPA2]], [[wiki/papers/2026_V-JEPA2.1|2026_V-JEPA2.1]], [[wiki/papers/2026_TC-JEPA|2026_TC-JEPA]].
 - **Estabilidad y regularización:** [[wiki/papers/2025_LeJEPA|2025_LeJEPA]], [[wiki/papers/2026_LeVJEPA|2026_LeVJEPA]], [[wiki/papers/2026_Rectified_LpJEPA|2026_Rectified_LpJEPA]], [[wiki/papers/2026_LpWM|2026_LpWM]], [[wiki/papers/2026_MotionJEPA|2026_MotionJEPA]], [[wiki/papers/2026_EB-JEPA|2026_EB-JEPA]], [[wiki/papers/2026_VJEPA|2026_VJEPA]].
-- **Matemáticas:** [[SIGReg]], [[LeJEPA_Loss]], [[Isotropic_Gaussian_Optimality]], [[Invariance_Loss]], [[LeWM_Loss]], [[RDMReg]], [[DISReg]], [[Dense_Predictive_Loss]], [[VJEPA_Loss]], [[Semigroup_Rollout_Consistency]], [[Latent_Dynamics_Consistency]], [[Visual_Action_Flow_Matching]], [[Temporal_Straightening_Loss]], [[Planning_Hessian_Conditioning]].
+- **Matemáticas:** [[SIGReg]], [[LeJEPA_Loss]], [[Isotropic_Gaussian_Optimality]], [[Invariance_Loss]], [[LeWM_Loss]], [[RDMReg]], [[DISReg]], [[Dense_Predictive_Loss]], [[VJEPA_Loss]], [[Semigroup_Rollout_Consistency]], [[Latent_Dynamics_Consistency]], [[Visual_Action_Flow_Matching]], [[Temporal_Straightening_Loss]], [[Planning_Hessian_Conditioning]], [[Teacher_Forcing_Rollout_Loss]].
 - **Teoría:** [[wiki/papers/2026_LeJEPA_Identifiability|2026_LeJEPA_Identifiability]], [[Linear_Identifiability]].
-- **World models y planificación:** [[wiki/papers/2025_PLDM|2025_PLDM]], [[wiki/papers/2026_LeWorldModel|2026_LeWorldModel]], [[wiki/papers/2026_Causal-JEPA|2026_Causal-JEPA]], [[wiki/papers/2026_AdaJEPA|2026_AdaJEPA]], [[wiki/papers/2026_Semigroup-JEPA|2026_Semigroup-JEPA]], [[wiki/papers/2026_SkyJEPA|2026_SkyJEPA]], [[wiki/papers/2026_Temporal_Straightening|2026_Temporal_Straightening]].
+- **World models y planificación:** [[wiki/papers/2025_PLDM|2025_PLDM]], [[wiki/papers/2026_LeWorldModel|2026_LeWorldModel]], [[wiki/papers/2026_Causal-JEPA|2026_Causal-JEPA]], [[wiki/papers/2026_AdaJEPA|2026_AdaJEPA]], [[wiki/papers/2026_Semigroup-JEPA|2026_Semigroup-JEPA]], [[wiki/papers/2026_SkyJEPA|2026_SkyJEPA]], [[wiki/papers/2026_Temporal_Straightening|2026_Temporal_Straightening]], [[wiki/papers/2026_AD-E2E-JEPA|2026_AD-E2E-JEPA]].
 - **Otras modalidades:** [[wiki/papers/2026_CHARM|2026_CHARM]], [[wiki/papers/2026_HP-JEPA|2026_HP-JEPA]], [[wiki/papers/2026_Music-JEPA|2026_Music-JEPA]], [[wiki/papers/2026_MJEPA|2026_MJEPA]], [[wiki/papers/2026_Semantic_Tube|2026_Semantic_Tube]].
-- **Contraste:** [[wiki/papers/2026_GeniWorld|2026_GeniWorld]], [[wiki/papers/2026_MuSe|2026_MuSe]], [[wiki/papers/2026_DL_Predictive_Maintenance|2026_DL_Predictive_Maintenance]], baselines [[DINO-WM]] y [[Ctrl-World]].
+- **Contraste:** [[wiki/papers/2026_GeniWorld|2026_GeniWorld]], [[wiki/papers/2026_MuSe|2026_MuSe]], [[wiki/papers/2026_DL_Predictive_Maintenance|2026_DL_Predictive_Maintenance]], baselines [[DINO-WM]], [[JEPA-WM]] y [[Ctrl-World]].
 
 ---
 
@@ -1346,3 +1348,4 @@ Estas son las contradicciones entre notas de la bóveda o entre las notas y los 
 - **Music-JEPA:** $g$ "reconstruct $a_t$" en el texto frente a $a_{t+1}$ en la ecuación.
 - **PLDM:** varianza "across time" en el texto frente a la varianza sobre el batch de la fórmula.
 - **Temporal Straightening:** acciones iniciales "Gaussian" (App. B.1) frente a "Zero" (Tab. 4); $h_\phi(v_t)$ en el texto frente a $h_\phi(z_t)$ en la Fig. 13; "improves across all models" (Tab. 2) con ResNet/Medium empatado; $K$ se usa a la vez para la historia y para el horizonte.
+- **AD-E2E-JEPA:** "100×" de aceleración frente a 115× / 126× reales (Tab. 2); hit rate "54 %/83 %" en el texto frente a 53.8 / 82.7 en la Tab. 2; $\lambda$ "ajustado para batches grandes" (0.025 con batch 512) pero 0.09 con batch 256 (Tab. 1); $N$ y $T$ en Eq. 10 chocan con la notación canónica (ventana temporal y test, no tokens ni nodos).

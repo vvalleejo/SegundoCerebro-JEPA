@@ -293,3 +293,20 @@ Registro cronolÃ³gico de las operaciones realizadas en la base de conocimiento
     - `wiki/math/Planning_Hessian_Conditioning.md`
     - `wiki/entities/Temporal_Straightening.md`
   - Archivos actualizados: `wiki/entities/DINO-WM.md`, `wiki/entities/Semantic_Tube.md`, `wiki/entities/JEPA.md`, `wiki/synthesis/JEPA-master-note.md` (§5.6, §7.1, §7.3, §8.3, §11, §13, §14), `wiki/index.md`, `wiki/repositories.md`, `wiki/brain-map.html`, `wiki/log.md`
+
+## [2026-10-03] ingest | AD-E2E-JEPA
+- **Resumen**: Ingesta de "AD-E2E-JEPA: A Joint-Embedding Predictive Architecture For End-to-End Autonomous Driving" (Zhu, Zhang, LeCun, Choromanska; NYU / AMI Labs; arXiv:2609.34085v1, 28 Sep 2026, cs.RO). Trabajo empírico, preprint. Procedencia sin señales de alerta graves; señales menores: una sola ejecución por configuración, sin ablación de SIGReg ni del proyector, baseline LeWM con ViT-L y batch 8. World model JEPA para conducción (NAVSIMv2, cámara frontal) sobre JEPA-WM (DINOv3 ViT-L congelado + predictor AdaLN/RoPE) con patch projector entrenable (16× menos tokens, 4× menos dimensión), SG + SIGReg parche a parche, y planificación zero-shot por vocabulario de trayectorias con objetivo oráculo (frame futuro real).
+- **Acciones**:
+  - Figuras a 300 DPI: `overview` (Fig. 1), `arch` (Fig. 2), `planning_qualitative` (Fig. 3), `imitation` (Fig. 4).
+  - Verificación contra el PDF (texto completo extraído, 17 pp.) de las Eq. 1–28 y de las Tab. 1–5. Inconsistencias internas registradas en §14 de la nota maestra.
+  - Observaciones críticas: el objetivo oráculo hace que el EPDMS zero-shot no sea comparable con el de las políticas de IL; no hay ablación del anti-colapso ni del proyector; confusión de batch y lr entre métodos (Tab. 1).
+  - Contradicciones con la bóveda: ninguna. Se anota en [[DINO-WM]] que en este paper usa DINOv3 y búsqueda por vocabulario, y en [[LeWorldModel]] que el baseline usa ViT-L desde cero y no el ViT-Tiny original (arbitraje #12).
+  - Esquema: nuevo valor `vocab-search` en `planner` (`GEMINI.md` §3).
+  - Archivos creados:
+    - `wiki/papers/2026_AD-E2E-JEPA.md`
+    - `wiki/architecture/2026_AD-E2E-JEPA_Arch.md`
+    - `wiki/architecture/img/2026_AD-E2E-JEPA_{overview,arch,planning_qualitative,imitation}.png`
+    - `wiki/math/Teacher_Forcing_Rollout_Loss.md`
+    - `wiki/entities/AD-E2E-JEPA.md`
+    - `wiki/entities/JEPA-WM.md` (stub, `external-baseline`)
+  - Archivos actualizados: `wiki/math/SIGReg.md` (fila y variante parche a parche), `wiki/entities/DINO-WM.md`, `wiki/entities/LeWorldModel.md`, `wiki/entities/Temporal_Straightening.md`, `wiki/entities/JEPA.md`, `wiki/GEMINI.md`, `wiki/synthesis/JEPA-master-note.md` (frontmatter, §5.3, §5.6, §7.1, §8.3, §13, §14), `wiki/index.md`, `wiki/repositories.md`, `wiki/brain-map.html`, `wiki/log.md`

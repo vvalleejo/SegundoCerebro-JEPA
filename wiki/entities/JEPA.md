@@ -17,9 +17,9 @@ Nota **hub** de la familia. La explicación completa, con notación, derivacione
 |---|---|
 | EMA + stop-gradient | [[I-JEPA]], [[V-JEPA2]], [[V-JEPA2.1]], [[TC-JEPA]], [[MJEPA]], [[CHARM]], [[HP-JEPA]], [[Music-JEPA]], [[VJEPA]] (+ KL) |
 | Stop-gradient sin EMA | [[AdaJEPA]], [[Temporal_Straightening]] (+ regularizador de curvatura) |
-| Encoder congelado | [[C-JEPA]] |
+| Encoder congelado | [[C-JEPA]], [[JEPA-WM]] (DINOv3, solo MSE) |
 | VICReg (+ IDM) | [[PLDM]], [[EB-JEPA]] |
-| SIGReg | [[LeJEPA]], [[LeVJEPA]], [[LeWorldModel]], [[SG-JEPA]], [[SkyJEPA]], [[MotionJEPA]] (vía [[DISReg]]) |
+| SIGReg | [[LeJEPA]], [[LeVJEPA]], [[LeWorldModel]], [[SG-JEPA]], [[SkyJEPA]], [[MotionJEPA]] (vía [[DISReg]]), [[AD-E2E-JEPA]] (+ DINOv3 congelado + SG sobre el proyector) |
 | RDMReg (sparse) | [[Rectified_LpJEPA]], [[LpWM]] |
 | Sin predictor ni regularizador (predictor identidad) | [[Semantic_Tube]] |
 

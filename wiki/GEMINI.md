@@ -68,7 +68,7 @@ family: jepa                         # jepa | jepa-adjacent | generative | revie
 modality: [video, control]           # image | video | audio | text | time-series | graph | control | theory | multimodal
 anti_collapse: [sigreg]              # ema-sg | sg (stop-grad sin EMA) | vicreg | sigreg | rdmreg | disreg | kl | frozen-encoder | none | n/a
 predictor: true                      # ¿hay red predictora explícita?
-planner: [cem]                       # cem | mppi | gd | diffusion-policy | inverse | tta | none
+planner: [cem]                       # cem | mppi | gd | diffusion-policy | inverse | tta | vocab-search | none
 tags: [paper, jepa, world-models]
 ---
 ```
