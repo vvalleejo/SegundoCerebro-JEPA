@@ -47,7 +47,12 @@ Los **5 teoremas** (los Thm. 1–4 anteriores más el **Thm. 5** del App. E, que
 > - Se asume dimensión de salida igual a la latente real ($m=n$, p. 9). No se enuncia inyectividad de $g$: los teoremas son sobre $h=f\circ g$ medible.
 
 ## Implicaciones para el Doctorado
-Este trabajo justifica teóricamente por qué las sondas lineales (*linear probes*) funcionan como evaluación estándar en SSL/JEPA: evaluar con sondas lineales solo es conceptualmente válido si la red ha aprendido una representación linealmente identificable. Además, explica por qué la regularización Gaussiana de [[SIGReg]] en [[LeWorldModel]] no es un truco heurístico, sino una condición matemáticamente necesaria y suficiente para garantizar que un World Model recupere los verdaderos grados de libertad del entorno.
+El paper da una **motivación teórica** a las sondas lineales (*linear probes*) en SSL/JEPA, no una justificación general. La identificabilidad lineal es condición *"necessary, albeit not sufficient"* para un probing lineal fiel (p. 2). Un $R^2$ alto en probes es evidencia empírica compatible con ella, pero no la demuestra.
+
+Sobre [[SIGReg]] en [[LeWorldModel]]: el paper muestra que, **bajo sus hipótesis** (latentes Gaussianos con transición OU, $m=n$, óptimo global), el objetivo LeJEPA recupera los latentes salvo rotación. Eso da un respaldo teórico a SIGReg frente a otras heurísticas. Sin embargo, **no** prueba que SIGReg sea condición necesaria y suficiente:
+- El Thm. 2 (unicidad) trata de la distribución de los **latentes del mundo**, no del regularizador.
+- VICReg e InfoNCE también alcanzan identificabilidad en la Tab. 1 (p. 9).
+- Mundos no Gaussianos, dinámica condicionada por acciones, EMA o pérdidas distintas de $L_2^2$ quedan fuera del resultado.
 
 ## Referencias Cruzadas
 - **Arquitectura**: [[wiki/architecture/2026_LeJEPA_Identifiability|2026_LeJEPA_Identifiability]]

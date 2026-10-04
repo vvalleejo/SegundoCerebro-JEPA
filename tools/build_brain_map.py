@@ -107,7 +107,6 @@ def extract_wikilinks(text: str) -> list[tuple[str, bool]]:
 
     Args:
         text: Texto markdown (ya sin código).
-
     Returns:
         Lista de (destino, es_embed).
     """

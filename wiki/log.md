@@ -310,3 +310,24 @@ Registro cronolÃ³gico de las operaciones realizadas en la base de conocimiento
     - `wiki/entities/AD-E2E-JEPA.md`
     - `wiki/entities/JEPA-WM.md` (stub, `external-baseline`)
   - Archivos actualizados: `wiki/math/SIGReg.md` (fila y variante parche a parche), `wiki/entities/DINO-WM.md`, `wiki/entities/LeWorldModel.md`, `wiki/entities/Temporal_Straightening.md`, `wiki/entities/JEPA.md`, `wiki/GEMINI.md`, `wiki/synthesis/JEPA-master-note.md` (frontmatter, §5.3, §5.6, §7.1, §8.3, §13, §14), `wiki/index.md`, `wiki/repositories.md`, `wiki/brain-map.html`, `wiki/log.md`
+
+## [2026-10-04] fix | Corrección de notas detectadas en la revisión del anteproyecto TFM
+- **Resumen**: Al verificar el anteproyecto del TFM contra los PDFs de `raw/`, se encontraron afirmaciones exageradas o erróneas en cuatro notas. Se corrigen contra el PDF original.
+- **Acciones**:
+  - `wiki/entities/Linear_Identifiability.md`:
+    - "desentraña (*disentangles*)" pasa a "recupera salvo rotación ortogonal".
+    - Se añaden las hipótesis del Thm. 1 (latentes Gaussianos, transición OU, $m=n$, óptimo global).
+    - Se aclara que la unicidad Gaussiana (Thm. 2) se refiere a los latentes del mundo, y que el Thm. 4 exige costes $O(n)$-invariantes.
+    - Se añade el alcance: solo el encoder, no la dinámica condicionada por acciones (App. D.2), y VICReg/InfoNCE también son identificables (Tab. 1).
+  - `wiki/papers/2026_LeJEPA_Identifiability.md` (Implicaciones):
+    - Se elimina "justifica por qué las sondas lineales funcionan" ("necessary, albeit not sufficient", p. 2).
+    - Se elimina "SIGReg es condición necesaria y suficiente".
+  - `wiki/architecture/2025_V-JEPA2.md`:
+    - El condicionamiento por acción usa tokens intercalados con transformaciones afines, no cross-attention.
+    - Se añaden los datos de DROID, la acción 7-D y la pérdida L1 de teacher forcing más rollout.
+    - "Sin muestreo por fuerza bruta" pasa a "planificación por CEM", con la cita literal "relatively smooth and locally convex" (p. 13) y los objetivos en lenguaje como trabajo futuro (p. 15).
+  - `wiki/architecture/2026_MuSe.md`:
+    - Se elimina el "World Model Head estilo JEPA": la base es UVA y predice frames de vídeo, acciones y F/T. Se quita el tag `jepa`.
+    - La fusión se corrige a early fusion (anteponer tokens) más late fusion (adaptadores de cross-attention).
+    - El encoder F/T es convolucional causal.
+  - `wiki/architecture/2026_LeJEPA_Identifiability.md`: se elimina "preserva relaciones de causalidad" (sin respaldo en el paper). Se añaden las hipótesis (latentes independientes, transición OU, $m=n$, óptimo global) y un recuadro de alcance (Thm. 2–4, App. D.2, §7).
